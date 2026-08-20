@@ -170,20 +170,20 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding.apply {
             initBackground()
             uiLayout.post {
+                // 左侧边栏：直角，跟随主题色
                 ThemeEngine.getInstance().registerEvent(leftMenu) {
                     leftMenu.background = GradientDrawable().apply {
                         setColor(ThemeEngine.getInstance().getTheme().color)
                         shape = GradientDrawable.RECTANGLE
-                        val radius = ConvertUtils.dip2px(this@MainActivity, 8f).toFloat()
-                        cornerRadii = floatArrayOf(radius, radius, radius, radius, radius, radius, radius, radius)
+                        cornerRadius = 0f
                     }
                 }
-
-                // 顶部标题栏也跟随主题色切换
+                // 顶部标题栏：直角，跟随主题色
                 ThemeEngine.getInstance().registerEvent(titleBar) {
                     titleBar.background = GradientDrawable().apply {
                         setColor(ThemeEngine.getInstance().getTheme().color)
                         shape = GradientDrawable.RECTANGLE
+                        cornerRadius = 0f
                     }
                 }
 
