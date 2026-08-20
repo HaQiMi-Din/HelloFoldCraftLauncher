@@ -88,7 +88,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -97,14 +97,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/home_page"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_home_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="主页"
@@ -125,7 +125,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -134,14 +134,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/home"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_home_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="游戏"
@@ -162,7 +162,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -171,14 +171,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/manage"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_build_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="版本"
@@ -199,7 +199,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -208,14 +208,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/download"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_cloud_download_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="下载"
@@ -236,7 +236,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -245,14 +245,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/controller"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_videogame_asset_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="控制"
@@ -273,7 +273,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -282,14 +282,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/multiplayer"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_outline_account_tree_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="联机"
@@ -310,7 +310,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -319,14 +319,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/setting"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_settings_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="设置"
@@ -347,7 +347,7 @@
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:gravity="center"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -357,14 +357,14 @@
 
             <com.tungsten.fcllibrary.component.view.FCLMenuView
                 android:id="@+id/back"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:alpha="0"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
 
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="返回"
