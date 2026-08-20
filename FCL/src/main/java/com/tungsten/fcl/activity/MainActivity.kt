@@ -179,6 +179,17 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     }
                 }
 
+                // ========== 顶部标题栏按钮 ==========
+                // 退出键：点击直接关闭应用
+                btnExit.setOnClickListener {
+                    finishAffinity()
+                    exitProcess(0)
+                }
+                // 最小化键：应用退到后台
+                btnMinimize.setOnClickListener {
+                    moveTaskToBack(true)
+                }
+
                 // 菜单点击绑定外层 item，触发 ripple + 缩放动画
                 account.setOnClickListener(this@MainActivity)
                 homePageItem.setOnClickListener { onSelect(binding.homePage) }
