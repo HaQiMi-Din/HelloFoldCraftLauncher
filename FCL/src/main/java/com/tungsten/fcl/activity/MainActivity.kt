@@ -207,7 +207,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 controllerItem.setOnClickListener { onSelect(binding.controller) }
                 multiplayerItem.setOnClickListener { onSelect(binding.multiplayer) }
                 settingItem.setOnClickListener { onSelect(binding.setting) }
-                backItem.setOnClickListener { onSelect(binding.back) }
+                // 【修复】左下角返回键：直接调用返回，不走 onSelect
+                backItem.setOnClickListener {
+                    uiManager.onBackPressed()
+                }
 
                 version.setOnClickListener(this@MainActivity)
                 goSetting.setOnClickListener(this@MainActivity)
@@ -437,9 +440,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 refreshMenuView(null)
                 title.setTextWithAnim(getString(R.string.version))
                 uiManager.switchUI(uiManager.versionUI)
-            }
-            if (view === backItem) {
-                uiManager.onBackPressed()
             }
             if (view === jar) {
                 if (sharedPreferences.getBoolean("showJarExecutorWarnDialog", true)) {
