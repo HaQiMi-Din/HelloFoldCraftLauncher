@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 左侧侧边栏：FCLMenuView必须是直接子View，不能包裹 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
         android:layout_width="100dp"
@@ -25,7 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- 账户区域 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/account"
             android:layout_width="match_parent"
@@ -75,7 +73,6 @@
                 app:layout_constraintTop_toBottomOf="@id/account_name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- 主页图标（直接子View） -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/home"
             android:layout_width="wrap_content"
@@ -90,14 +87,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="主页"
+            android:text="游戏"
             android:textColor="#FFFFFF"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home" />
 
-        <!-- 版本管理图标（直接子View） -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/manage"
             android:layout_width="wrap_content"
@@ -119,7 +115,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/manage" />
 
-        <!-- 下载图标 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/download"
             android:layout_width="wrap_content"
@@ -141,7 +136,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/download" />
 
-        <!-- 游戏图标 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/controller"
             android:layout_width="wrap_content"
@@ -156,14 +150,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="游戏"
+            android:text="控制"
             android:textColor="#FFFFFF"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/controller" />
 
-        <!-- 联机图标 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/multiplayer"
             android:layout_width="wrap_content"
@@ -185,7 +178,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/multiplayer" />
 
-        <!-- 设置图标 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/setting"
             android:layout_width="wrap_content"
@@ -207,7 +199,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/setting" />
 
-        <!-- 返回图标 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/back"
             android:layout_width="wrap_content"
@@ -244,7 +235,6 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-    <!-- 主内容区 -->
     <com.tungsten.fcllibrary.component.view.FCLUILayout
         android:id="@+id/ui_layout"
         android:layout_width="0dp"
@@ -254,7 +244,6 @@
         app:layout_constraintStart_toEndOf="@id/left_menu"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <!-- 右下角启动按钮 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="260dp"
@@ -315,14 +304,12 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 执行Jar按钮：彻底隐藏 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/jar"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"/>
 
-    <!-- 管理版本按钮：彻底隐藏，入口移到左侧栏 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/version"
         android:layout_width="0dp"
