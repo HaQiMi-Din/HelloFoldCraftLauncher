@@ -80,7 +80,6 @@ import com.tungsten.fcllibrary.component.dialog.EditDialog
 import com.tungsten.fcllibrary.component.dialog.FCLAlertDialog
 import com.tungsten.fcllibrary.component.theme.ThemeEngine
 import com.tungsten.fcllibrary.component.view.FCLMenuView
-import com.tungsten.fcllibrary.component.view.FCLMenuView.OnSelectListener
 import com.tungsten.fcllibrary.util.ConvertUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -92,7 +91,7 @@ import java.util.logging.Level
 import java.util.stream.Stream
 import kotlin.system.exitProcess
 
-class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
+class MainActivity : FCLActivity(), View.OnClickListener {
     companion object {
         private lateinit var instance: WeakReference<MainActivity>
 
@@ -180,7 +179,17 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                     }
                 }
 
+                // 菜单点击绑定外层 item，触发 ripple + 缩放动画
                 account.setOnClickListener(this@MainActivity)
+                homePageItem.setOnClickListener { onSelect(binding.homePage) }
+                homeItem.setOnClickListener { onSelect(binding.home) }
+                manageItem.setOnClickListener { onSelect(binding.manage) }
+                downloadItem.setOnClickListener { onSelect(binding.download) }
+                controllerItem.setOnClickListener { onSelect(binding.controller) }
+                multiplayerItem.setOnClickListener { onSelect(binding.multiplayer) }
+                settingItem.setOnClickListener { onSelect(binding.setting) }
+                backItem.setOnClickListener { onSelect(binding.back) }
+
                 version.setOnClickListener(this@MainActivity)
                 goSetting.setOnClickListener(this@MainActivity)
                 start.setOnClickListener(this@MainActivity)
@@ -222,23 +231,12 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                     }
                 }
                 uiManager.init()
-                homePage.setOnSelectListener(this@MainActivity)
-                home.setOnSelectListener(this@MainActivity)
-                manage.setOnSelectListener(this@MainActivity)
-                download.setOnSelectListener(this@MainActivity)
-                controller.setOnSelectListener(this@MainActivity)
-                multiplayer.setOnSelectListener(this@MainActivity)
-                setting.setOnSelectListener(this@MainActivity)
-                homePage.setSelected(true)
+
                 home.setOnLongClickListener {
                     shareLog()
                     true
                 }
-                back.setOnClickListener(this@MainActivity)
-                back.setOnLongClickListener {
-                    startActivity(Intent(this@MainActivity, ShellActivity::class.java))
-                    true
-                }
+
                 UpdateChecker.getInstance().checkAuto(this@MainActivity).start()
                 if (!checkNotificationPermission() && getSharedPreferences(
                         "launcher",
@@ -263,6 +261,12 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                 setupAccountDisplay()
                 setupVersionDisplay()
                 playAnim()
+
+                // 默认选中主页
+                homePage.isSelected = true
+                homePageItem.isSelected = true
+                refreshMenuView(binding.homePage)
+
                 uiLayout.postDelayed(1500) {
                     GuideUtil.show(
                         activity = this@MainActivity,
@@ -278,46 +282,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
         setupLiveBackground()
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            _uiManager?.onBackPressed()
-            return true
-        }
-        return super.onKeyDown(keyCode, event)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBoolean("modpack_handled", modpackHandled)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        _uiManager?.onPause()
-        if (shouldPlayVideo() && binding.videoView.isPlaying) {
-            videoPosition = binding.videoView.currentPosition
-            binding.videoView.pause()
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        _uiManager?.onResume()
-        if (shouldPlayVideo() && !binding.videoView.isPlaying) {
-            binding.videoView.seekTo(videoPosition)
-            binding.videoView.start()
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (shouldPlayVideo()) {
-            mediaPlayer = null
-            binding.videoView.stopPlayback()
-        }
-    }
-
-    override fun onSelect(view: FCLMenuView) {
+    private fun onSelect(view: FCLMenuView) {
         refreshMenuView(view)
         val speed = ThemeEngine.getInstance().getTheme().animationSpeed
         AnimUtil.playRotation(view, speed * 100L, 0f, 360f)
@@ -375,10 +340,73 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
     }
 
     fun refreshMenuView(view: FCLMenuView?) {
+        // 清除所有外层 item 选中状态
+        binding.homePageItem.isSelected = false
+        binding.homeItem.isSelected = false
+        binding.manageItem.isSelected = false
+        binding.downloadItem.isSelected = false
+        binding.controllerItem.isSelected = false
+        binding.multiplayerItem.isSelected = false
+        binding.settingItem.isSelected = false
+        binding.backItem.isSelected = false
+
+        // 清除所有内层 FCLMenuView 选中状态
         binding.leftMenu.forEach {
-            if (it is FCLMenuView && it != view) {
+            if (it is FCLMenuView) {
                 it.isSelected = false
             }
+        }
+
+        // 设置当前选中
+        view?.isSelected = true
+        when (view?.id) {
+            R.id.home_page -> binding.homePageItem.isSelected = true
+            R.id.home -> binding.homeItem.isSelected = true
+            R.id.manage -> binding.manageItem.isSelected = true
+            R.id.download -> binding.downloadItem.isSelected = true
+            R.id.controller -> binding.controllerItem.isSelected = true
+            R.id.multiplayer -> binding.multiplayerItem.isSelected = true
+            R.id.setting -> binding.settingItem.isSelected = true
+            R.id.back -> binding.backItem.isSelected = true
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            _uiManager?.onBackPressed()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("modpack_handled", modpackHandled)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        _uiManager?.onPause()
+        if (shouldPlayVideo() && binding.videoView.isPlaying) {
+            videoPosition = binding.videoView.currentPosition
+            binding.videoView.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        _uiManager?.onResume()
+        if (shouldPlayVideo() && !binding.videoView.isPlaying) {
+            binding.videoView.seekTo(videoPosition)
+            binding.videoView.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (shouldPlayVideo()) {
+            mediaPlayer = null
+            binding.videoView.stopPlayback()
         }
     }
 
@@ -394,7 +422,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                 title.setTextWithAnim(getString(R.string.version))
                 uiManager.switchUI(uiManager.versionUI)
             }
-            if (view === back) {
+            if (view === backItem) {
                 uiManager.onBackPressed()
             }
             if (view === jar) {
