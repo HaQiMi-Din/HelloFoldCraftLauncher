@@ -169,14 +169,15 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding.apply {
             initBackground()
             uiLayout.post {
-                ThemeEngine.getInstance().registerEvent(leftMenu) {
-                    leftMenu.background = GradientDrawable().apply {
-                        setColor(ThemeEngine.getInstance().getTheme().color)
-                        shape = GradientDrawable.RECTANGLE
-                        val radius = ConvertUtils.dip2px(this@MainActivity, 8f).toFloat()
-                        cornerRadii = floatArrayOf(radius, radius, radius, radius, radius, radius, radius, radius)
-                    }
-                }
+                // ========== 注释掉这段，防止覆盖半透明背景 ==========
+                // ThemeEngine.getInstance().registerEvent(leftMenu) {
+                //     leftMenu.background = GradientDrawable().apply {
+                //         setColor(ThemeEngine.getInstance().getTheme().color)
+                //         shape = GradientDrawable.RECTANGLE
+                //         val radius = ConvertUtils.dip2px(this@MainActivity, 8f).toFloat()
+                //         cornerRadii = floatArrayOf(radius, radius, radius, radius, radius, radius, radius, radius)
+                //     }
+                // }
 
                 // 菜单点击绑定外层 item，触发 ripple + 缩放动画
                 account.setOnClickListener(this@MainActivity)
