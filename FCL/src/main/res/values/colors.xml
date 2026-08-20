@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="default_theme_color">#7797CF</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="ui_bg_color">#40F4F4F4</color>
-    <color name="right_menu_color">#80F4F4F4</color>
-    <color name="icon_background_color">#FFFFFF</color>
-    <color name="primary_text">#0E0E0E</color>
-    <!-- 原 FCLLibrary 模块颜色（模块已并入 FCL） -->
-    <color name="dialog_background">#F4F4F4</color>
+    <!-- HMCL 深色配色 -->
+    <color name="theme_color">#292929</color>
+    <color name="theme_color2">#5C6BC0</color>
+    <color name="theme_color2_dark">#4252a3</color>
+    <color name="theme_background">#3C3C3C</color>
+    <color name="theme_background_card">#484848</color>
+    <color name="theme_text_primary">#ffffff</color>
+    <color name="theme_text_secondary">#bbbbbb</color>
+    <color name="theme_divider">#555555</color>
 </resources>
