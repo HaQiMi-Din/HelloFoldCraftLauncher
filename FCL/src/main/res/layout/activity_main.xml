@@ -172,7 +172,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
 
-    <!-- 【修复后 HMCL 右下角大启动按钮】 -->
+    <!-- 右下角大启动按钮（HMCL风格） -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="260dp"
@@ -219,10 +219,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
+        <!-- 保留ID防编译失败，隐藏不显示 -->
+        <com.tungsten.fcllibrary.component.view.FCLImageView
+            android:id="@+id/icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+
+        <com.tungsten.fcllibrary.component.view.FCLProgressBar
+            android:id="@+id/version_progress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!-- 把这两个按钮移到 启动按钮**上方**，不要同一行挤压 -->
+    <!-- 版本管理、Jar按钮放到启动按钮上方 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/version"
         android:layout_width="wrap_content"
