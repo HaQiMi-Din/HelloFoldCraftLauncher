@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- HMCL 深色配色 -->
-    <color name="theme_color">#292929</color>
-    <color name="theme_color2">#5C6BC0</color>
-    <color name="theme_color2_dark">#4252a3</color>
-    <color name="theme_background">#3C3C3C</color>
-    <color name="theme_background_card">#484848</color>
-    <color name="theme_text_primary">#ffffff</color>
-    <color name="theme_text_secondary">#bbbbbb</color>
-    <color name="theme_divider">#555555</color>
+    <!-- HMCL深色配色，保留原始资源名 -->
+    <color name="default_theme_color">#292929</color>
+    <color name="default_theme_color2">#5C6BC0</color>
+    <color name="default_theme_color2_dark">#4252a3</color>
+    <color name="default_theme_background">#3C3C3C</color>
+    <color name="default_theme_background_card">#484848</color>
+    <color name="default_theme_text_primary">#ffffff</color>
+    <color name="default_theme_text_secondary">#bbbbbb</color>
+    <color name="default_theme_divider">#555555</color>
 </resources>
