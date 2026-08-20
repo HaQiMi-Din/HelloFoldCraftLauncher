@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- 开源 -->
+            <!-- 开源选项 -->
             <com.tungsten.fcllibrary.component.view.FCLLinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,6 +48,7 @@
 
             </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
 
+            <!-- 修改后的描述文本 -->
             <com.tungsten.fcllibrary.component.view.FCLTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
