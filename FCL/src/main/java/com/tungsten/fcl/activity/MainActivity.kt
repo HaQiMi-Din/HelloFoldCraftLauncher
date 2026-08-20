@@ -218,17 +218,18 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                         startActivity(i)
                         exitProcess(0)
                     } else {
-                        home.isSelected = true
+                        homePage.isSelected = true
                     }
                 }
                 uiManager.init()
+                homePage.setOnSelectListener(this@MainActivity)
                 home.setOnSelectListener(this@MainActivity)
                 manage.setOnSelectListener(this@MainActivity)
                 download.setOnSelectListener(this@MainActivity)
                 controller.setOnSelectListener(this@MainActivity)
                 multiplayer.setOnSelectListener(this@MainActivity)
                 setting.setOnSelectListener(this@MainActivity)
-                home.setSelected(true)
+                homePage.setSelected(true)
                 home.setOnLongClickListener {
                     shareLog()
                     true
@@ -327,6 +328,11 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
             .start()
         binding.apply {
             when (view) {
+                homePage -> {
+                    title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
+                    uiManager.switchUI(uiManager.mainUI)
+                }
+
                 home -> {
                     title.setTextWithAnim(getString(R.string.version))
                     uiManager.switchUI(uiManager.versionUI)
@@ -681,7 +687,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                 objectAnimator.interpolator(BounceInterpolator()).startAfter((index + 1) * 100L)
             }
             AnimUtil.playTranslationY(
-                listOf(home, manage, download, controller, multiplayer, setting, back),
+                listOf(homePage, home, manage, download, controller, multiplayer, setting, back),
                 speed * 100L,
                 -300f,
                 0f
@@ -689,7 +695,7 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                 objectAnimator.interpolator(BounceInterpolator()).startAfter((index + 1) * 100L)
             }
             AnimUtil.playTranslationX(
-                listOf(home, manage, download, controller, multiplayer, setting, back),
+                listOf(homePage, home, manage, download, controller, multiplayer, setting, back),
                 speed * 100L,
                 -100f,
                 0f
