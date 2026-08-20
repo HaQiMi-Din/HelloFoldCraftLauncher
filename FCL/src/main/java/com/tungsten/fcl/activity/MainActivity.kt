@@ -126,7 +126,7 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         // ========== 背景图替换为自定义白桦林风景 ==========
-        binding.background.setImageResource(R.drawable.bg_main)
+        binding.background.setBackgroundResource(R.drawable.bg_main)
 
         RemoteMod.registerEmptyRemoteMod(
             RemoteMod(
