@@ -179,6 +179,14 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     }
                 }
 
+                // 顶部标题栏也跟随主题色切换
+                ThemeEngine.getInstance().registerEvent(titleBar) {
+                    titleBar.background = GradientDrawable().apply {
+                        setColor(ThemeEngine.getInstance().getTheme().color)
+                        shape = GradientDrawable.RECTANGLE
+                    }
+                }
+
                 // ========== 顶部标题栏按钮 ==========
                 // 退出键：点击直接关闭应用
                 btnExit.setOnClickListener {
@@ -351,7 +359,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
     }
 
     fun refreshMenuView(view: FCLMenuView?) {
-        // 清除所有外层 item 选中状态
         binding.homePageItem.isSelected = false
         binding.homeItem.isSelected = false
         binding.manageItem.isSelected = false
@@ -361,14 +368,12 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding.settingItem.isSelected = false
         binding.backItem.isSelected = false
 
-        // 清除所有内层 FCLMenuView 选中状态
         binding.leftMenu.forEach {
             if (it is FCLMenuView) {
                 it.isSelected = false
             }
         }
 
-        // 设置当前选中
         view?.isSelected = true
         when (view?.id) {
             R.id.home_page -> binding.homePageItem.isSelected = true
