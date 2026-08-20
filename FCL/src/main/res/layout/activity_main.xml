@@ -12,13 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 顶部标题横条 -->
+    <!-- 顶部标题横条（与左侧边栏同背景，一起切换颜色） -->
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:orientation="horizontal"
-        android:background="#CC5C6BC0"
+        android:background="@drawable/bg_game_menu"
         android:gravity="center_vertical"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
