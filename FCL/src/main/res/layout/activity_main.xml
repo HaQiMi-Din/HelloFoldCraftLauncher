@@ -75,7 +75,6 @@
                 app:layout_constraintTop_toBottomOf="@id/account_name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <!-- 侧边导航按钮 -->
         <com.tungsten.fcllibrary.component.view.FCLMenuView
             android:id="@+id/home"
             android:layout_width="wrap_content"
@@ -161,7 +160,7 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
-    <!-- 主内容区域 -->
+    <!-- 主内容区 -->
     <com.tungsten.fcllibrary.component.view.FCLUILayout
         android:id="@+id/ui_layout"
         android:layout_width="0dp"
@@ -171,8 +170,7 @@
         app:layout_constraintStart_toEndOf="@id/left_menu"
         app:layout_constraintTop_toTopOf="parent"/>
 
-
-    <!-- 右下角大启动按钮（HMCL风格） -->
+    <!-- 右下角启动按钮 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="260dp"
@@ -215,11 +213,10 @@
             android:layout_height="32dp"
             android:src="@drawable/ic_baseline_settings_24"
             android:tint="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <!-- 保留ID防编译失败，隐藏不显示 -->
         <com.tungsten.fcllibrary.component.view.FCLImageView
             android:id="@+id/icon"
             android:layout_width="0dp"
@@ -234,28 +231,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <!-- 版本管理、Jar按钮放到启动按钮上方 -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/manage_version"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@id/start"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+    <!-- 执行Jar按钮：彻底隐藏，保留ID防编译失败 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/jar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/jar_execute"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@id/start"
-        app:layout_constraintEnd_toStartOf="@id/version"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"/>
+
+    <!-- 管理版本按钮：彻底隐藏（左侧栏已有manage入口），保留ID防编译失败 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/version"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
