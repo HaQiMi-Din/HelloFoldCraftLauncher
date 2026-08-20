@@ -27,13 +27,15 @@
         <!-- 账户区域 -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/account"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_left_menu_item"
             android:clickable="true"
             android:focusable="true"
             android:stateListAnimator="@xml/anim_button_press"
             android:paddingBottom="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <com.tungsten.fcllibrary.component.view.FCLImageView
@@ -78,7 +80,7 @@
         <!-- 主页 -->
         <LinearLayout
             android:id="@+id/home_page_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -114,7 +116,7 @@
         <!-- 游戏 -->
         <LinearLayout
             android:id="@+id/home_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -150,7 +152,7 @@
         <!-- 版本 -->
         <LinearLayout
             android:id="@+id/manage_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -186,7 +188,7 @@
         <!-- 下载 -->
         <LinearLayout
             android:id="@+id/download_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -222,7 +224,7 @@
         <!-- 控制 -->
         <LinearLayout
             android:id="@+id/controller_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -258,7 +260,7 @@
         <!-- 联机 -->
         <LinearLayout
             android:id="@+id/multiplayer_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -294,7 +296,7 @@
         <!-- 设置 -->
         <LinearLayout
             android:id="@+id/setting_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -330,7 +332,7 @@
         <!-- 返回 -->
         <LinearLayout
             android:id="@+id/back_item"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:background="@drawable/bg_left_menu_item"
@@ -387,6 +389,7 @@
         app:layout_constraintStart_toEndOf="@id/left_menu"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <!-- 右下角启动按钮 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="260dp"
@@ -401,27 +404,37 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
-            android:id="@+id/text_start"
-            android:layout_width="wrap_content"
+        <!-- 文字区域：垂直排列，水平居中于按钮（除去右侧齿轮图标区域） -->
+        <LinearLayout
+            android:id="@+id/start_text_container"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/launch"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/go_setting"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
-            android:id="@+id/version_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textColor="#DDDDDD"
-            android:textSize="14sp"
-            tools:text="1.20.4"
-            app:layout_constraintStart_toStartOf="@id/text_start"
-            app:layout_constraintTop_toBottomOf="@id/text_start"/>
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:id="@+id/text_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启动游戏"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:id="@+id/version_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#DDDDDD"
+                android:textSize="14sp"
+                tools:text="good" />
+
+        </LinearLayout>
 
         <com.tungsten.fcllibrary.component.view.FCLImageButton
             android:id="@+id/go_setting"
