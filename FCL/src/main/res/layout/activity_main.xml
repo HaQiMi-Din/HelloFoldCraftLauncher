@@ -12,13 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 顶部标题横条（与左侧边栏同背景，一起切换颜色） -->
+    <!-- 顶部标题横条【直角，跟随主题变色】 -->
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:orientation="horizontal"
-        android:background="@drawable/bg_game_menu"
         android:gravity="center_vertical"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -44,7 +43,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
         </FrameLayout>
 
         <!-- 中间标题 -->
@@ -74,16 +72,14 @@
                 android:layout_height="2dp"
                 android:layout_gravity="center"
                 android:background="#FFFFFF" />
-
         </FrameLayout>
-
     </LinearLayout>
 
+    <!-- 左侧边栏【直角，跟随主题变色】 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
         android:layout_width="160dp"
         android:layout_height="0dp"
-        android:background="@drawable/bg_game_menu"
         android:elevation="100dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
@@ -178,7 +174,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 游戏（刷新图标） -->
@@ -215,7 +210,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 版本 -->
@@ -252,7 +246,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 下载 -->
@@ -289,7 +282,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 控制 -->
@@ -326,7 +318,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 联机 -->
@@ -363,7 +354,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 设置 -->
@@ -400,7 +390,6 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
 
         <!-- 返回 -->
@@ -438,9 +427,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -507,7 +494,6 @@
                 android:textColor="#DDDDDD"
                 android:textSize="14sp"
                 tools:text="good" />
-
         </LinearLayout>
 
         <com.tungsten.fcllibrary.component.view.FCLImageButton
@@ -531,7 +517,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:visibility="gone"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
