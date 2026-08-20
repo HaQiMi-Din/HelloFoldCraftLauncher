@@ -162,7 +162,6 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
         if (!ConfigHolder.isInit()) {
             try {
                 ConfigHolder.init()
-                //当强制关闭进程时，不会经过SplashActivity，此时需要重新初始化
                 RendererManager.init(this@MainActivity)
             } catch (e: IOException) {
                 LOG.log(Level.WARNING, e.message)
@@ -329,8 +328,8 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
         binding.apply {
             when (view) {
                 home -> {
-                    title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
-                    uiManager.switchUI(uiManager.mainUI)
+                    title.setTextWithAnim(getString(R.string.version))
+                    uiManager.switchUI(uiManager.versionUI)
                 }
 
                 manage -> {
@@ -541,7 +540,6 @@ class MainActivity : FCLActivity(), OnSelectListener, View.OnClickListener {
                     binding.versionProgress.visibility = View.GONE
                     binding.versionName.text = version
                     binding.versionName.isSelected = true
-//                    binding.versionHint.text = libraries.toString()
                     binding.icon.setBackgroundDrawable(drawable)
                 }
             }
