@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 左侧侧边栏 -->
+    <!-- 左侧侧边栏 完整版：图标+底部汉字，新增版本入口 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
         android:layout_width="90dp"
@@ -75,76 +75,244 @@
                 app:layout_constraintTop_toBottomOf="@id/account_name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
+        <!-- 主页 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_home_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/account"/>
+            app:layout_constraintTop_toBottomOf="@id/account">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/manage"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_home_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="主页"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 版本管理 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/manage_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_build_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home"/>
+            app:layout_constraintTop_toBottomOf="@id/home_item">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/download"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/manage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_build_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="版本"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/manage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 下载 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/download_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_cloud_download_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/manage"/>
+            app:layout_constraintTop_toBottomOf="@id/manage_item">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/controller"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_cloud_download_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="下载"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/download" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 游戏 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controller_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_videogame_asset_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/download"/>
+            app:layout_constraintTop_toBottomOf="@id/download_item">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/multiplayer"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/controller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_videogame_asset_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="游戏"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/controller" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 联机 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/multiplayer_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_outline_account_tree_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/controller"/>
+            app:layout_constraintTop_toBottomOf="@id/controller_item">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/setting"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/multiplayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_outline_account_tree_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="联机"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/multiplayer" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 设置 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setting_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_settings_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/multiplayer"/>
+            app:layout_constraintTop_toBottomOf="@id/multiplayer_item">
 
-        <com.tungsten.fcllibrary.component.view.FCLMenuView
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_settings_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="设置"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/setting" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 返回 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back_item"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_back_24"
-            android:layout_marginTop="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/setting"/>
+            app:layout_constraintTop_toBottomOf="@id/setting_item">
+
+            <com.tungsten.fcllibrary.component.view.FCLMenuView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.tungsten.fcllibrary.component.view.FCLTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="返回"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -231,14 +399,14 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 执行Jar按钮：彻底隐藏，保留ID防编译失败 -->
+    <!-- 执行Jar按钮：彻底隐藏 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/jar"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"/>
 
-    <!-- 管理版本按钮：彻底隐藏（左侧栏已有manage入口），保留ID防编译失败 -->
+    <!-- 管理版本按钮：彻底隐藏，入口移到左侧栏 -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/version"
         android:layout_width="0dp"
