@@ -124,10 +124,9 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         sharedPreferences = getSharedPreferences("launcher", MODE_PRIVATE)
         setContentView(binding.root)
-        ImageUtil.loadInto(
-            binding.background,
-            ThemeEngine.getInstance().getTheme().getBackground(this)
-        )
+
+        // ========== 背景图替换为自定义白桦林风景 ==========
+        binding.background.setImageResource(R.drawable.bg_main)
 
         RemoteMod.registerEmptyRemoteMod(
             RemoteMod(
