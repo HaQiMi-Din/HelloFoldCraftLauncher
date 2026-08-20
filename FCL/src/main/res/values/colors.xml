@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="default_theme_color">#7797CF</color>
+    <!-- HMCL侧边栏背景 #292929，只改这个色值 -->
+    <color name="default_theme_color">#292929</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ui_bg_color">#40F4F4F4</color>
