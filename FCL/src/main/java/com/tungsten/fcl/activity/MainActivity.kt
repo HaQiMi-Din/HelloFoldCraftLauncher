@@ -1,5 +1,4 @@
 package com.tungsten.fcl.activity
-
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -90,17 +89,14 @@ import java.lang.ref.WeakReference
 import java.util.logging.Level
 import java.util.stream.Stream
 import kotlin.system.exitProcess
-
 class MainActivity : FCLActivity(), View.OnClickListener {
     companion object {
         private lateinit var instance: WeakReference<MainActivity>
-
         @JvmStatic
         fun getInstance(): MainActivity {
             return instance.get()!!
         }
     }
-
     lateinit var binding: ActivityMainBinding
     private var _uiManager: UIManager? = null
     lateinit var uiManager: UIManager
@@ -116,7 +112,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
     private lateinit var sharedPreferences: SharedPreferences
     var mediaPlayer: MediaPlayer? = null
     private var videoPosition = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         modpackHandled = savedInstanceState?.getBoolean("modpack_handled") ?: false
@@ -128,7 +123,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             binding.background,
             ThemeEngine.getInstance().getTheme().getBackground(this)
         )
-
         RemoteMod.registerEmptyRemoteMod(
             RemoteMod(
                 "",
@@ -143,12 +137,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     override fun loadDependencies(modRepository: RemoteModRepository): List<RemoteMod> {
                         throw IOException()
                     }
-
                     @Throws(IOException::class)
                     override fun loadVersions(modRepository: RemoteModRepository): Stream<RemoteMod.Version> {
                         throw IOException()
                     }
-
                     override fun loadScreenshots(modRepository: RemoteModRepository): MutableList<RemoteMod.Screenshot> {
                         throw IOException()
                     }
@@ -157,7 +149,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 ""
             )
         )
-
         if (!ConfigHolder.isInit()) {
             try {
                 ConfigHolder.init()
@@ -166,7 +157,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 LOG.log(Level.WARNING, e.message)
             }
         }
-
         binding.apply {
             initBackground()
             uiLayout.post {
@@ -186,7 +176,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         cornerRadius = 0f
                     }
                 }
-
                 // ========== 顶部标题栏按钮 ==========
                 // 退出键：点击直接关闭应用
                 btnExit.setOnClickListener {
@@ -197,7 +186,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 btnMinimize.setOnClickListener {
                     moveTaskToBack(true)
                 }
-
                 // 菜单点击绑定外层 item，触发 ripple + 缩放动画
                 account.setOnClickListener(this@MainActivity)
                 homePageItem.setOnClickListener { onSelect(binding.homePage) }
@@ -211,7 +199,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 backItem.setOnClickListener {
                     uiManager.onBackPressed()
                 }
-
                 version.setOnClickListener(this@MainActivity)
                 goSetting.setOnClickListener(this@MainActivity)
                 start.setOnClickListener(this@MainActivity)
@@ -238,7 +225,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     }.show()
                     true
                 }
-
                 uiManager = UIManager(this@MainActivity, uiLayout)
                 _uiManager = uiManager
                 uiManager.registerDefaultBackEvent {
@@ -253,12 +239,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     }
                 }
                 uiManager.init()
-
                 home.setOnLongClickListener {
                     shareLog()
                     true
                 }
-
                 UpdateChecker.getInstance().checkAuto(this@MainActivity).start()
                 if (!checkNotificationPermission() && getSharedPreferences(
                         "launcher",
@@ -283,12 +267,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 setupAccountDisplay()
                 setupVersionDisplay()
                 playAnim()
-
                 // 默认选中主页
                 homePage.isSelected = true
                 homePageItem.isSelected = true
                 refreshMenuView(binding.homePage)
-
                 uiLayout.postDelayed(1500) {
                     GuideUtil.show(
                         activity = this@MainActivity,
@@ -303,7 +285,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             }
         setupLiveBackground()
     }
-
     private fun onSelect(view: FCLMenuView) {
         refreshMenuView(view)
         val speed = ThemeEngine.getInstance().getTheme().animationSpeed
@@ -319,12 +300,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                     title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
                     uiManager.switchUI(uiManager.mainUI)
                 }
-
                 home -> {
                     title.setTextWithAnim(getString(R.string.version))
                     uiManager.switchUI(uiManager.versionUI)
                 }
-
                 manage -> {
                     val version = Profiles.getSelectedProfile().selectedVersion
                     if (version == null) {
@@ -337,22 +316,18 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         uiManager.switchUI(uiManager.manageUI)
                     }
                 }
-
                 download -> {
                     title.setTextWithAnim(getString(R.string.download))
                     uiManager.switchUI(uiManager.downloadUI)
                 }
-
                 controller -> {
                     title.setTextWithAnim(getString(R.string.controller))
                     uiManager.switchUI(uiManager.controllerUI)
                 }
-
                 multiplayer -> {
                     title.setTextWithAnim(getString(R.string.terracotta))
                     uiManager.switchUI(uiManager.multiplayerUI)
                 }
-
                 setting -> {
                     title.setTextWithAnim(getString(R.string.setting))
                     uiManager.switchUI(uiManager.settingUI)
@@ -360,7 +335,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             }
         }
     }
-
     fun refreshMenuView(view: FCLMenuView?) {
         binding.homePageItem.isSelected = false
         binding.homeItem.isSelected = false
@@ -370,13 +344,11 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding.multiplayerItem.isSelected = false
         binding.settingItem.isSelected = false
         binding.backItem.isSelected = false
-
         binding.leftMenu.forEach {
             if (it is FCLMenuView) {
                 it.isSelected = false
             }
         }
-
         view?.isSelected = true
         when (view?.id) {
             R.id.home_page -> binding.homePageItem.isSelected = true
@@ -389,7 +361,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             R.id.back -> binding.backItem.isSelected = true
         }
     }
-
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             _uiManager?.onBackPressed()
@@ -397,12 +368,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         }
         return super.onKeyDown(keyCode, event)
     }
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putBoolean("modpack_handled", modpackHandled)
     }
-
     override fun onPause() {
         super.onPause()
         _uiManager?.onPause()
@@ -411,7 +380,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             binding.videoView.pause()
         }
     }
-
     override fun onResume() {
         super.onResume()
         _uiManager?.onResume()
@@ -420,7 +388,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             binding.videoView.start()
         }
     }
-
     override fun onDestroy() {
         super.onDestroy()
         if (shouldPlayVideo()) {
@@ -428,7 +395,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             binding.videoView.stopPlayback()
         }
     }
-
     override fun onClick(view: View) {
         binding.apply {
             if (view === account && uiManager.currentUI !== uiManager.accountUI) {
@@ -470,25 +436,12 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 DisplayUtil.refreshDisplayMetrics(this@MainActivity)
                 Versions.launch(this@MainActivity, selectedProfile)
             }
+            // 右下角齿轮：跳转版本设置页面
             if (view === goSetting) {
-                val profile = Profiles.getSelectedProfile()
-                if (profile.versionSetting.isGlobal) {
-                    setting.isSelected = true
-                    uiManager.settingUI.runAfterInit {
-                        val tab = uiManager.settingUI.tabLayout.getTabAt(0)
-                        uiManager.settingUI.tabLayout.selectTab(tab)
-                    }
-                } else {
-                    manage.isSelected = true
-                    uiManager.manageUI.runAfterInit {
-                        val tab = uiManager.manageUI.tabLayout.getTabAt(0)
-                        uiManager.manageUI.tabLayout.selectTab(tab)
-                    }
-                }
+                onSelect(binding.home)
             }
         }
     }
-
     private fun setupAccountDisplay() {
         binding.apply {
             currentAccount = object : SimpleObjectProperty<Account?>() {
@@ -527,7 +480,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             (currentAccount as SimpleObjectProperty<Account?>).bind(Accounts.selectedAccountProperty())
         }
     }
-
     fun refreshAvatar(account: Account) {
         lifecycleScope.launch {
             if (currentAccount.get() === account) {
@@ -542,7 +494,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             }
         }
     }
-
     private fun loadVersion(version: String?) {
         isVersionLoading = true
         binding.versionProgress.visibility = View.VISIBLE
@@ -605,13 +556,11 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             )
         }
     }
-
     private fun setupVersionDisplay() {
         holder.add(FXUtils.onWeakChangeAndOperate(Profiles.selectedVersionProperty()) { s: String? ->
             lifecycleScope.launch { loadVersion(s) }
         })
     }
-
     private fun accountSubtitle(context: Context, account: Account): ObservableValue<String> {
         return if (account is AuthlibInjectorAccount) {
             BindingMapping.of(account.server) { obj: AuthlibInjectorServer -> obj.name }
@@ -624,7 +573,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             })
         }
     }
-
     private fun updateColor() {
         binding.apply {
             start.background = createBackground()
@@ -640,20 +588,16 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             version.setTextColor(ThemeEngine.getInstance().theme.color2)
             jar.setTextColor(ThemeEngine.getInstance().theme.color2)
         }
-
     }
-
     private fun initBackground() {
         theme = object : IntegerPropertyBase() {
             override fun invalidated() {
                 get()
                 updateColor()
             }
-
             override fun getBean(): Any {
                 return this
             }
-
             override fun getName(): String {
                 return "theme"
             }
@@ -663,11 +607,9 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 get()
                 updateColor()
             }
-
             override fun getBean(): Any {
                 return this
             }
-
             override fun getName(): String {
                 return "theme2"
             }
@@ -677,11 +619,9 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 get()
                 updateColor()
             }
-
             override fun getBean(): Any {
                 return this
             }
-
             override fun getName(): String {
                 return "theme2Dark"
             }
@@ -690,7 +630,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         theme2.bind(ThemeEngine.getInstance().theme.color2Property())
         theme2Dark.bind(ThemeEngine.getInstance().theme.color2DarkProperty())
     }
-
     private fun createBackground(): GradientDrawable {
         return GradientDrawable().apply {
             setColor(Color.TRANSPARENT)
@@ -702,7 +641,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             )
         }
     }
-
     private fun playAnim() {
         binding.apply {
             val speed = ThemeEngine.getInstance().theme.animationSpeed
@@ -748,13 +686,11 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             }
         }
     }
-
     private fun shareLog() {
         try {
             val file = File(FCLPath.LOG_DIR).resolve("latest_game.log")
             if (!file.exists()) return
             val intent = Intent(Intent.ACTION_SEND)
-
             val uri = FileProvider.getUriForFile(
                 this,
                 "${application.packageName}.provider",
@@ -773,7 +709,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             LOG.log(Level.INFO, "Share error: $e")
         }
     }
-
     fun checkNotificationPermission(): Boolean {
         return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
             true
@@ -784,7 +719,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             ) != PackageManager.PERMISSION_DENIED
         }
     }
-
     fun requestNotificationPermission() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || !ActivityCompat.shouldShowRequestPermissionRationale(
                 this,
@@ -807,11 +741,9 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             permissionResultLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
     }
-
     fun shouldPlayVideo(): Boolean {
         return File(FCLPath.LIVE_BACKGROUND_PATH).exists()
     }
-
     fun setupLiveBackground() {
         if (shouldPlayVideo()) {
             binding.videoView.visibility = View.VISIBLE
@@ -836,14 +768,12 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             binding.videoView.stopPlayback()
         }
     }
-
     fun setLiveBackgroundVolume() {
         mediaPlayer?.let {
             val volume = sharedPreferences.getInt("videoBackgroundVolume", 100) / 100f
             it.setVolume(volume, volume)
         }
     }
-
     private fun handleModpack(intent: Intent) {
         val path = intent.getStringExtra("modpack_cache_path") ?: return
         modpackHandled = true
@@ -869,7 +799,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
             downloadUI.pageManager.showTempPage(page)
         }
     }
-
     private fun refreshScreenSize() {
         DisplayUtil.screenWidth = binding.root.width
         DisplayUtil.screenHeight = binding.root.height
