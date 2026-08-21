@@ -55,25 +55,6 @@ import com.tungsten.fcl.upgrade.UpdateChecker
 import com.tungsten.fcl.util.AndroidUtils
 import com.tungsten.fcl.util.FXUtils
 import com.tungsten.fcl.util.WeakListenerHolder
-import com.tungsten.fclauncher.plugins.DriverPlugin
-import com.tungsten.fclauncher.utils.FCLPath
-import com.tungsten.fclcore.auth.Account
-import com.tungsten.fclcore.auth.authlibinjector.AuthlibInjectorAccount
-import com.tungsten.fclcore.auth.authlibinjector.AuthlibInjectorServer
-import com.tungsten.fclcore.auth.yggdrasil.TextureModel
-import com.tungsten.fclcore.download.LibraryAnalyzer
-import com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType
-import com.tungsten.fclcore.fakefx.beans.binding.Bindings
-import com.tungsten.fclcore.fakefx.beans.property.IntegerProperty
-import com.tungsten.fclcore.fakefx.beans.property.IntegerPropertyBase
-import com.tungsten.fclcore.fakefx.beans.property.ObjectProperty
-import com.tungsten.fclcore.fakefx.beans.property.SimpleObjectProperty
-import com.tungsten.fclcore.fakefx.beans.value.ObservableValue
-import com.tungsten.fclcore.mod.RemoteMod
-import com.tungsten.fclcore.mod.RemoteMod.IMod
-import com.tungsten.fclcore.mod.RemoteModRepository
-import com.tungsten.fclcore.util.Logging.LOG
-import com.tungsten.fclcore.util.fakefx.BindingMapping
 import com.tungsten.fcllibrary.component.FCLActivity
 import com.tungsten.fcllibrary.component.dialog.EditDialog
 import com.tungsten.fcllibrary.component.dialog.FCLAlertDialog
@@ -229,6 +210,7 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 _uiManager = uiManager
                 uiManager.registerDefaultBackEvent {
                     if (uiManager.currentUI === uiManager.mainUI) {
+                        binding.start.visibility = View.VISIBLE
                         val i = Intent(Intent.ACTION_MAIN)
                         i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                         i.addCategory(Intent.CATEGORY_HOME)
@@ -267,9 +249,10 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 setupAccountDisplay()
                 setupVersionDisplay()
                 playAnim()
-                // 默认选中主页
+                // 默认选中主页，启动按钮显示
                 homePage.isSelected = true
                 homePageItem.isSelected = true
+                binding.start.visibility = View.VISIBLE
                 refreshMenuView(binding.homePage)
                 uiLayout.postDelayed(1500) {
                     GuideUtil.show(
@@ -299,10 +282,12 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 homePage -> {
                     title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
                     uiManager.switchUI(uiManager.mainUI)
+                    start.visibility = View.VISIBLE
                 }
                 home -> {
                     title.setTextWithAnim(getString(R.string.version))
                     uiManager.switchUI(uiManager.versionUI)
+                    start.visibility = View.GONE
                 }
                 manage -> {
                     val version = Profiles.getSelectedProfile().selectedVersion
@@ -310,27 +295,33 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         refreshMenuView(null)
                         title.setTextWithAnim(getString(R.string.version))
                         uiManager.switchUI(uiManager.versionUI)
+                        start.visibility = View.GONE
                     } else {
                         title.setTextWithAnim(getString(R.string.manage))
                         uiManager.manageUI.setVersion(version, Profiles.getSelectedProfile())
                         uiManager.switchUI(uiManager.manageUI)
+                        start.visibility = View.GONE
                     }
                 }
                 download -> {
                     title.setTextWithAnim(getString(R.string.download))
                     uiManager.switchUI(uiManager.downloadUI)
+                    start.visibility = View.GONE
                 }
                 controller -> {
                     title.setTextWithAnim(getString(R.string.controller))
                     uiManager.switchUI(uiManager.controllerUI)
+                    start.visibility = View.GONE
                 }
                 multiplayer -> {
                     title.setTextWithAnim(getString(R.string.terracotta))
                     uiManager.switchUI(uiManager.multiplayerUI)
+                    start.visibility = View.GONE
                 }
                 setting -> {
                     title.setTextWithAnim(getString(R.string.setting))
                     uiManager.switchUI(uiManager.settingUI)
+                    start.visibility = View.GONE
                 }
             }
         }
@@ -401,11 +392,13 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 refreshMenuView(null)
                 title.setTextWithAnim(getString(R.string.account))
                 uiManager.switchUI(uiManager.accountUI)
+                start.visibility = View.GONE
             }
             if (view === version && uiManager.currentUI !== uiManager.versionUI) {
                 refreshMenuView(null)
                 title.setTextWithAnim(getString(R.string.version))
                 uiManager.switchUI(uiManager.versionUI)
+                start.visibility = View.GONE
             }
             if (view === jar) {
                 if (sharedPreferences.getBoolean("showJarExecutorWarnDialog", true)) {
