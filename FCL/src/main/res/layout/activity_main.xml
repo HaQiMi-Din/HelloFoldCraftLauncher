@@ -67,331 +67,317 @@
                 android:textStyle="bold" />
         </FrameLayout>
     </LinearLayout>
-    <!-- 左侧边栏【直角，跟随主题变色】 -->
+    <!-- 左侧边栏【直角，跟随主题变色，支持上下滑动】 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
         android:layout_width="160dp"
         android:layout_height="0dp"
         android:elevation="100dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
         app:layout_constraintTop_toBottomOf="@id/title_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-        <!-- 账户区域 -->
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/account"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <com.tungsten.fcllibrary.component.view.FCLImageView
-                android:id="@+id/avatar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:elevation="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:id="@+id/account_name"
-                android:layout_width="wrap_content"
+
+        <ScrollView
+            android:id="@+id/left_menu_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/account_state_no_account"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/avatar" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:id="@+id/account_hint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/account_state_add"
-                android:textColor="#CCCCCC"
-                android:textSize="10sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/account_name" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- 主页 → 回到主页 -->
-        <LinearLayout
-            android:id="@+id/home_page_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/account">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/home_page"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_home_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="回到主页"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 游戏 → 游戏管理 -->
-        <LinearLayout
-            android:id="@+id/home_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_page_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/home"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_refresh_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="游戏管理"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 版本 → 版本设置 -->
-        <LinearLayout
-            android:id="@+id/manage_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/manage"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_build_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="版本设置"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 下载 → 游戏下载 -->
-        <LinearLayout
-            android:id="@+id/download_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/manage_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/download"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_cloud_download_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="游戏下载"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 控制 -->
-        <LinearLayout
-            android:id="@+id/controller_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/download_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/controller"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_videogame_asset_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="控制"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 联机 → 联机设置 -->
-        <LinearLayout
-            android:id="@+id/multiplayer_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/controller_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/multiplayer"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_outline_account_tree_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="联机设置"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 设置 → 设置管理 -->
-        <LinearLayout
-            android:id="@+id/setting_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/multiplayer_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/setting"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_settings_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="设置管理"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-        <!-- 返回 → 回到上级 -->
-        <LinearLayout
-            android:id="@+id/back_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_left_menu_item"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@xml/anim_button_press"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/setting_item">
-            <com.tungsten.fcllibrary.component.view.FCLMenuView
-                android:id="@+id/back"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="回到上级"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+                <!-- 账户区域 -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:elevation="50dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:id="@+id/account_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/account_state_no_account"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/avatar" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:id="@+id/account_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/account_state_add"
+                        android:textColor="#CCCCCC"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/account_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- 主页 → 回到主页 -->
+                <LinearLayout
+                    android:id="@+id/home_page_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/home_page"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_home_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="回到主页"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 游戏 → 游戏管理 -->
+                <LinearLayout
+                    android:id="@+id/home_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/home"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_refresh_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="游戏管理"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 版本 → 版本设置 -->
+                <LinearLayout
+                    android:id="@+id/manage_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/manage"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_build_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="版本设置"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 下载 → 游戏下载 -->
+                <LinearLayout
+                    android:id="@+id/download_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/download"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_cloud_download_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="游戏下载"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 控制 -->
+                <LinearLayout
+                    android:id="@+id/controller_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/controller"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_videogame_asset_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="控制"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 联机 → 联机设置 -->
+                <LinearLayout
+                    android:id="@+id/multiplayer_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/multiplayer"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_outline_account_tree_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="联机设置"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 设置 → 设置管理 -->
+                <LinearLayout
+                    android:id="@+id/setting_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/setting"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_settings_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="设置管理"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <!-- 返回 → 回到上级 -->
+                <LinearLayout
+                    android:id="@+id/back_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_left_menu_item"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@xml/anim_button_press"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                        android:id="@+id/back"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/ic_baseline_arrow_back_24" />
+                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="回到上级"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/right_menu"
@@ -411,7 +397,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/left_menu" />
-    <!-- 右下角启动按钮 -->
+    <!-- 右下角启动按钮【实心】 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="260dp"
