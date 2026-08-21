@@ -160,7 +160,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
         binding.apply {
             initBackground()
             uiLayout.post {
-                // 左侧边栏：直角，跟随主题色
                 ThemeEngine.getInstance().registerEvent(leftMenu) {
                     leftMenu.background = GradientDrawable().apply {
                         setColor(ThemeEngine.getInstance().getTheme().color)
@@ -168,7 +167,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         cornerRadius = 0f
                     }
                 }
-                // 顶部标题栏：直角，跟随主题色
                 ThemeEngine.getInstance().registerEvent(titleBar) {
                     titleBar.background = GradientDrawable().apply {
                         setColor(ThemeEngine.getInstance().getTheme().color)
@@ -176,17 +174,13 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         cornerRadius = 0f
                     }
                 }
-                // ========== 顶部标题栏按钮 ==========
-                // 退出键：点击直接关闭应用
                 btnExit.setOnClickListener {
                     finishAffinity()
                     exitProcess(0)
                 }
-                // 最小化键：应用退到后台
                 btnMinimize.setOnClickListener {
                     moveTaskToBack(true)
                 }
-                // 菜单点击绑定外层 item，触发 ripple + 缩放动画
                 account.setOnClickListener(this@MainActivity)
                 homePageItem.setOnClickListener { onSelect(binding.homePage) }
                 homeItem.setOnClickListener { onSelect(binding.home) }
@@ -195,7 +189,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 controllerItem.setOnClickListener { onSelect(binding.controller) }
                 multiplayerItem.setOnClickListener { onSelect(binding.multiplayer) }
                 settingItem.setOnClickListener { onSelect(binding.setting) }
-                // 【修复】左下角返回键：直接调用返回，不走 onSelect
                 backItem.setOnClickListener {
                     uiManager.onBackPressed()
                 }
@@ -267,7 +260,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 setupAccountDisplay()
                 setupVersionDisplay()
                 playAnim()
-                // 默认选中主页
                 homePage.isSelected = true
                 homePageItem.isSelected = true
                 refreshMenuView(binding.homePage)
@@ -436,7 +428,6 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 DisplayUtil.refreshDisplayMetrics(this@MainActivity)
                 Versions.launch(this@MainActivity, selectedProfile)
             }
-            // 右下角齿轮：跳转版本设置页面
             if (view === goSetting) {
                 onSelect(binding.home)
             }
@@ -575,7 +566,7 @@ class MainActivity : FCLActivity(), View.OnClickListener {
     }
     private fun updateColor() {
         binding.apply {
-            start.background = createBackground()
+            // start.background = createBackground()  // 已删除：启动按钮使用xml中的实心背景
             createBackground().apply {
                 version.background = this
                 jar.background = this
