@@ -229,6 +229,7 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         exitProcess(0)
                     } else {
                         homePage.isSelected = true
+                        start.visibility = View.VISIBLE
                     }
                 }
                 uiManager.init()
@@ -291,10 +292,12 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 homePage -> {
                     title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
                     uiManager.switchUI(uiManager.mainUI)
+                    start.visibility = View.VISIBLE
                 }
                 home -> {
                     title.setTextWithAnim(getString(R.string.version))
                     uiManager.switchUI(uiManager.versionUI)
+                    start.visibility = View.GONE
                 }
                 manage -> {
                     val version = Profiles.getSelectedProfile().selectedVersion
@@ -307,22 +310,27 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                         uiManager.manageUI.setVersion(version, Profiles.getSelectedProfile())
                         uiManager.switchUI(uiManager.manageUI)
                     }
+                    start.visibility = View.GONE
                 }
                 download -> {
                     title.setTextWithAnim(getString(R.string.download))
                     uiManager.switchUI(uiManager.downloadUI)
+                    start.visibility = View.GONE
                 }
                 controller -> {
                     title.setTextWithAnim(getString(R.string.controller))
                     uiManager.switchUI(uiManager.controllerUI)
+                    start.visibility = View.GONE
                 }
                 multiplayer -> {
                     title.setTextWithAnim(getString(R.string.terracotta))
                     uiManager.switchUI(uiManager.multiplayerUI)
+                    start.visibility = View.GONE
                 }
                 setting -> {
                     title.setTextWithAnim(getString(R.string.setting))
                     uiManager.switchUI(uiManager.settingUI)
+                    start.visibility = View.GONE
                 }
             }
         }
@@ -393,11 +401,13 @@ class MainActivity : FCLActivity(), View.OnClickListener {
                 refreshMenuView(null)
                 title.setTextWithAnim(getString(R.string.account))
                 uiManager.switchUI(uiManager.accountUI)
+                start.visibility = View.GONE
             }
             if (view === version && uiManager.currentUI !== uiManager.versionUI) {
                 refreshMenuView(null)
                 title.setTextWithAnim(getString(R.string.version))
                 uiManager.switchUI(uiManager.versionUI)
+                start.visibility = View.GONE
             }
             if (view === jar) {
                 if (sharedPreferences.getBoolean("showJarExecutorWarnDialog", true)) {
