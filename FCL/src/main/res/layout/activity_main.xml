@@ -23,7 +23,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <!-- 退出键（×） -->
+        <!-- 中间标题 → 移到最左边，左对齐 -->
+        <com.tungsten.fcllibrary.component.view.FCLTextView
+            android:id="@+id/title_bar_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:singleLine="true"
+            android:text="HelloFoldCraftLauncher"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <!-- 最小化键（横线）→ 移到中间 -->
+        <FrameLayout
+            android:id="@+id/btnMinimize"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackgroundBorderless">
+            <View
+                android:layout_width="18dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="#FFFFFF" />
+        </FrameLayout>
+        <!-- 退出键（×）→ 移到最右边 -->
         <FrameLayout
             android:id="@+id/btnExit"
             android:layout_width="36dp"
@@ -40,37 +66,11 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </FrameLayout>
-        <!-- 中间标题 -->
-        <com.tungsten.fcllibrary.component.view.FCLTextView
-            android:id="@+id/title_bar_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:singleLine="true"
-            android:text="HelloFoldCraftLauncher"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-        <!-- 最小化键（横线） -->
-        <FrameLayout
-            android:id="@+id/btnMinimize"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:background="?attr/selectableItemBackgroundBorderless">
-            <View
-                android:layout_width="18dp"
-                android:layout_height="2dp"
-                android:layout_gravity="center"
-                android:background="#FFFFFF" />
-        </FrameLayout>
     </LinearLayout>
     <!-- 左侧边栏【直角，跟随主题变色】 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
-        android:layout_width="200dp"
+        android:layout_width="160dp"
         android:layout_height="0dp"
         android:elevation="100dp"
         android:paddingTop="12dp"
@@ -127,7 +127,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/account_name" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!-- 主页 → 回到主页（硬编码文字，不碰strings） -->
+        <!-- 主页 → 回到主页 -->
         <LinearLayout
             android:id="@+id/home_page_item"
             android:layout_width="0dp"
@@ -160,7 +160,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 游戏 → 游戏管理（硬编码文字） -->
+        <!-- 游戏 → 游戏管理 -->
         <LinearLayout
             android:id="@+id/home_item"
             android:layout_width="0dp"
@@ -193,7 +193,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 版本 → 版本设置（硬编码文字） -->
+        <!-- 版本 → 版本设置 -->
         <LinearLayout
             android:id="@+id/manage_item"
             android:layout_width="0dp"
@@ -226,7 +226,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 下载 → 游戏下载（硬编码文字） -->
+        <!-- 下载 → 游戏下载 -->
         <LinearLayout
             android:id="@+id/download_item"
             android:layout_width="0dp"
@@ -259,7 +259,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 触控 -->
+        <!-- 控制 -->
         <LinearLayout
             android:id="@+id/controller_item"
             android:layout_width="0dp"
@@ -287,12 +287,12 @@
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="触控设置"
+                android:text="控制"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 联机 → 联机设置（硬编码文字） -->
+        <!-- 联机 → 联机设置 -->
         <LinearLayout
             android:id="@+id/multiplayer_item"
             android:layout_width="0dp"
@@ -325,7 +325,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 设置 → 设置管理（硬编码文字） -->
+        <!-- 设置 → 设置管理 -->
         <LinearLayout
             android:id="@+id/setting_item"
             android:layout_width="0dp"
@@ -358,7 +358,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 返回 → 回到上级（硬编码文字） -->
+        <!-- 返回 → 回到上级 -->
         <LinearLayout
             android:id="@+id/back_item"
             android:layout_width="0dp"
