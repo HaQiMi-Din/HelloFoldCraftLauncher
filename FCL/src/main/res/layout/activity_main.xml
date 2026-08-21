@@ -70,7 +70,7 @@
     <!-- 左侧边栏【直角，跟随主题变色】 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="0dp"
         android:elevation="100dp"
         android:paddingTop="12dp"
@@ -259,7 +259,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
-        <!-- 控制 -->
+        <!-- 触控 -->
         <LinearLayout
             android:id="@+id/controller_item"
             android:layout_width="0dp"
@@ -287,7 +287,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:text="控制"
+                android:text="触控设置"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:textStyle="bold" />
