@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- 半透明5C6BC0，80=50%透明度 -->
-    <solid android:color="#805C6BC0"/>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorPrimary"/>
+    <corners android:radius="12dp"/>
 </shape>
