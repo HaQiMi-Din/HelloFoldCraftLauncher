@@ -256,7 +256,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 控制 -->
+                <!-- 按键 -->
                 <LinearLayout
                     android:id="@+id/controller_item"
                     android:layout_width="match_parent"
@@ -281,7 +281,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="控制"
+                        android:text="按键布局"
                         android:textColor="#FFFFFF"
                         android:textSize="14sp"
                         android:textStyle="bold" />
