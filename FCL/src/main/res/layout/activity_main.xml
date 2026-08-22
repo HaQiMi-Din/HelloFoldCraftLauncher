@@ -436,6 +436,7 @@
                 android:layout_marginTop="4dp"
                 android:textColor="#DDDDDD"
                 android:textSize="14sp"
+                tools:text=" " />
         </LinearLayout>
         <com.tungsten.fcllibrary.component.view.FCLImageButton
             android:id="@+id/go_setting"
