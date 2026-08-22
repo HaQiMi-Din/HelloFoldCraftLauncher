@@ -404,7 +404,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
-        android:background="@drawable/bg_game_menu"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:focusable="true"
         android:padding="16dp"
@@ -436,13 +436,12 @@
                 android:layout_marginTop="4dp"
                 android:textColor="#DDDDDD"
                 android:textSize="14sp"
-                tools:text="good" />
         </LinearLayout>
         <com.tungsten.fcllibrary.component.view.FCLImageButton
             android:id="@+id/go_setting"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@drawable/ic_baseline_settings_24"
+            android:src="?attr/selectableItemBackgroundBorderless"
             android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
