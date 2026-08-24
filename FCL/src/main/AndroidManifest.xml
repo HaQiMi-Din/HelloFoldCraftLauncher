@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <uses-feature android:glEsVersion="0x00020000" />
     <uses-feature
         android:name="android.hardware.type.pc"
         android:required="false" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
@@ -24,6 +22,14 @@
         android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"
         tools:ignore="HighSamplingRate" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- 屏幕自适应支持：声明支持所有屏幕尺寸和密度，禁用兼容模式缩放 -->
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
 
     <application
         android:name=".FCLApplication"
@@ -53,11 +59,9 @@
             android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity-alias
             android:name=".ImportActivity"
             android:exported="true"
@@ -65,10 +69,8 @@
             android:targetActivity=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="file" />
                 <data android:scheme="content" />
                 <data android:mimeType="application/zip" />
@@ -78,10 +80,8 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="file" />
                 <data android:scheme="content" />
                 <data android:host="*" />
@@ -127,7 +127,6 @@
             android:name="com.tungsten.fcllibrary.crash.CrashReportActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
             android:screenOrientation="sensor" />
-
         <service
             android:name="com.tungsten.fclcore.download.ProcessService"
             android:enabled="true"
@@ -144,7 +143,6 @@
                 <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
-
         <provider
             android:name=".scoped.FolderProvider"
             android:authorities="${applicationId}.document.provider"
