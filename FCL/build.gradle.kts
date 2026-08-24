@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tungsten.fcl"
+    namespace = "com.tungsten.hfcl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     var localProperty: Properties? = null
@@ -50,8 +50,8 @@ android {
         applicationId = "com.tungsten.fcl"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
-        versionCode = 1327
-        versionName = "1.3.2.7"
+        versionCode = 199405
+        versionName = "1.9.9.10.5"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
