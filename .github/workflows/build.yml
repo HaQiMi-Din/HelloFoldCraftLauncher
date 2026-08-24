@@ -45,7 +45,7 @@ jobs:
           ./gradlew assemblerelease -Darch=${{ matrix.arch }} --no-daemon
 
       - name: Build debug apk
-        if: ${{ github.repository_owner != 'HaQiMi-Din' || github.event_name == 'pull_request' }}
+        if: ${{ github.repository_owner != 'FCL-Team' || github.event_name == 'pull_request' }}
         run: |
           chmod +x gradlew
           ./gradlew assemblefordebug -Darch=${{ matrix.arch }} --no-daemon
