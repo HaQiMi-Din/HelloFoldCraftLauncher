@@ -39,7 +39,7 @@ jobs:
           cache: "gradle"
 
       - name: Build release apk
-        if: ${{ github.repository_owner == 'HaQiMi-Din' && github.event_name != 'pull_request' }}
+        if: ${{ github.repository_owner == 'FCL-Team' && github.event_name != 'pull_request' }}
         run: |
           chmod +x gradlew
           ./gradlew assemblerelease -Darch=${{ matrix.arch }} --no-daemon
