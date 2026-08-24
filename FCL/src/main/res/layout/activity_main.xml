@@ -10,7 +10,7 @@
         android:id="@+id/video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <!-- 顶部标题横条【直角，跟随主题变色】 -->
+    <!-- 顶部标题横条 -->
     <LinearLayout
         android:id="@+id/title_bar"
         android:layout_width="0dp"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-        <!-- 中间标题 → 移到最左边，左对齐 -->
+        <!-- 中间标题 -->
         <com.tungsten.fcllibrary.component.view.FCLTextView
             android:id="@+id/title_bar_text"
             android:layout_width="0dp"
@@ -35,7 +35,7 @@
             android:textColor="#FFFFFF"
             android:textSize="@dimen/title_bar_text_size"
             android:textStyle="bold" />
-        <!-- 最小化键（横线）→ 移到中间 -->
+        <!-- 最小化键 -->
         <FrameLayout
             android:id="@+id/btnMinimize"
             android:layout_width="@dimen/title_button_size"
@@ -49,7 +49,7 @@
                 android:layout_gravity="center"
                 android:background="#FFFFFF" />
         </FrameLayout>
-        <!-- 退出键（×）→ 移到最右边 -->
+        <!-- 退出键（×） -->
         <FrameLayout
             android:id="@+id/btnExit"
             android:layout_width="@dimen/title_button_size"
@@ -67,7 +67,7 @@
                 android:textStyle="bold" />
         </FrameLayout>
     </LinearLayout>
-    <!-- 左侧边栏【直角，跟随主题变色，支持上下滑动】 -->
+    <!-- 左侧边栏 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/left_menu"
         android:layout_width="@dimen/left_menu_width"
@@ -134,7 +134,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/account_name" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-                <!-- 主页 → 回到主页 -->
+                <!-- 回到主页 -->
                 <LinearLayout
                     android:id="@+id/home_page_item"
                     android:layout_width="match_parent"
@@ -164,7 +164,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 游戏 → 游戏管理 -->
+                <!-- 游戏管理 -->
                 <LinearLayout
                     android:id="@+id/home_item"
                     android:layout_width="match_parent"
@@ -194,7 +194,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 版本 → 版本设置 -->
+                <!-- 版本设置 -->
                 <LinearLayout
                     android:id="@+id/manage_item"
                     android:layout_width="match_parent"
@@ -224,7 +224,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 下载 → 游戏下载 -->
+                <!-- 游戏下载 -->
                 <LinearLayout
                     android:id="@+id/download_item"
                     android:layout_width="match_parent"
@@ -284,7 +284,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 联机 → 联机设置 -->
+                <!-- 联机设置 -->
                 <LinearLayout
                     android:id="@+id/multiplayer_item"
                     android:layout_width="match_parent"
@@ -314,7 +314,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 设置 → 设置管理 -->
+                <!-- 设置管理 -->
                 <LinearLayout
                     android:id="@+id/setting_item"
                     android:layout_width="match_parent"
@@ -344,7 +344,7 @@
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
-                <!-- 返回 → 回到上级 -->
+                <!-- 回到上级 -->
                 <LinearLayout
                     android:id="@+id/back_item"
                     android:layout_width="match_parent"
@@ -395,7 +395,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/left_menu" />
-    <!-- 右下角启动按钮【实心】 -->
+    <!-- 右下角启动按钮 -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/start"
         android:layout_width="@dimen/start_button_width"
