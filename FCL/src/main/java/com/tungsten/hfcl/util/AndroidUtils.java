@@ -117,7 +117,10 @@ public class AndroidUtils {
             } catch (RuntimeException e) {
                 return mime;
             } finally {
-                mmr.release();
+                try {
+                    mmr.release();
+                } catch (IOException ignored) {
+                }
             }
         }
         return mime;
