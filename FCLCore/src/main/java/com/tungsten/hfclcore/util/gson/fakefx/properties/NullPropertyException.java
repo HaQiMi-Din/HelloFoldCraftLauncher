@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties;
+package com.tungsten.hfclcore.util.gson.fakefx.properties;
 
 public class NullPropertyException extends RuntimeException {
 

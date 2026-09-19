@@ -1,11 +1,11 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties;
+package com.tungsten.hfclcore.util.gson.fakefx.properties;
 
 import java.io.IOException;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.tungsten.fclcore.fakefx.beans.property.Property;
+import com.tungsten.hfclcore.fakefx.beans.property.Property;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

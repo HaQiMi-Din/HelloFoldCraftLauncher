@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.bridge;
+package com.tungsten.hfclauncher.bridge;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -19,8 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 
-import com.tungsten.fclauncher.keycodes.LwjglGlfwKeycode;
-import com.tungsten.fclauncher.utils.FCLPath;
+import com.tungsten.hfclauncher.keycodes.LwjglGlfwKeycode;
+import com.tungsten.hfclauncher.utils.FCLPath;
 
 import org.lwjgl.glfw.CallbackBridge;
 

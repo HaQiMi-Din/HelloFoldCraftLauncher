@@ -1,9 +1,9 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties;
+package com.tungsten.hfclcore.util.gson.fakefx.properties;
 
 import com.google.gson.TypeAdapter;
-import com.tungsten.fclcore.fakefx.beans.property.SetProperty;
-import com.tungsten.fclcore.fakefx.beans.property.SimpleSetProperty;
-import com.tungsten.fclcore.fakefx.collections.ObservableSet;
+import com.tungsten.hfclcore.fakefx.beans.property.SetProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleSetProperty;
+import com.tungsten.hfclcore.fakefx.collections.ObservableSet;
 
 import org.jetbrains.annotations.NotNull;
 

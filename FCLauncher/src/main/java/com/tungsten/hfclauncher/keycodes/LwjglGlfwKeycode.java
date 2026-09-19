@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.keycodes;
+package com.tungsten.hfclauncher.keycodes;
 // Keycodes from https://github.com/glfw/glfw/blob/master/include/GLFW/glfw3.h
 
 /*-************************************************************************

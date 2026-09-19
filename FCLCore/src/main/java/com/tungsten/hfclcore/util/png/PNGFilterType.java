@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.png;
+package com.tungsten.hfclcore.util.png;
 
 public enum PNGFilterType {
     NONE(0),

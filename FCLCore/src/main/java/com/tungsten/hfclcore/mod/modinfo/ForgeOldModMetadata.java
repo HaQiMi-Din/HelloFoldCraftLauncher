@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modinfo;
+package com.tungsten.hfclcore.mod.modinfo;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-import com.tungsten.fclcore.mod.LocalModFile;
-import com.tungsten.fclcore.mod.ModLoaderType;
-import com.tungsten.fclcore.mod.ModManager;
-import com.tungsten.fclcore.util.StringUtils;
-import com.tungsten.fclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.mod.LocalModFile;
+import com.tungsten.hfclcore.mod.ModLoaderType;
+import com.tungsten.hfclcore.mod.ModManager;
+import com.tungsten.hfclcore.util.StringUtils;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
 
 import java.io.IOException;
 import java.nio.file.FileSystem;
@@ -33,7 +33,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static com.tungsten.fclcore.util.gson.JsonUtils.listTypeOf;
+import static com.tungsten.hfclcore.util.gson.JsonUtils.listTypeOf;
 
 /**
  *

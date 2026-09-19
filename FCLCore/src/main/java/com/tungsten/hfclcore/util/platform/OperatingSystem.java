@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.platform;
+package com.tungsten.hfclcore.util.platform;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

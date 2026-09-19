@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tungsten.fclauncher"
+    namespace = "com.tungsten.hfclauncher"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

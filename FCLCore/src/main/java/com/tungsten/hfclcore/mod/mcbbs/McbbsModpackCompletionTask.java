@@ -15,30 +15,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.mcbbs;
+package com.tungsten.hfclcore.mod.mcbbs;
 
-import static com.tungsten.fclcore.util.Lang.wrap;
-import static com.tungsten.fclcore.util.Lang.wrapConsumer;
+import static com.tungsten.hfclcore.util.Lang.wrap;
+import static com.tungsten.hfclcore.util.Lang.wrapConsumer;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.download.DefaultDependencyManager;
-import com.tungsten.fclcore.game.DefaultGameRepository;
-import com.tungsten.fclcore.mod.ModManager;
-import com.tungsten.fclcore.mod.ModpackCompletionException;
-import com.tungsten.fclcore.mod.ModpackConfiguration;
-import com.tungsten.fclcore.mod.curse.CurseMetaMod;
-import com.tungsten.fclcore.task.CompletableFutureTask;
-import com.tungsten.fclcore.task.FileDownloadTask;
-import com.tungsten.fclcore.task.GetTask;
-import com.tungsten.fclcore.task.Task;
-import com.tungsten.fclcore.task.TaskCompletableFuture;
-import com.tungsten.fclcore.util.DigestUtils;
-import com.tungsten.fclcore.util.Logging;
-import com.tungsten.fclcore.util.StringUtils;
-import com.tungsten.fclcore.util.gson.JsonUtils;
-import com.tungsten.fclcore.util.io.FileUtils;
-import com.tungsten.fclcore.util.io.NetworkUtils;
+import com.tungsten.hfclcore.download.DefaultDependencyManager;
+import com.tungsten.hfclcore.game.DefaultGameRepository;
+import com.tungsten.hfclcore.mod.ModManager;
+import com.tungsten.hfclcore.mod.ModpackCompletionException;
+import com.tungsten.hfclcore.mod.ModpackConfiguration;
+import com.tungsten.hfclcore.mod.curse.CurseMetaMod;
+import com.tungsten.hfclcore.task.CompletableFutureTask;
+import com.tungsten.hfclcore.task.FileDownloadTask;
+import com.tungsten.hfclcore.task.GetTask;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfclcore.task.TaskCompletableFuture;
+import com.tungsten.hfclcore.util.DigestUtils;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.StringUtils;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.util.io.NetworkUtils;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

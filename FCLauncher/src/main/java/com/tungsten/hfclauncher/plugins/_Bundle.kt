@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.plugins
+package com.tungsten.hfclauncher.plugins
 
 import android.os.Bundle
 

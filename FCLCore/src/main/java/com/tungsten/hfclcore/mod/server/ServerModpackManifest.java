@@ -15,19 +15,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.server;
+package com.tungsten.hfclcore.mod.server;
 
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.MINECRAFT;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.MINECRAFT;
 
 import com.google.gson.JsonParseException;
-import com.tungsten.fclcore.download.DefaultDependencyManager;
-import com.tungsten.fclcore.mod.Modpack;
-import com.tungsten.fclcore.mod.ModpackConfiguration;
-import com.tungsten.fclcore.mod.ModpackManifest;
-import com.tungsten.fclcore.mod.ModpackProvider;
-import com.tungsten.fclcore.task.Task;
-import com.tungsten.fclcore.util.gson.TolerableValidationException;
-import com.tungsten.fclcore.util.gson.Validation;
+import com.tungsten.hfclcore.download.DefaultDependencyManager;
+import com.tungsten.hfclcore.mod.Modpack;
+import com.tungsten.hfclcore.mod.ModpackConfiguration;
+import com.tungsten.hfclcore.mod.ModpackManifest;
+import com.tungsten.hfclcore.mod.ModpackProvider;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfclcore.util.gson.TolerableValidationException;
+import com.tungsten.hfclcore.util.gson.Validation;
 
 import java.io.File;
 import java.io.IOException;

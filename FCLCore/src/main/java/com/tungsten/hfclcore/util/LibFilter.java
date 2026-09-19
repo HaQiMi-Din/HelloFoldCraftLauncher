@@ -1,9 +1,9 @@
-package com.tungsten.fclcore.util;
+package com.tungsten.hfclcore.util;
 
-import static com.tungsten.fclcore.util.gson.JsonUtils.GSON;
+import static com.tungsten.hfclcore.util.gson.JsonUtils.GSON;
 
-import com.tungsten.fclcore.game.Library;
-import com.tungsten.fclcore.game.Version;
+import com.tungsten.hfclcore.game.Library;
+import com.tungsten.hfclcore.game.Version;
 
 import java.util.ArrayList;
 import java.util.List;

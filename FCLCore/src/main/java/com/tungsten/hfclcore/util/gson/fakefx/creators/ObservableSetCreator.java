@@ -1,10 +1,10 @@
-package com.tungsten.fclcore.util.gson.fakefx.creators;
+package com.tungsten.hfclcore.util.gson.fakefx.creators;
 
 import java.lang.reflect.Type;
 
 import com.google.gson.InstanceCreator;
-import com.tungsten.fclcore.fakefx.collections.FXCollections;
-import com.tungsten.fclcore.fakefx.collections.ObservableSet;
+import com.tungsten.hfclcore.fakefx.collections.FXCollections;
+import com.tungsten.hfclcore.fakefx.collections.ObservableSet;
 
 /**
  * An {@link InstanceCreator} for observable sets using {@link FXCollections}.

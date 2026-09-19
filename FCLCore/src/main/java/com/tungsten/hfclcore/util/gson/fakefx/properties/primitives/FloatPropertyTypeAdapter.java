@@ -1,8 +1,8 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties.primitives;
+package com.tungsten.hfclcore.util.gson.fakefx.properties.primitives;
 
 import com.google.gson.TypeAdapter;
-import com.tungsten.fclcore.fakefx.beans.property.FloatProperty;
-import com.tungsten.fclcore.fakefx.beans.property.SimpleFloatProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.FloatProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleFloatProperty;
 
 /**
  * An implementation of {@link PrimitivePropertyTypeAdapter} for JavaFX {@link FloatProperty}. It serializes the float

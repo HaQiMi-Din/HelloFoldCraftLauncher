@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
 import java.io.*;
 import java.lang.reflect.Method;
@@ -30,9 +30,9 @@ import java.util.function.Predicate;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.tungsten.fclcore.util.Lang;
-import com.tungsten.fclcore.util.StringUtils;
-import com.tungsten.fclcore.util.function.ExceptionalConsumer;
+import com.tungsten.hfclcore.util.Lang;
+import com.tungsten.hfclcore.util.StringUtils;
+import com.tungsten.hfclcore.util.function.ExceptionalConsumer;
 
 public final class FileUtils {
 

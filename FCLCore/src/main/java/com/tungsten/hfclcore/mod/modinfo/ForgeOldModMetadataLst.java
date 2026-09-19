@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modinfo;
+package com.tungsten.hfclcore.mod.modinfo;
 
-import com.tungsten.fclcore.mod.modinfo.ForgeOldModMetadata;
+import com.tungsten.hfclcore.mod.modinfo.ForgeOldModMetadata;
 
 
 import java.util.List;

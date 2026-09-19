@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.keycodes;
+package com.tungsten.hfclauncher.keycodes;
 
 import androidx.annotation.Nullable;
 

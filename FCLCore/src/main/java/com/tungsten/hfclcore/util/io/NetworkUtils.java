@@ -15,12 +15,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import static com.tungsten.fclcore.util.Pair.pair;
-import static com.tungsten.fclcore.util.StringUtils.removeSurrounding;
-import static com.tungsten.fclcore.util.StringUtils.substringAfter;
-import static com.tungsten.fclcore.util.StringUtils.substringAfterLast;
+import static com.tungsten.hfclcore.util.Pair.pair;
+import static com.tungsten.hfclcore.util.StringUtils.removeSurrounding;
+import static com.tungsten.hfclcore.util.StringUtils.substringAfter;
+import static com.tungsten.hfclcore.util.StringUtils.substringAfterLast;
 
 import java.io.*;
 import java.net.*;
@@ -30,9 +30,9 @@ import java.util.regex.Pattern;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.tungsten.fclauncher.utils.FCLPath;
-import com.tungsten.fclcore.R;
-import com.tungsten.fclcore.util.Pair;
+import com.tungsten.hfclauncher.utils.FCLPath;
+import com.tungsten.hfclcore.R;
+import com.tungsten.hfclcore.util.Pair;
 
 public final class NetworkUtils {
     public static final String PARAMETER_SEPARATOR = "&";

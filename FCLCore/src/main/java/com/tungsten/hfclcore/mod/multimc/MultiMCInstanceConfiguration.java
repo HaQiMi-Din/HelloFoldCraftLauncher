@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.multimc;
+package com.tungsten.hfclcore.mod.multimc;
 
-import com.tungsten.fclcore.mod.ModpackManifest;
-import com.tungsten.fclcore.mod.ModpackProvider;
-import com.tungsten.fclcore.util.Lang;
+import com.tungsten.hfclcore.mod.ModpackManifest;
+import com.tungsten.hfclcore.mod.ModpackProvider;
+import com.tungsten.hfclcore.util.Lang;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -15,21 +15,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import static com.tungsten.fclcore.util.Lang.mapOf;
-import static com.tungsten.fclcore.util.Lang.wrap;
-import static com.tungsten.fclcore.util.gson.JsonUtils.GSON;
-import static com.tungsten.fclcore.util.io.NetworkUtils.createHttpConnection;
-import static com.tungsten.fclcore.util.io.NetworkUtils.resolveConnection;
+import static com.tungsten.hfclcore.util.Lang.mapOf;
+import static com.tungsten.hfclcore.util.Lang.wrap;
+import static com.tungsten.hfclcore.util.gson.JsonUtils.GSON;
+import static com.tungsten.hfclcore.util.io.NetworkUtils.createHttpConnection;
+import static com.tungsten.hfclcore.util.io.NetworkUtils.resolveConnection;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.task.Schedulers;
-import com.tungsten.fclcore.util.Pair;
-import com.tungsten.fclcore.util.function.ExceptionalBiConsumer;
-import com.tungsten.fclcore.util.function.ExceptionalSupplier;
-import com.tungsten.fclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.task.Schedulers;
+import com.tungsten.hfclcore.util.Pair;
+import com.tungsten.hfclcore.util.function.ExceptionalBiConsumer;
+import com.tungsten.hfclcore.util.function.ExceptionalSupplier;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
 
 import java.io.IOException;
 import java.io.OutputStream;

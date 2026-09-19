@@ -1,11 +1,11 @@
-package com.tungsten.fclauncher.plugins
+package com.tungsten.hfclauncher.plugins
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import com.tungsten.fclauncher.utils.FCLPath
+import com.tungsten.hfclauncher.utils.FCLPath
 
 object DriverPlugin {
     data class Driver(val driver: String, val path: String)

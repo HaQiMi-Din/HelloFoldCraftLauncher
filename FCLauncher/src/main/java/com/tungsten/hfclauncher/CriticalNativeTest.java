@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher;
+package com.tungsten.hfclauncher;
 
 import dalvik.annotation.optimization.CriticalNative;
 

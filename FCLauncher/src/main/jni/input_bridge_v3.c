@@ -625,7 +625,7 @@ static bool tryCriticalNative(JNIEnv *env) {
             {"testCriticalNative", "(II)V", dvm_testCriticalNative}
     };
     jclass criticalNativeTest = (*env)->FindClass(env,
-                                                  "com/tungsten/fclauncher/CriticalNativeTest");
+                                                  "com/tungsten/hfclauncher/CriticalNativeTest");
     if (criticalNativeTest == NULL) {
         (*env)->ExceptionClear(env);
         return false;

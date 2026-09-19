@@ -15,23 +15,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.multimc;
+package com.tungsten.hfclcore.mod.multimc;
 
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.FABRIC;
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.FORGE;
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.LITELOADER;
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.NEO_FORGE;
-import static com.tungsten.fclcore.download.LibraryAnalyzer.LibraryType.QUILT;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.FABRIC;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.FORGE;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.LITELOADER;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.NEO_FORGE;
+import static com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType.QUILT;
 
-import com.tungsten.fclcore.download.LibraryAnalyzer;
-import com.tungsten.fclcore.game.DefaultGameRepository;
-import com.tungsten.fclcore.mod.ModAdviser;
-import com.tungsten.fclcore.mod.Modpack;
-import com.tungsten.fclcore.mod.ModpackExportInfo;
-import com.tungsten.fclcore.task.Task;
-import com.tungsten.fclcore.util.Logging;
-import com.tungsten.fclcore.util.gson.JsonUtils;
-import com.tungsten.fclcore.util.io.Zipper;
+import com.tungsten.hfclcore.download.LibraryAnalyzer;
+import com.tungsten.hfclcore.game.DefaultGameRepository;
+import com.tungsten.hfclcore.mod.ModAdviser;
+import com.tungsten.hfclcore.mod.Modpack;
+import com.tungsten.hfclcore.mod.ModpackExportInfo;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.io.Zipper;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.png.image;
+package com.tungsten.hfclcore.util.png.image;
 
 public final class ArgbImageBuffer implements ArgbImage {
     private final int width;

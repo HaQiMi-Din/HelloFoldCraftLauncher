@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.plugins
+package com.tungsten.hfclauncher.plugins
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import com.mio.data.Renderer
-import com.tungsten.fclauncher.utils.FCLPath
+import com.tungsten.hfclauncher.utils.FCLPath
 
 object RendererPlugin {
     private var isInit = false;

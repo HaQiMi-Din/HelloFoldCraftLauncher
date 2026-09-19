@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import static com.tungsten.fclcore.util.platform.OperatingSystem.NATIVE_CHARSET;
+import static com.tungsten.hfclcore.util.platform.OperatingSystem.NATIVE_CHARSET;
 
 import org.glavo.chardet.DetectedCharset;
 import org.glavo.chardet.UniversalDetector;

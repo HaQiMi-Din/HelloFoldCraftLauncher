@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.multimc;
+package com.tungsten.hfclcore.mod.multimc;
 
-import com.tungsten.fclcore.download.DefaultDependencyManager;
-import com.tungsten.fclcore.mod.MismatchedModpackTypeException;
-import com.tungsten.fclcore.mod.Modpack;
-import com.tungsten.fclcore.mod.ModpackProvider;
-import com.tungsten.fclcore.mod.ModpackUpdateTask;
-import com.tungsten.fclcore.task.Task;
-import com.tungsten.fclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.download.DefaultDependencyManager;
+import com.tungsten.hfclcore.mod.MismatchedModpackTypeException;
+import com.tungsten.hfclcore.mod.Modpack;
+import com.tungsten.hfclcore.mod.ModpackProvider;
+import com.tungsten.hfclcore.mod.ModpackUpdateTask;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfclcore.util.io.FileUtils;
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;

@@ -1,6 +1,6 @@
-package com.tungsten.fclcore.util.png.image;
+package com.tungsten.hfclcore.util.png.image;
 
-import com.tungsten.fclcore.util.png.PNGMetadata;
+import com.tungsten.hfclcore.util.png.PNGMetadata;
 
 public interface ArgbImage {
 

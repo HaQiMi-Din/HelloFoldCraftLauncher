@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.utils;
+package com.tungsten.hfclauncher.utils;
 
 import android.os.Build;
 

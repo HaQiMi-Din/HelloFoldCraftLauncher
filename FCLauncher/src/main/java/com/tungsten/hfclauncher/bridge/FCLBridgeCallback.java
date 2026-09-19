@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher.bridge;
+package com.tungsten.hfclauncher.bridge;
 
 public interface FCLBridgeCallback {
 

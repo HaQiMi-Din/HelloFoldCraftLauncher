@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import com.tungsten.fclcore.download.ArtifactMalformedException;
-import com.tungsten.fclcore.util.DigestUtils;
+import com.tungsten.hfclcore.download.ArtifactMalformedException;
+import com.tungsten.hfclcore.util.DigestUtils;
 
 import java.io.IOException;
 import java.nio.file.Path;

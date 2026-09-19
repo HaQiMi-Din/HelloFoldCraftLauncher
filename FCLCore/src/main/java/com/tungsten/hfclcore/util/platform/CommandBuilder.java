@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.platform;
+package com.tungsten.hfclcore.util.platform;
 
-import static com.tungsten.fclcore.util.Logging.LOG;
+import static com.tungsten.hfclcore.util.Logging.LOG;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

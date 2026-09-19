@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util;
+package com.tungsten.hfclcore.util;
 
-import com.tungsten.fclcore.util.function.ExceptionalBiConsumer;
-import com.tungsten.fclcore.util.function.ExceptionalConsumer;
-import com.tungsten.fclcore.util.function.ExceptionalFunction;
-import com.tungsten.fclcore.util.function.ExceptionalRunnable;
-import com.tungsten.fclcore.util.function.ExceptionalSupplier;
+import com.tungsten.hfclcore.util.function.ExceptionalBiConsumer;
+import com.tungsten.hfclcore.util.function.ExceptionalConsumer;
+import com.tungsten.hfclcore.util.function.ExceptionalFunction;
+import com.tungsten.hfclcore.util.function.ExceptionalRunnable;
+import com.tungsten.hfclcore.util.function.ExceptionalSupplier;
 
 import java.util.*;
 import java.util.concurrent.*;

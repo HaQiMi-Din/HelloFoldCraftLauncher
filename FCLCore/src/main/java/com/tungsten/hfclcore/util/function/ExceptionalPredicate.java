@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.function;
+package com.tungsten.hfclcore.util.function;
 
 public interface ExceptionalPredicate<T, E extends Exception> {
     boolean test(T t) throws E;

@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.multimc;
+package com.tungsten.hfclcore.mod.multimc;
 
 import com.google.gson.annotations.SerializedName;
-import com.tungsten.fclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;

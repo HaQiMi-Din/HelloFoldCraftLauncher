@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.fakefx;
+package com.tungsten.hfclcore.util.fakefx;
 
-import static com.tungsten.fclcore.fakefx.collections.FXCollections.unmodifiableObservableList;
+import static com.tungsten.hfclcore.fakefx.collections.FXCollections.unmodifiableObservableList;
 import static java.util.stream.Collectors.toCollection;
 
-import com.tungsten.fclcore.fakefx.collections.FXCollections;
-import com.tungsten.fclcore.fakefx.collections.ListChangeListener;
-import com.tungsten.fclcore.fakefx.collections.ObservableList;
-import com.tungsten.fclcore.fakefx.collections.WeakListChangeListener;
+import com.tungsten.hfclcore.fakefx.collections.FXCollections;
+import com.tungsten.hfclcore.fakefx.collections.ListChangeListener;
+import com.tungsten.hfclcore.fakefx.collections.ObservableList;
+import com.tungsten.hfclcore.fakefx.collections.WeakListChangeListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
-import static com.tungsten.fclcore.util.Lang.threadPool;
+import static com.tungsten.hfclcore.util.Lang.threadPool;
 
 import android.os.Handler;
 import android.os.Looper;
 
-import com.tungsten.fclcore.util.Logging;
+import com.tungsten.hfclcore.util.Logging;
 
 import java.util.concurrent.*;
 

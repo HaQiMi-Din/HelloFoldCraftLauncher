@@ -15,17 +15,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util;
+package com.tungsten.hfclcore.util;
 
-import static com.tungsten.fclcore.util.Logging.LOG;
+import static com.tungsten.hfclcore.util.Logging.LOG;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.util.function.ExceptionalSupplier;
-import com.tungsten.fclcore.util.gson.JsonUtils;
-import com.tungsten.fclcore.util.io.FileUtils;
-import com.tungsten.fclcore.util.io.IOUtils;
+import com.tungsten.hfclcore.util.function.ExceptionalSupplier;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.util.io.IOUtils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

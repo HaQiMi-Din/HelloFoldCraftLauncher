@@ -15,18 +15,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
-import static com.tungsten.fclcore.util.Lang.threadPool;
+import static com.tungsten.hfclcore.util.Lang.threadPool;
 
-import com.tungsten.fclcore.event.Event;
-import com.tungsten.fclcore.event.EventBus;
-import com.tungsten.fclcore.util.CacheRepository;
-import com.tungsten.fclcore.util.Logging;
-import com.tungsten.fclcore.util.ToStringBuilder;
-import com.tungsten.fclcore.util.io.IOUtils;
-import com.tungsten.fclcore.util.io.NetworkUtils;
-import com.tungsten.fclcore.util.io.ResponseCodeException;
+import com.tungsten.hfclcore.event.Event;
+import com.tungsten.hfclcore.event.EventBus;
+import com.tungsten.hfclcore.util.CacheRepository;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.ToStringBuilder;
+import com.tungsten.hfclcore.util.io.IOUtils;
+import com.tungsten.hfclcore.util.io.NetworkUtils;
+import com.tungsten.hfclcore.util.io.ResponseCodeException;
 
 import java.io.Closeable;
 import java.io.FileNotFoundException;

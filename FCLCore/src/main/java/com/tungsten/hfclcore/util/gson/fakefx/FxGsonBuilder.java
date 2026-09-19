@@ -1,14 +1,14 @@
-package com.tungsten.fclcore.util.gson.fakefx;
+package com.tungsten.hfclcore.util.gson.fakefx;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tungsten.fclcore.fakefx.collections.ObservableList;
-import com.tungsten.fclcore.fakefx.collections.ObservableMap;
-import com.tungsten.fclcore.fakefx.collections.ObservableSet;
-import com.tungsten.fclcore.util.gson.fakefx.creators.ObservableListCreator;
-import com.tungsten.fclcore.util.gson.fakefx.creators.ObservableMapCreator;
-import com.tungsten.fclcore.util.gson.fakefx.creators.ObservableSetCreator;
-import com.tungsten.fclcore.util.gson.fakefx.factories.JavaFxPropertyTypeAdapterFactory;
+import com.tungsten.hfclcore.fakefx.collections.ObservableList;
+import com.tungsten.hfclcore.fakefx.collections.ObservableMap;
+import com.tungsten.hfclcore.fakefx.collections.ObservableSet;
+import com.tungsten.hfclcore.util.gson.fakefx.creators.ObservableListCreator;
+import com.tungsten.hfclcore.util.gson.fakefx.creators.ObservableMapCreator;
+import com.tungsten.hfclcore.util.gson.fakefx.creators.ObservableSetCreator;
+import com.tungsten.hfclcore.util.gson.fakefx.factories.JavaFxPropertyTypeAdapterFactory;
 
 public class FxGsonBuilder {
 

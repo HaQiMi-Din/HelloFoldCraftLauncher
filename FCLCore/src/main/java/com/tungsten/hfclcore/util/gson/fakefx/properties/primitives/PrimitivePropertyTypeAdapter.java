@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties.primitives;
+package com.tungsten.hfclcore.util.gson.fakefx.properties.primitives;
 
 import java.io.IOException;
 
@@ -6,8 +6,8 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
-import com.tungsten.fclcore.fakefx.beans.property.Property;
-import com.tungsten.fclcore.util.gson.fakefx.properties.NullPropertyException;
+import com.tungsten.hfclcore.fakefx.beans.property.Property;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.NullPropertyException;
 
 /**
  * An abstract base for {@link TypeAdapter}s of primitive values. By default, it throws {@link NullPrimitiveException}

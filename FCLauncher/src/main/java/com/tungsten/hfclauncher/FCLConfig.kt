@@ -1,4 +1,4 @@
-package com.tungsten.fclauncher
+package com.tungsten.hfclauncher
 
 import android.content.Context
 import com.mio.data.Renderer

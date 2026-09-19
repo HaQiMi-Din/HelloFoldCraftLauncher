@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,7 +27,7 @@ import java.util.*;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.tungsten.fclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.util.io.FileUtils;
 
 public final class GetTask extends FetchTask<String> {
 

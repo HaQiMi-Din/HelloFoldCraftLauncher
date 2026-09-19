@@ -15,14 +15,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import static com.tungsten.fclcore.util.Lang.mapOf;
+import static com.tungsten.hfclcore.util.Lang.mapOf;
 
 import com.google.gson.JsonParseException;
-import com.tungsten.fclcore.util.Logging;
-import com.tungsten.fclcore.util.function.ExceptionalFunction;
-import com.tungsten.fclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.function.ExceptionalFunction;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
 
 import fi.iki.elonen.NanoHTTPD;
 

@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.tree;
+package com.tungsten.hfclcore.util.tree;
 
-import static com.tungsten.fclcore.util.Logging.LOG;
+import static com.tungsten.hfclcore.util.Logging.LOG;
 
-import com.tungsten.fclcore.util.io.IOUtils;
+import com.tungsten.hfclcore.util.io.IOUtils;
 
 import org.apache.commons.compress.archivers.ArchiveEntry;
 import org.apache.commons.compress.archivers.zip.ZipFile;

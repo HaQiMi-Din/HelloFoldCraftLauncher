@@ -1,10 +1,10 @@
-package com.tungsten.fclauncher.plugins
+package com.tungsten.hfclauncher.plugins
 
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import com.tungsten.fclauncher.utils.FCLPath
+import com.tungsten.hfclauncher.utils.FCLPath
 import java.nio.file.Path
 import java.nio.file.Paths
 

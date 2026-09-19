@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util;
+package com.tungsten.hfclcore.util;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

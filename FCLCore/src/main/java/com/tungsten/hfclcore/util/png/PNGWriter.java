@@ -1,6 +1,6 @@
-package com.tungsten.fclcore.util.png;
+package com.tungsten.hfclcore.util.png;
 
-import com.tungsten.fclcore.util.png.image.ArgbImage;
+import com.tungsten.hfclcore.util.png.image.ArgbImage;
 
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;

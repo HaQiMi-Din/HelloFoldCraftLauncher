@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.fakefx;
+package com.tungsten.hfclcore.util.fakefx;
 
-import com.tungsten.fclcore.fakefx.beans.InvalidationListener;
-import com.tungsten.fclcore.fakefx.beans.Observable;
-import com.tungsten.fclcore.fakefx.beans.property.Property;
-import com.tungsten.fclcore.fakefx.beans.value.WritableValue;
-import com.tungsten.fclcore.fakefx.collections.ObservableList;
-import com.tungsten.fclcore.fakefx.collections.ObservableMap;
-import com.tungsten.fclcore.fakefx.collections.ObservableSet;
+import com.tungsten.hfclcore.fakefx.beans.InvalidationListener;
+import com.tungsten.hfclcore.fakefx.beans.Observable;
+import com.tungsten.hfclcore.fakefx.beans.property.Property;
+import com.tungsten.hfclcore.fakefx.beans.value.WritableValue;
+import com.tungsten.hfclcore.fakefx.collections.ObservableList;
+import com.tungsten.hfclcore.fakefx.collections.ObservableMap;
+import com.tungsten.hfclcore.fakefx.collections.ObservableSet;
 
 import java.lang.reflect.Method;
 import java.util.LinkedHashMap;

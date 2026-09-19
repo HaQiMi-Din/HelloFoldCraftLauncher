@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx.factories;
+package com.tungsten.hfclcore.util.gson.fakefx.factories;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

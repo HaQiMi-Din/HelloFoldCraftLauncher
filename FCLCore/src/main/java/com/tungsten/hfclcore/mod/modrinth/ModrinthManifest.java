@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modrinth;
+package com.tungsten.hfclcore.mod.modrinth;
 
 import com.google.gson.JsonParseException;
-import com.tungsten.fclcore.mod.ModpackManifest;
-import com.tungsten.fclcore.mod.ModpackProvider;
-import com.tungsten.fclcore.util.gson.TolerableValidationException;
-import com.tungsten.fclcore.util.gson.Validation;
+import com.tungsten.hfclcore.mod.ModpackManifest;
+import com.tungsten.hfclcore.mod.ModpackProvider;
+import com.tungsten.hfclcore.util.gson.TolerableValidationException;
+import com.tungsten.hfclcore.util.gson.Validation;
 
 import org.jetbrains.annotations.Nullable;
 

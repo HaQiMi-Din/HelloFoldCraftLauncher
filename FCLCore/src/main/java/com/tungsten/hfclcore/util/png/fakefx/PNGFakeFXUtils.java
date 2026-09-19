@@ -1,10 +1,10 @@
-package com.tungsten.fclcore.util.png.fakefx;
+package com.tungsten.hfclcore.util.png.fakefx;
 
 import android.graphics.Bitmap;
 
-import com.tungsten.fclcore.util.png.PNGType;
-import com.tungsten.fclcore.util.png.PNGWriter;
-import com.tungsten.fclcore.util.png.image.ArgbImageWrapper;
+import com.tungsten.hfclcore.util.png.PNGType;
+import com.tungsten.hfclcore.util.png.PNGWriter;
+import com.tungsten.hfclcore.util.png.image.ArgbImageWrapper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

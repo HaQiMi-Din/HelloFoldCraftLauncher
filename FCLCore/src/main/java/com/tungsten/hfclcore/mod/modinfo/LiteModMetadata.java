@@ -15,13 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modinfo;
+package com.tungsten.hfclcore.mod.modinfo;
 
 import com.google.gson.JsonParseException;
-import com.tungsten.fclcore.mod.LocalModFile;
-import com.tungsten.fclcore.mod.ModLoaderType;
-import com.tungsten.fclcore.mod.ModManager;
-import com.tungsten.fclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.mod.LocalModFile;
+import com.tungsten.hfclcore.mod.ModLoaderType;
+import com.tungsten.hfclcore.mod.ModManager;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
-import com.tungsten.fclcore.event.Event;
+import com.tungsten.hfclcore.event.Event;
 
 public class TaskEvent extends Event {
 

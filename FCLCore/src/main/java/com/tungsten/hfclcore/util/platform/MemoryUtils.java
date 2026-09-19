@@ -1,9 +1,9 @@
-package com.tungsten.fclcore.util.platform;
+package com.tungsten.hfclcore.util.platform;
 
 import android.app.ActivityManager;
 import android.content.Context;
 
-import com.tungsten.fclauncher.utils.Architecture;
+import com.tungsten.hfclauncher.utils.Architecture;
 
 public class MemoryUtils {
 

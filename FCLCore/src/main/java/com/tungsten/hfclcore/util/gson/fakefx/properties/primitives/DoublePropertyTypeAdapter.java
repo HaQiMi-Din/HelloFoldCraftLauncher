@@ -1,8 +1,8 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties.primitives;
+package com.tungsten.hfclcore.util.gson.fakefx.properties.primitives;
 
 import com.google.gson.TypeAdapter;
-import com.tungsten.fclcore.fakefx.beans.property.DoubleProperty;
-import com.tungsten.fclcore.fakefx.beans.property.SimpleDoubleProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.DoubleProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleDoubleProperty;
 
 /**
  * An implementation of {@link PrimitivePropertyTypeAdapter} for JavaFX {@link DoubleProperty}. It serializes the double

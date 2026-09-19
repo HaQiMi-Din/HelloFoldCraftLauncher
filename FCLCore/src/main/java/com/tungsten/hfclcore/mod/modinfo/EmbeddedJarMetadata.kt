@@ -1,7 +1,7 @@
-package com.tungsten.fclcore.mod.modinfo
+package com.tungsten.hfclcore.mod.modinfo
 
 import com.google.gson.JsonParseException
-import com.tungsten.fclcore.util.gson.Validation
+import com.tungsten.hfclcore.util.gson.Validation
 
 data class EmbeddedJarMetadata(
     var path: String? = null,

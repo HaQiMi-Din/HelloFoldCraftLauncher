@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.fakefx;
+package com.tungsten.hfclcore.util.fakefx;
 
-import static com.tungsten.fclcore.util.Lang.handleUncaughtException;
+import static com.tungsten.hfclcore.util.Lang.handleUncaughtException;
 
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
@@ -26,10 +26,10 @@ import java.util.function.Supplier;
 
 import static java.util.Objects.requireNonNull;
 
-import com.tungsten.fclcore.fakefx.beans.Observable;
-import com.tungsten.fclcore.fakefx.beans.binding.Bindings;
-import com.tungsten.fclcore.fakefx.beans.binding.ObjectBinding;
-import com.tungsten.fclcore.fakefx.beans.value.ObservableValue;
+import com.tungsten.hfclcore.fakefx.beans.Observable;
+import com.tungsten.hfclcore.fakefx.beans.binding.Bindings;
+import com.tungsten.hfclcore.fakefx.beans.binding.ObjectBinding;
+import com.tungsten.hfclcore.fakefx.beans.value.ObservableValue;
 
 public abstract class BindingMapping<T, U> extends ObjectBinding<U> {
 

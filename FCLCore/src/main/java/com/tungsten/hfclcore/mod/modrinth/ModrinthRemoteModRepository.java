@@ -15,26 +15,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modrinth;
+package com.tungsten.hfclcore.mod.modrinth;
 
-import static com.tungsten.fclcore.util.Lang.mapOf;
-import static com.tungsten.fclcore.util.Logging.LOG;
-import static com.tungsten.fclcore.util.Pair.pair;
+import static com.tungsten.hfclcore.util.Lang.mapOf;
+import static com.tungsten.hfclcore.util.Logging.LOG;
+import static com.tungsten.hfclcore.util.Pair.pair;
 
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.download.DownloadProvider;
-import com.tungsten.fclcore.mod.LocalModFile;
-import com.tungsten.fclcore.mod.ModLoaderType;
-import com.tungsten.fclcore.mod.RemoteMod;
-import com.tungsten.fclcore.mod.RemoteModRepository;
-import com.tungsten.fclcore.util.DigestUtils;
-import com.tungsten.fclcore.util.Lang;
-import com.tungsten.fclcore.util.StringUtils;
-import com.tungsten.fclcore.util.gson.JsonUtils;
-import com.tungsten.fclcore.util.io.HttpRequest;
-import com.tungsten.fclcore.util.io.NetworkUtils;
-import com.tungsten.fclcore.util.io.ResponseCodeException;
+import com.tungsten.hfclcore.download.DownloadProvider;
+import com.tungsten.hfclcore.mod.LocalModFile;
+import com.tungsten.hfclcore.mod.ModLoaderType;
+import com.tungsten.hfclcore.mod.RemoteMod;
+import com.tungsten.hfclcore.mod.RemoteModRepository;
+import com.tungsten.hfclcore.util.DigestUtils;
+import com.tungsten.hfclcore.util.Lang;
+import com.tungsten.hfclcore.util.StringUtils;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.io.HttpRequest;
+import com.tungsten.hfclcore.util.io.NetworkUtils;
+import com.tungsten.hfclcore.util.io.ResponseCodeException;
 
 import org.jetbrains.annotations.Nullable;
 

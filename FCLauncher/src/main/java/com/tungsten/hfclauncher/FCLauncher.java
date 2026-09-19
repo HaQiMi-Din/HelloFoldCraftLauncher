@@ -1,8 +1,8 @@
-package com.tungsten.fclauncher;
+package com.tungsten.hfclauncher;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.tungsten.fclauncher.utils.Architecture.ARCH_X86;
-import static com.tungsten.fclauncher.utils.Architecture.is64BitsDevice;
+import static com.tungsten.hfclauncher.utils.Architecture.ARCH_X86;
+import static com.tungsten.hfclauncher.utils.Architecture.is64BitsDevice;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,12 +15,12 @@ import android.util.ArrayMap;
 
 import com.mio.data.Renderer;
 import com.oracle.dalvik.VMLauncher;
-import com.tungsten.fclauncher.bridge.FCLBridge;
-import com.tungsten.fclauncher.plugins.DriverPlugin;
-import com.tungsten.fclauncher.plugins.FFmpegPlugin;
-import com.tungsten.fclauncher.plugins.NativeLibPlugin;
-import com.tungsten.fclauncher.utils.Architecture;
-import com.tungsten.fclauncher.utils.FCLPath;
+import com.tungsten.hfclauncher.bridge.FCLBridge;
+import com.tungsten.hfclauncher.plugins.DriverPlugin;
+import com.tungsten.hfclauncher.plugins.FFmpegPlugin;
+import com.tungsten.hfclauncher.plugins.NativeLibPlugin;
+import com.tungsten.hfclauncher.utils.Architecture;
+import com.tungsten.hfclauncher.utils.FCLPath;
 
 import java.io.BufferedReader;
 import java.io.File;

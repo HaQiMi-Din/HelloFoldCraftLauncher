@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties.primitives;
+package com.tungsten.hfclcore.util.gson.fakefx.properties.primitives;
 
 public class NullPrimitiveException extends RuntimeException {
 

@@ -15,7 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.gson;
+package com.tungsten.hfclcore.util.gson;
 
 import com.google.gson.*;
 import com.google.gson.internal.Streams;

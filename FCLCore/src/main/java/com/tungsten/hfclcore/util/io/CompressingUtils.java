@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
 import com.github.junrar.Archive;
 import com.github.junrar.exception.RarException;
 import com.github.junrar.rarfile.FileHeader;
 import com.sun.nio.zipfs.ZipFileSystemProvider;
-import com.tungsten.fclcore.util.Lang;
-import com.tungsten.fclcore.util.platform.OperatingSystem;
-import com.tungsten.fclcore.util.tree.ZipFileTree;
+import com.tungsten.hfclcore.util.Lang;
+import com.tungsten.hfclcore.util.platform.OperatingSystem;
+import com.tungsten.hfclcore.util.tree.ZipFileTree;
 
 import org.apache.commons.compress.archivers.sevenz.SevenZArchiveEntry;
 import org.apache.commons.compress.archivers.sevenz.SevenZFile;

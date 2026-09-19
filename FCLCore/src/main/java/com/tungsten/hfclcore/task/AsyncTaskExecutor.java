@@ -15,15 +15,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
-import static com.tungsten.fclcore.task.CompletableFutureTask.resolveException;
-import static com.tungsten.fclcore.util.Lang.rethrow;
-import static com.tungsten.fclcore.util.Lang.wrap;
+import static com.tungsten.hfclcore.task.CompletableFutureTask.resolveException;
+import static com.tungsten.hfclcore.util.Lang.rethrow;
+import static com.tungsten.hfclcore.util.Lang.wrap;
 
 import com.google.gson.JsonParseException;
-import com.tungsten.fclcore.util.Lang;
-import com.tungsten.fclcore.util.Logging;
+import com.tungsten.hfclcore.util.Lang;
+import com.tungsten.hfclcore.util.Logging;
 
 import java.util.Collection;
 import java.util.Collections;

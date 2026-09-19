@@ -15,11 +15,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.multimc;
+package com.tungsten.hfclcore.mod.multimc;
 
 import com.google.gson.annotations.SerializedName;
-import com.tungsten.fclcore.game.Library;
-import com.tungsten.fclcore.util.Lang;
+import com.tungsten.hfclcore.game.Library;
+import com.tungsten.hfclcore.util.Lang;
 
 import java.util.ArrayList;
 import java.util.Collections;

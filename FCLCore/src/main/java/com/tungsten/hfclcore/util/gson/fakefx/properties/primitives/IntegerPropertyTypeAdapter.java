@@ -1,8 +1,8 @@
-package com.tungsten.fclcore.util.gson.fakefx.properties.primitives;
+package com.tungsten.hfclcore.util.gson.fakefx.properties.primitives;
 
 import com.google.gson.TypeAdapter;
-import com.tungsten.fclcore.fakefx.beans.property.IntegerProperty;
-import com.tungsten.fclcore.fakefx.beans.property.SimpleIntegerProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleIntegerProperty;
 
 /**
  * An implementation of {@link PrimitivePropertyTypeAdapter} for JavaFX {@link IntegerProperty}. It serializes the int

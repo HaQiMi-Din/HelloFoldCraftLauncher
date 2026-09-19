@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.io;
+package com.tungsten.hfclcore.util.io;
 
-import com.tungsten.fclcore.util.function.ExceptionalPredicate;
+import com.tungsten.hfclcore.util.function.ExceptionalPredicate;
 
 import java.io.Closeable;
 import java.io.File;

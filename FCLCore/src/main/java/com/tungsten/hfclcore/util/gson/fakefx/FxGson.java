@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx;
+package com.tungsten.hfclcore.util.gson.fakefx;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

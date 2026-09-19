@@ -15,22 +15,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.mod.modrinth;
+package com.tungsten.hfclcore.mod.modrinth;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.download.DefaultDependencyManager;
-import com.tungsten.fclcore.download.GameBuilder;
-import com.tungsten.fclcore.game.DefaultGameRepository;
-import com.tungsten.fclcore.mod.MinecraftInstanceTask;
-import com.tungsten.fclcore.mod.Modpack;
-import com.tungsten.fclcore.mod.ModpackCompletionException;
-import com.tungsten.fclcore.mod.ModpackConfiguration;
-import com.tungsten.fclcore.mod.ModpackInstallTask;
-import com.tungsten.fclcore.mod.curse.CurseManifest;
-import com.tungsten.fclcore.task.Task;
-import com.tungsten.fclcore.util.gson.JsonUtils;
-import com.tungsten.fclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.download.DefaultDependencyManager;
+import com.tungsten.hfclcore.download.GameBuilder;
+import com.tungsten.hfclcore.game.DefaultGameRepository;
+import com.tungsten.hfclcore.mod.MinecraftInstanceTask;
+import com.tungsten.hfclcore.mod.Modpack;
+import com.tungsten.hfclcore.mod.ModpackCompletionException;
+import com.tungsten.hfclcore.mod.ModpackConfiguration;
+import com.tungsten.hfclcore.mod.ModpackInstallTask;
+import com.tungsten.hfclcore.mod.curse.CurseManifest;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfclcore.util.gson.JsonUtils;
+import com.tungsten.hfclcore.util.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

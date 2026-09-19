@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.gson.fakefx.factories;
+package com.tungsten.hfclcore.util.gson.fakefx.factories;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -7,29 +7,29 @@ import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.google.gson.TypeAdapterFactory;
 import com.google.gson.reflect.TypeToken;
-import com.tungsten.fclcore.fakefx.beans.property.BooleanProperty;
-import com.tungsten.fclcore.fakefx.beans.property.DoubleProperty;
-import com.tungsten.fclcore.fakefx.beans.property.FloatProperty;
-import com.tungsten.fclcore.fakefx.beans.property.IntegerProperty;
-import com.tungsten.fclcore.fakefx.beans.property.ListProperty;
-import com.tungsten.fclcore.fakefx.beans.property.LongProperty;
-import com.tungsten.fclcore.fakefx.beans.property.MapProperty;
-import com.tungsten.fclcore.fakefx.beans.property.Property;
-import com.tungsten.fclcore.fakefx.beans.property.SetProperty;
-import com.tungsten.fclcore.fakefx.beans.property.StringProperty;
-import com.tungsten.fclcore.fakefx.collections.ObservableList;
-import com.tungsten.fclcore.fakefx.collections.ObservableMap;
-import com.tungsten.fclcore.fakefx.collections.ObservableSet;
-import com.tungsten.fclcore.util.gson.fakefx.properties.ListPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.MapPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.ObjectPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.SetPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.StringPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.primitives.BooleanPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.primitives.DoublePropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.primitives.FloatPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.primitives.IntegerPropertyTypeAdapter;
-import com.tungsten.fclcore.util.gson.fakefx.properties.primitives.LongPropertyTypeAdapter;
+import com.tungsten.hfclcore.fakefx.beans.property.BooleanProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.DoubleProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.FloatProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.ListProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.LongProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.MapProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.Property;
+import com.tungsten.hfclcore.fakefx.beans.property.SetProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.StringProperty;
+import com.tungsten.hfclcore.fakefx.collections.ObservableList;
+import com.tungsten.hfclcore.fakefx.collections.ObservableMap;
+import com.tungsten.hfclcore.fakefx.collections.ObservableSet;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.ListPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.MapPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.ObjectPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.SetPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.StringPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.primitives.BooleanPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.primitives.DoublePropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.primitives.FloatPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.primitives.IntegerPropertyTypeAdapter;
+import com.tungsten.hfclcore.util.gson.fakefx.properties.primitives.LongPropertyTypeAdapter;
 
 public class JavaFxPropertyTypeAdapterFactory implements TypeAdapterFactory {
 

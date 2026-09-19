@@ -15,9 +15,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.task;
+package com.tungsten.hfclcore.task;
 
-import static com.tungsten.fclcore.util.DigestUtils.getDigest;
+import static com.tungsten.hfclcore.util.DigestUtils.getDigest;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,11 +33,11 @@ import java.util.logging.Level;
 
 import static java.util.Objects.requireNonNull;
 
-import com.tungsten.fclcore.util.Hex;
-import com.tungsten.fclcore.util.Logging;
-import com.tungsten.fclcore.util.io.ChecksumMismatchException;
-import com.tungsten.fclcore.util.io.CompressingUtils;
-import com.tungsten.fclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.util.Hex;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.io.ChecksumMismatchException;
+import com.tungsten.hfclcore.util.io.CompressingUtils;
+import com.tungsten.hfclcore.util.io.FileUtils;
 
 /**
  * A task that can download a file online.

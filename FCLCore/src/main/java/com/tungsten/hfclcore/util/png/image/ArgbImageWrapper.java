@@ -1,4 +1,4 @@
-package com.tungsten.fclcore.util.png.image;
+package com.tungsten.hfclcore.util.png.image;
 
 import java.util.Objects;
 

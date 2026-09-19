@@ -15,10 +15,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.tungsten.fclcore.util.fakefx;
+package com.tungsten.hfclcore.util.fakefx;
 
-import com.tungsten.fclcore.fakefx.util.StringConverter;
-import com.tungsten.fclcore.util.function.ExceptionalFunction;
+import com.tungsten.hfclcore.fakefx.util.StringConverter;
+import com.tungsten.hfclcore.util.function.ExceptionalFunction;
 
 import java.util.ArrayList;
 import java.util.List;
