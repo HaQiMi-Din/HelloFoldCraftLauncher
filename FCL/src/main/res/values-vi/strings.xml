@@ -2,16 +2,16 @@
     <string name="app_name" translatable="false">Fold Craft Launcher</string>
     <string name="app_name_import">Cài đặt Modpack</string>
 
-    <string name="splash_agreement">FCL yêu cầu quyền lưu trữ để quản lý và đọc các tệp trò chơi. FCL hoàn toàn mã nguồn mở trên GitHub, vì vậy bạn hãy yên tâm về an toàn dữ liệu của mình. Quyền này chỉ nhằm mục đích để trò chơi hoạt động bình thường và không gây ra rủi ro về bảo mật.</string>
-    <string name="splash_permission_msg">Không có quyền lưu trữ, vui lòng cấp quyền cho Fold Craft Launcher.</string>
+    <string name="splash_agreement">HFCL yêu cầu quyền lưu trữ để quản lý và đọc các tệp trò chơi. HFCL hoàn toàn mã nguồn mở trên GitHub, vì vậy bạn hãy yên tâm về an toàn dữ liệu của mình. Quyền này chỉ nhằm mục đích để trò chơi hoạt động bình thường và không gây ra rủi ro về bảo mật.</string>
+    <string name="splash_permission_msg">Không có quyền lưu trữ, vui lòng cấp quyền cho Hello Fold Craft Launcher.</string>
     <string name="splash_permission_grant">Cấp quyền</string>
     <string name="splash_permission_title">Cần quyền lưu trữ</string>
     <string name="splash_permission_close">Đóng ứng dụng</string>
     <string name="splash_permission_settings">Cài đặt</string>
     <string name="splash_permission_settings_msg">Bạn đã chọn "Không bao giờ cho phép". Vui lòng cấp quyền lưu trữ theo cách thủ công trong cài đặt.</string>
-    <string name="notification_permission">FCL yêu cầu quyền gửi thông báo để tránh các sự cố khi cài đặt hoặc khởi động trò chơi.</string>
+    <string name="notification_permission">HFCL yêu cầu quyền gửi thông báo để tránh các sự cố khi cài đặt hoặc khởi động trò chơi.</string>
 
-    <string name="splash_title">Chào mừng đến với Fold Craft Launcher</string>
+    <string name="splash_title">Chào mừng đến với Hello Fold Craft Launcher</string>
     <string name="splash_eula_error">Không thể lấy EULA, vui lòng kiểm tra kết nối mạng.</string>
     <string name="splash_eula_next">Đồng ý và Tiếp tục</string>
     <string name="splash_runtime_title">Cài đặt hoặc cập nhật thời gian chạy ứng dụng</string>

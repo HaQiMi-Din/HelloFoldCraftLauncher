@@ -394,6 +394,8 @@
         android:id="@+id/ui_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:paddingBottom="108dp"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/title_bar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

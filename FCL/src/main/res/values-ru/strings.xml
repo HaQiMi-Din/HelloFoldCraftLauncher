@@ -1,14 +1,14 @@
 <resources>
-    <string name="splash_agreement">FCL требуется разрешение на доступ к хранилищу для управления игровыми файлами и их чтения. FCL имеет полностью открытый исходный код на GitHub, поэтому вы можете быть уверены в безопасности ваших данных. Это разрешение необходимо исключительно для корректной работы игры и не представляет никаких угроз безопасности.</string>
-    <string name="splash_permission_msg">Нет доступа к хранилищу. Предоствьте разрешение Fold Craft Launcher в настройках.</string>
+    <string name="splash_agreement">HFCL требуется разрешение на доступ к хранилищу для управления игровыми файлами и их чтения. HFCL имеет полностью открытый исходный код на GitHub, поэтому вы можете быть уверены в безопасности ваших данных. Это разрешение необходимо исключительно для корректной работы игры и не представляет никаких угроз безопасности.</string>
+    <string name="splash_permission_msg">Нет доступа к хранилищу. Предоствьте разрешение Hello Fold Craft Launcher в настройках.</string>
     <string name="splash_permission_grant">Разрешить</string>
     <string name="splash_permission_title">Необходимо разрешение на доступ к хранилищу</string>
     <string name="splash_permission_close">Закрыть лаунчер</string>
     <string name="splash_permission_settings">Настройки</string>
     <string name="splash_permission_settings_msg">Вы выбрали "Запретить". Разрешите доступ к хранилищу в настройках вручную.</string>
-    <string name="notification_permission">FCL требуется разрешение на отправку уведомлений, чтобы избежать проблем с установкой и запуском игры.</string>
+    <string name="notification_permission">HFCL требуется разрешение на отправку уведомлений, чтобы избежать проблем с установкой и запуском игры.</string>
 
-    <string name="splash_title">Добро пожаловать в Fold Craft Launcher</string>
+    <string name="splash_title">Добро пожаловать в Hello Fold Craft Launcher</string>
     <string name="splash_eula_error">Не удалось подтвердить наличие лицензии из-за проблем с соединением.</string>
     <string name="splash_eula_next">Принять и продолжить</string>
     <string name="splash_runtime_title">Установить среду выполнения лаунчера</string>
@@ -992,7 +992,7 @@
     <string name="file_browser_share_title">Поделиться файлом</string>
     <string name="file_browser_share_message">Вы уверены, что хотите поделиться этим файлом?</string>
     <string name="crash_reporter_title">Отчет об ошибке</string>
-    <string name="crash_reporter_hint">В Fold Craft Launcher произошла критическая ошибка. Обратитесь к разработчику или в сообщество за помощью.</string>
+    <string name="crash_reporter_hint">В Hello Fold Craft Launcher произошла критическая ошибка. Обратитесь к разработчику или в сообщество за помощью.</string>
     <string name="crash_reporter_restart">Перезапустить</string>
     <string name="crash_reporter_close">Выйти</string>
     <string name="crash_reporter_copy">Копировать</string>

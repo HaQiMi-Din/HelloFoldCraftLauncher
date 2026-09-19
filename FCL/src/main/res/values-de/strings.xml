@@ -1,12 +1,12 @@
 <resources>
-    <string name="splash_permission_msg">Kein Zugriff auf den Speicher. Bitte gewähren Sie Fold Craft Launcher die Berechtigung in den Einstellungen.</string>
+    <string name="splash_permission_msg">Kein Zugriff auf den Speicher. Bitte gewähren Sie Hello Fold Craft Launcher die Berechtigung in den Einstellungen.</string>
     <string name="splash_permission_grant">Erlauben</string>
     <string name="splash_permission_title">Speicherzugriff erforderlich</string>
     <string name="splash_permission_close">Launcher schließen</string>
     <string name="splash_permission_settings">Einstellungen</string>
     <string name="splash_permission_settings_msg">Sie haben „Verweigern“ gewählt. Bitte gewähren Sie den Speicherzugriff manuell in den Einstellungen.</string>
 
-    <string name="splash_title">Willkommen bei Fold Craft Launcher</string>
+    <string name="splash_title">Willkommen bei Hello Fold Craft Launcher</string>
     <string name="splash_eula_error">Die Lizenz konnte aufgrund von Verbindungsproblemen nicht überprüft werden.</string>
     <string name="splash_eula_next">Akzeptieren und fortfahren</string>
     <string name="splash_runtime_title">Laufzeitumgebung des Launchers installieren</string>
@@ -932,7 +932,7 @@
     <string name="file_browser_share_title">Datei teilen</string>
     <string name="file_browser_share_message">Sind Sie sicher, dass Sie diese Datei teilen möchten?</string>
     <string name="crash_reporter_title">Absturzbericht</string>
-    <string name="crash_reporter_hint">Fold Craft Launcher ist auf einen unlösbaren Fehler gestoßen. Bitte wenden Sie sich an den Entwickler oder andere um Hilfe.</string>
+    <string name="crash_reporter_hint">Hello Fold Craft Launcher ist auf einen unlösbaren Fehler gestoßen. Bitte wenden Sie sich an den Entwickler oder andere um Hilfe.</string>
     <string name="crash_reporter_restart">Neustart</string>
     <string name="crash_reporter_close">Beenden</string>
     <string name="crash_reporter_copy">Kopieren</string>

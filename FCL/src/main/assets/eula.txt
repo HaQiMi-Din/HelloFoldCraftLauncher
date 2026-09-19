@@ -1,10 +1,10 @@
-Fold Craft Launcher end-user license agreements
+HelloFoldCraftLauncher end-user license agreements
 
 Before you using the software, please read the eula first.
-The software is developed by FCL-Team.
+The software is forked from FoldCraftLauncher, originally developed by FCL-Team, and rebranded as HFCL by HaQiMi-Din.
 
 1. User's obligations
-1) Get a qualified device, FCL requires Android 8.0 or higher.
+1) Get a qualified device, HFCL requires Android 8.0 or higher.
 2) Pay for the cost of Internet access and other services.
 3) Take responsibility for all the consequences of your own use of the software.
 

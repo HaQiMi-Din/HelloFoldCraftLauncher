@@ -1,12 +1,12 @@
 <resources>
-    <string name="splash_permission_msg">Немає доступу до сховища. Надайте дозвіл Fold Craft Launcher у налаштуваннях.</string>
+    <string name="splash_permission_msg">Немає доступу до сховища. Надайте дозвіл Hello Fold Craft Launcher у налаштуваннях.</string>
     <string name="splash_permission_grant">Дозволити</string>
     <string name="splash_permission_title">Потрібен дозвіл на доступ до сховища</string>
     <string name="splash_permission_close">Закрити лаунчер</string>
     <string name="splash_permission_settings">Налаштування</string>
     <string name="splash_permission_settings_msg">Ви обрали "Заборонити". Надайте доступ до сховища вручну в налаштуваннях.</string>
 
-    <string name="splash_title">Ласкаво просимо до Fold Craft Launcher</string>
+    <string name="splash_title">Ласкаво просимо до Hello Fold Craft Launcher</string>
     <string name="splash_eula_error">Не вдалося підтвердити наявність ліцензії через проблеми з підключенням.</string>
     <string name="splash_eula_next">Прийняти та продовжити</string>
     <string name="splash_runtime_title">Встановити середовище виконання лаунчера</string>
@@ -949,7 +949,7 @@
     <string name="file_browser_share_title">Поділитися файлом</string>
     <string name="file_browser_share_message">Ви впевнені, що хочете поділитися цим файлом?</string>
     <string name="crash_reporter_title">Звіт про помилку</string>
-    <string name="crash_reporter_hint">У Fold Craft Launcher сталася критична помилка. Зверніться до розробника або спільноти за допомогою.</string>
+    <string name="crash_reporter_hint">У Hello Fold Craft Launcher сталася критична помилка. Зверніться до розробника або спільноти за допомогою.</string>
     <string name="crash_reporter_restart">Перезапустити</string>
     <string name="crash_reporter_close">Вийти</string>
     <string name="crash_reporter_copy">Копіювати</string>

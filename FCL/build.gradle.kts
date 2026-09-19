@@ -23,6 +23,9 @@ android {
     val pwd = System.getenv("FCL_KEYSTORE_PASSWORD") ?: localProperty?.getProperty("pwd")
     val curseApiKey = System.getenv("CURSE_API_KEY") ?: localProperty?.getProperty("curse.api.key")
     val oauthApiKey = System.getenv("OAUTH_API_KEY") ?: localProperty?.getProperty("oauth.api.key")
+        // fork 构建未注入官方 OAUTH_API_KEY 时，回退到众所周知、已被 Xbox/Minecraft 服务放行的
+        // 官方 Minecraft 启动器公开 client_id，否则 AADSTS900144: client_id missing。
+        ?: "00000000402b5328"
     // 命令行 -Darch 优先；local.properties 仅在命令行未指定时生效
     if (System.getProperty("arch") == null && localProperty != null && localProperty.getProperty(
             "arch",

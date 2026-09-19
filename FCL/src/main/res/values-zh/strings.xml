@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name_import">安装整合包</string>
-    <string name="splash_agreement">FCL需要储存权限以管理/读取游戏文件，FCL在GitHub上完全开源，请不用担心您的数据安全。权限仅用于正常运行游戏，无任何安全问题。</string>
-    <string name="splash_permission_msg">没有存储权限，请授予 Fold Craft Launcher 权限。</string>
+    <string name="splash_agreement">HFCL需要储存权限以管理/读取游戏文件，HFCL在GitHub上完全开源，请不用担心您的数据安全。权限仅用于正常运行游戏，无任何安全问题。</string>
+    <string name="splash_permission_msg">没有存储权限，请授予 Hello Fold Craft Launcher 权限。</string>
     <string name="splash_permission_grant">授予</string>
     <string name="splash_permission_title">需要存储权限</string>
     <string name="splash_permission_close">关闭应用</string>
     <string name="splash_permission_settings">去设置</string>
     <string name="splash_permission_settings_msg">您已选择永不授权，请在设置中手动授予存储权限。</string>
-    <string name="notification_permission">FCL需要发布通知的权限，防止无法正常安装/启动游戏 。</string>
+    <string name="notification_permission">HFCL需要发布通知的权限，防止无法正常安装/启动游戏 。</string>
 
-    <string name="splash_title">欢迎使用 Fold Craft Launcher</string>
+    <string name="splash_title">欢迎使用 Hello Fold Craft Launcher</string>
     <string name="splash_eula_error">无法获取用户协议，请检查网络。</string>
     <string name="splash_eula_next">同意并继续</string>
     <string name="splash_runtime_title">安装或更新运行环境</string>
@@ -1218,7 +1218,7 @@
     <string name="file_browser_share_title">分享文件</string>
     <string name="file_browser_share_message">你确定要分享此文件吗？</string>
     <string name="crash_reporter_title">崩溃报告</string>
-    <string name="crash_reporter_hint">Fold Craft Launcher 遇到了无法解决的错误，请向开发者或他人求助。</string>
+    <string name="crash_reporter_hint">Hello Fold Craft Launcher 遇到了无法解决的错误，请向开发者或他人求助。</string>
     <string name="crash_reporter_restart">重启软件</string>
     <string name="crash_reporter_close">退出软件</string>
     <string name="crash_reporter_copy">复制日志</string>
