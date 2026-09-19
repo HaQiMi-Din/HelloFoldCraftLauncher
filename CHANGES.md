@@ -170,3 +170,25 @@ HFCL fork 相对上游分叉点领先 134 个提交（主要是平板 UI 迭代�
 ### 备注
 - token 含 `repo` + `workflow` 权限，可正常推送 workflow 与触发 Actions，无权限受阻。
 - release 签名所需 secrets（FCL_KEYSTORE_PASSWORD 等）未配置，故只出 debug APK；release 流程在非 FCL-Team 仓库本就被 workflow 跳过。
+
+## 11. 首启字符串残留 / 内容裁切 / 微软登录 client_id 修复（第三轮迭代）
+
+### 11.1 首启流程残留 FCL 字符串
+- 权限警告弹窗正文（`splash_agreement`）：各语言中独立的 "FCL"（"FCL需要储存权限…FCL在GitHub…"、"FCL requires storage…FCL is fully open-source…"、俄/越/繁中变体）全部改为 "HFCL"。
+- 无存储权限提示（`splash_permission_msg`）："请授予 Fold Craft Launcher 权限" → "请授予 Hello Fold Craft Launcher 权限"（含英/德/葡/俄/乌/越/简中/繁中）。
+- 欢迎/EULA 标题（`splash_title`）："欢迎使用 Fold Craft Launcher" → "欢迎使用 HelloFoldCraftLauncher"。
+- 通知权限说明（`notification_permission`）："FCL …" → "HFCL …"。
+- EULA 正文 `FCL/src/main/assets/eula.txt`：标题改 HelloFoldCraftLauncher；"The software is developed by FCL-Team." → "The software is forked from FoldCraftLauncher, originally developed by FCL-Team, and rebranded as HFCL by HaQiMi-Din."；"FCL requires Android 8.0" → "HFCL requires Android 8.0"。
+- 保留：`about_developer=FCL-Team` 署名、about_desc 中对 FCL-Team/HMCLCore/PojavLauncher/Boat 的 GPL 署名。
+
+### 11.2 右侧内容区底部被裁切
+- 根因：右下角"启动游戏"胶囊按钮（`@id/start`）悬浮在内容容器 `@id/ui_layout` 之上，而沉浸式 `setDecorFitsSystemWindows(false)` 使内容延伸到屏幕底，版本列表/下载列表最后一项被 FAB 与手势导航条遮挡、滚不到底。
+- 修复：`activity_main.xml` 的 `ui_layout` 增加 `android:paddingBottom="108dp"` + `android:clipToPadding="false"`，为 FAB（约 75dp 高 + 16dp 边距）留出滚动余量。
+
+### 11.3 微软正版登录 AADSTS900144: client_id missing
+- 根因：`FCL/build.gradle.kts` 中 `oauth_api_key` 来自环境变量 `OAUTH_API_KEY` / `local.properties`；fork 的 GitHub Actions 未配置该 secret，构建出的 APK 里 `R.string.oauth_api_key` 为空（或字面 "null"），OAuth token 请求 body 不带 client_id，被 Azure 拒绝。
+- 修复：在 `FCL/build.gradle.kts` 给 `oauthApiKey` 加兜底——未注入 secret 时回退到众所周知、已被 Xbox/Minecraft 服务放行的官方 Minecraft 启动器公开 client_id `00000000402b5328`；官方 secret 仍优先。
+
+### 构建结果
+- Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35435907910 — success（5/5 ABI）。
+- arm64 debug APK 已下载到工作区 `work/apk/`。
