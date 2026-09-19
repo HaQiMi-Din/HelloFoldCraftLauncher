@@ -192,3 +192,12 @@ HFCL fork 相对上游分叉点领先 134 个提交（主要是平板 UI 迭代�
 ### 构建结果
 - Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35435907910 — success（5/5 ABI）。
 - arm64 debug APK 已下载到工作区 `work/apk/`。
+
+## 12. 「启动游戏」主按钮 HMCL 实心化（第四轮迭代）
+
+- 根因：上一版 `bg_start_capsule.xml` 虽为 `@color/hmcl_primary` 实心，但用户实机看到白描边透明，且颜色不随主题变化。
+- 修复：
+  - `bg_start_capsule.xml` 改为 `<ripple>` + `<shape><solid android:color="?attr/colorPrimary">` 圆角 26dp——实心填充直接引用主题主色，切换主题色按钮随之变化，按压有白色涟漪。
+  - `activity_main.xml` 的 `@id/start` 加 `android:elevation="8dp"`，按钮浮在壁纸/内容之上。
+  - 「启动游戏」白字加粗、版本名半透白、齿轮图标在右侧，位置与尺寸维持右下角 200dp 宽（已与上轮 content paddingBottom 配合）。
+- Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35438976230 — success（5/5）。
