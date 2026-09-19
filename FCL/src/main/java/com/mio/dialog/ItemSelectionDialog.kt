@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.tungsten.fcl.R
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
-import com.tungsten.fcl.databinding.DialogItemSelectionBinding
-import com.tungsten.fcl.databinding.ItemTextBinding
-import com.tungsten.fcllibrary.util.ConvertUtils
+import com.tungsten.hfcl.R
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcl.databinding.DialogItemSelectionBinding
+import com.tungsten.hfcl.databinding.ItemTextBinding
+import com.tungsten.hfcllibrary.util.ConvertUtils
 
 class ItemSelectionDialog(
     context: Context,

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:text="@string/version_manage_rename_message"
         android:singleLine="true"
@@ -25,14 +25,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:singleLine="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/version_manage_rename_new"
             android:layout_gravity="center"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLEditText
+        <com.tungsten.hfcllibrary.component.view.FCLEditText
             android:layout_marginStart="10dp"
             android:singleLine="true"
             android:id="@+id/new_name"
@@ -42,7 +42,7 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:layout_marginTop="10dp"
         android:id="@+id/positive"
         android:text="@string/dialog_positive"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/details"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:layout_marginTop="10dp"
         android:id="@+id/negative"
         android:text="@string/dialog_negative"

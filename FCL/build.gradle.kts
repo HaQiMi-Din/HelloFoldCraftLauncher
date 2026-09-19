@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tungsten.fcl"
+    namespace = "com.tungsten.hfcl"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     var localProperty: Properties? = null
@@ -47,7 +47,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.tungsten.fcl"
+        applicationId = "com.tungsten.hfcl"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 199405
@@ -71,7 +71,7 @@ android {
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.getByName("FCLDebugKey")
             // 与 FileProvider authority（${applicationId}.provider）保持一致（原 FCLLibrary 模块的 resValue）
-            resValue("string", "file_browser_provider", "com.tungsten.fcl.debug.provider")
+            resValue("string", "file_browser_provider", "com.tungsten.hfcl.debug.provider")
         }
         configureEach {
             resValue("string", "app_version", defaultConfig.versionName.toString())
@@ -159,6 +159,13 @@ androidComponents {
 
         // LWJGL natives 打包在 lwjgl-*-natives aar 的 assets/app_runtime/lwjgl/<版本>/natives/<abi> 下，
         // 不走 AGP 的 abiFilters，需在 mergeAssets 后手动按架构删除其他 ABI 的 natives 目录。
+        //
+        // 窗口/输入后端 GLFW -> SDL3：3.4.1 起活动后端为 SDL3，其原生库为 libSDL3.so，
+        // 与其它 LWJGL native 一样来自 lwjgl-3.4.1-natives-release.aar，落在
+        // app_runtime/lwjgl/3.4.1/natives/<abi>/libSDL3.so。
+        // 本清理逻辑只按“整个 ABI 目录名”过滤（删除 != 目标 abi 的子目录），
+        // 因此目标 ABI 目录内的 libSDL3.so（以及 libglfw*.so 等）会被原样保留并随 assets 铺出，
+        // 无需为 SDL3 增加额外分支。若后续单独引入 SDL3 natives aar，其 assets 会被 AGP 自动合并进同一路径。
         val variantName = variant.name.replaceFirstChar { it.uppercaseChar() }
         afterEvaluate {
             val mergeAssets =
@@ -191,6 +198,13 @@ androidComponents {
                                     logger.lifecycle("删除非目标架构 natives: $dir")
                                     dir.deleteRecursively()
                                 }
+                            }
+                            // 显式核对 SDL3 后端 native 已随目标架构铺出（仅日志提示，不改动）
+                            val sdl3 = File(nativesDir, "$abi/libSDL3.so")
+                            if (sdl3.isFile) {
+                                logger.lifecycle("SDL3 后端 native 已打包: ${sdl3.path}")
+                            } else {
+                                logger.lifecycle("警告: 未发现 $sdl3 ，SDL3 窗口后端将无法加载（需补齐 3.4.1 natives aar 的 libSDL3.so）")
                             }
                         }
                     }

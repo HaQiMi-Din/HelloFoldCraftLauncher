@@ -1,7 +1,7 @@
 package com.mio.util
 
 import android.content.Context
-import com.tungsten.fcl.R
+import com.tungsten.hfcl.R
 
 fun getLauncherName(context: Context): String {
     val appName = context.getString(R.string.app_name)

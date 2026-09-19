@@ -1,0 +1,877 @@
+package com.tungsten.hfcl.activity
+
+import android.Manifest
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.content.res.ColorStateList
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
+import android.media.MediaPlayer
+import android.net.Uri
+import android.os.Build
+import android.os.Bundle
+import android.provider.Settings
+import android.view.KeyEvent
+import android.view.View
+import android.view.animation.BounceInterpolator
+import android.view.animation.OvershootInterpolator
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
+import androidx.core.content.edit
+import androidx.core.graphics.drawable.toDrawable
+import androidx.core.view.forEach
+import androidx.core.view.postDelayed
+import androidx.lifecycle.lifecycleScope
+import com.mio.manager.RendererManager
+import com.mio.ui.dialog.RendererSelectDialog
+import com.mio.util.AnimUtil
+import com.mio.util.AnimUtil.Companion.interpolator
+import com.mio.util.AnimUtil.Companion.startAfter
+import com.mio.util.DisplayUtil
+import com.mio.util.GuideUtil
+import com.mio.util.GuideUtil.Companion.guideTarget
+import com.mio.util.ImageUtil
+import com.mio.util.showWarningDialog
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.databinding.ActivityMainBinding
+import com.tungsten.hfcl.game.JarExecutorHelper
+import com.tungsten.hfcl.game.TexturesLoader
+import com.tungsten.hfcl.setting.Accounts
+import com.tungsten.hfcl.setting.ConfigHolder
+import com.tungsten.hfcl.setting.Controllers
+import com.tungsten.hfcl.setting.Profile
+import com.tungsten.hfcl.setting.Profiles
+import com.tungsten.hfcl.ui.PageManager
+import com.tungsten.hfcl.ui.UIManager
+import com.tungsten.hfcl.ui.download.modpack.LocalModpackPage
+import com.tungsten.hfcl.ui.version.Versions
+import com.tungsten.hfcl.upgrade.UpdateChecker
+import com.tungsten.hfcl.util.AndroidUtils
+import com.tungsten.hfcl.util.FXUtils
+import com.tungsten.hfcl.util.WeakListenerHolder
+import com.tungsten.hfclauncher.plugins.DriverPlugin
+import com.tungsten.hfclauncher.utils.FCLPath
+import com.tungsten.hfclcore.auth.Account
+import com.tungsten.hfclcore.auth.authlibinjector.AuthlibInjectorAccount
+import com.tungsten.hfclcore.auth.authlibinjector.AuthlibInjectorServer
+import com.tungsten.hfclcore.auth.yggdrasil.TextureModel
+import com.tungsten.hfclcore.download.LibraryAnalyzer
+import com.tungsten.hfclcore.download.LibraryAnalyzer.LibraryType
+import com.tungsten.hfclcore.fakefx.beans.binding.Bindings
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerProperty
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerPropertyBase
+import com.tungsten.hfclcore.fakefx.beans.property.ObjectProperty
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleObjectProperty
+import com.tungsten.hfclcore.fakefx.beans.value.ObservableValue
+import com.tungsten.hfclcore.mod.RemoteMod
+import com.tungsten.hfclcore.mod.RemoteMod.IMod
+import com.tungsten.hfclcore.mod.RemoteModRepository
+import com.tungsten.hfclcore.util.Logging.LOG
+import com.tungsten.hfclcore.util.fakefx.BindingMapping
+import com.tungsten.hfcllibrary.component.FCLActivity
+import com.tungsten.hfcllibrary.component.dialog.EditDialog
+import com.tungsten.hfcllibrary.component.dialog.FCLAlertDialog
+import com.tungsten.hfcllibrary.component.theme.ThemeEngine
+import com.tungsten.hfcllibrary.component.view.FCLMenuView
+import com.tungsten.hfcllibrary.util.ConvertUtils
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.File
+import java.io.IOException
+import java.lang.ref.WeakReference
+import java.util.logging.Level
+import java.util.stream.Stream
+import kotlin.system.exitProcess
+
+class MainActivity : FCLActivity(), View.OnClickListener {
+    companion object {
+        private lateinit var instance: WeakReference<MainActivity>
+
+        @JvmStatic
+        fun getInstance(): MainActivity {
+            return instance.get()!!
+        }
+    }
+
+    lateinit var binding: ActivityMainBinding
+    private var _uiManager: UIManager? = null
+    lateinit var uiManager: UIManager
+    private lateinit var currentAccount: ObjectProperty<Account?>
+    private val holder = WeakListenerHolder()
+    private lateinit var profile: Profile
+    private lateinit var theme: IntegerProperty
+    private lateinit var theme2: IntegerProperty
+    private lateinit var theme2Dark: IntegerProperty
+    var isVersionLoading = false
+    private var modpackHandled = false
+    lateinit var permissionResultLauncher: ActivityResultLauncher<String>
+    private lateinit var sharedPreferences: SharedPreferences
+    var mediaPlayer: MediaPlayer? = null
+    private var videoPosition = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        modpackHandled = savedInstanceState?.getBoolean("modpack_handled") ?: false
+        instance = WeakReference(this)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        sharedPreferences = getSharedPreferences("launcher", MODE_PRIVATE)
+        setContentView(binding.root)
+        ImageUtil.loadInto(
+            binding.background,
+            ThemeEngine.getInstance().getTheme().getBackground(this)
+        )
+
+        RemoteMod.registerEmptyRemoteMod(
+            RemoteMod(
+                "",
+                "",
+                getString(R.string.mods_broken_dependency_title),
+                getString(R.string.mods_broken_dependency_desc),
+                ArrayList(),
+                "",
+                "",
+                object : IMod {
+                    @Throws(IOException::class)
+                    override fun loadDependencies(modRepository: RemoteModRepository): List<RemoteMod> {
+                        throw IOException()
+                    }
+
+                    @Throws(IOException::class)
+                    override fun loadVersions(modRepository: RemoteModRepository): Stream<RemoteMod.Version> {
+                        throw IOException()
+                    }
+
+                    override fun loadScreenshots(modRepository: RemoteModRepository): MutableList<RemoteMod.Screenshot> {
+                        throw IOException()
+                    }
+                },
+                114514,
+                ""
+            )
+        )
+
+        if (!ConfigHolder.isInit()) {
+            try {
+                ConfigHolder.init()
+                RendererManager.init(this@MainActivity)
+            } catch (e: IOException) {
+                LOG.log(Level.WARNING, e.message)
+            }
+        }
+
+        binding.apply {
+            initBackground()
+            uiLayout.post {
+                // 左侧边栏：直角，跟随主题色
+                ThemeEngine.getInstance().registerEvent(leftMenu) {
+                    leftMenu.background = GradientDrawable().apply {
+                        setColor(ThemeEngine.getInstance().getTheme().color)
+                        shape = GradientDrawable.RECTANGLE
+                        cornerRadius = 0f
+                    }
+                }
+                // 顶部标题栏：直角，跟随主题色
+                ThemeEngine.getInstance().registerEvent(titleBar) {
+                    titleBar.background = GradientDrawable().apply {
+                        setColor(ThemeEngine.getInstance().getTheme().color)
+                        shape = GradientDrawable.RECTANGLE
+                        cornerRadius = 0f
+                    }
+                }
+
+                // ========== 顶部标题栏按钮 ==========
+                // 退出键：点击直接关闭应用
+                btnExit.setOnClickListener {
+                    finishAffinity()
+                    exitProcess(0)
+                }
+                // 最小化键：应用退到后台
+                btnMinimize.setOnClickListener {
+                    moveTaskToBack(true)
+                }
+
+                // 菜单点击绑定外层 item，触发 ripple + 缩放动画
+                account.setOnClickListener(this@MainActivity)
+                homePageItem.setOnClickListener { onSelect(binding.homePage) }
+                homeItem.setOnClickListener { onSelect(binding.home) }
+                manageItem.setOnClickListener { onSelect(binding.manage) }
+                downloadItem.setOnClickListener { onSelect(binding.download) }
+                controllerItem.setOnClickListener { onSelect(binding.controller) }
+                multiplayerItem.setOnClickListener { onSelect(binding.multiplayer) }
+                settingItem.setOnClickListener { onSelect(binding.setting) }
+                // 【修复】左下角返回键：直接调用返回，不走 onSelect
+                backItem.setOnClickListener {
+                    uiManager.onBackPressed()
+                }
+
+                version.setOnClickListener(this@MainActivity)
+                goSetting.setOnClickListener(this@MainActivity)
+                start.setOnClickListener(this@MainActivity)
+                start.setOnLongClickListener { view ->
+                    RendererSelectDialog(this@MainActivity, false) {
+                        onClick(view)
+                    }.show()
+                    true
+                }
+                jar.setOnClickListener(this@MainActivity)
+                jar.setOnLongClickListener {
+                    EditDialog(this@MainActivity) {
+                        JarExecutorHelper.exec(
+                            this@MainActivity,
+                            null,
+                            JarExecutorHelper.getJava(null),
+                            it
+                        )
+                    }.apply {
+                        setTitle(R.string.jar_execute_custom_args)
+                        binding.editText.hint = "-jar xxx"
+                        binding.editText.setLines(1)
+                        binding.editText.maxLines = 1
+                    }.show()
+                    true
+                }
+
+                uiManager = UIManager(this@MainActivity, uiLayout)
+                _uiManager = uiManager
+                uiManager.registerDefaultBackEvent {
+                    if (uiManager.currentUI === uiManager.mainUI) {
+                        val i = Intent(Intent.ACTION_MAIN)
+                        i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                        i.addCategory(Intent.CATEGORY_HOME)
+                        startActivity(i)
+                        exitProcess(0)
+                    } else {
+                        onSelect(homePage)
+                    }
+                }
+                uiManager.init()
+
+                home.setOnLongClickListener {
+                    shareLog()
+                    true
+                }
+
+                UpdateChecker.getInstance().checkAuto(this@MainActivity).start()
+                if (!checkNotificationPermission() && getSharedPreferences(
+                        "launcher",
+                        MODE_PRIVATE
+                    ).getBoolean("check_notification_permission", true)
+                ) {
+                    getSharedPreferences("launcher", MODE_PRIVATE).edit {
+                        putBoolean("check_notification_permission", false)
+                    }
+                    FCLAlertDialog.Builder(this@MainActivity)
+                        .setMessage(getString(R.string.notification_permission))
+                        .setPositiveButton {
+                            requestNotificationPermission()
+                        }
+                        .setNegativeButton {}
+                        .create()
+                        .show()
+                }
+                if (!modpackHandled) {
+                    handleModpack(intent)
+                }
+                setupAccountDisplay()
+                setupVersionDisplay()
+                playAnim()
+
+                // 默认选中主页
+                homePage.isSelected = true
+                homePageItem.isSelected = true
+                refreshMenuView(binding.homePage)
+
+                uiLayout.postDelayed(1500) {
+                    GuideUtil.show(
+                        activity = this@MainActivity,
+                        GuideUtil.TAG_GUIDE_THEME_2 to setting.guideTarget(title = getString(R.string.guide_theme2)),
+                        GuideUtil.TAG_GUIDE_SHARE_LOG to home.guideTarget(title = getString(R.string.guide_share_log))
+                    )
+                }
+            }
+        }
+        permissionResultLauncher =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            }
+        setupLiveBackground()
+    }
+
+    private fun onSelect(view: FCLMenuView) {
+        refreshMenuView(view)
+        val speed = ThemeEngine.getInstance().getTheme().animationSpeed
+        AnimUtil.playRotation(view, speed * 100L, 0f, 360f)
+            .interpolator(OvershootInterpolator()).start()
+        AnimUtil.playScaleX(view, speed * 100L, 1f, 2f, 1f)
+            .start()
+        AnimUtil.playScaleY(view, speed * 100L, 1f, 2f, 1f)
+            .start()
+        binding.apply {
+            when (view) {
+                homePage -> {
+                    title.setTextWithAnim(getString(R.string.app_name) + " " + getString(R.string.app_version))
+                    uiManager.switchUI(uiManager.mainUI)
+                }
+
+                home -> {
+                    title.setTextWithAnim(getString(R.string.version))
+                    uiManager.switchUI(uiManager.versionUI)
+                }
+
+                manage -> {
+                    val version = Profiles.getSelectedProfile().selectedVersion
+                    if (version == null) {
+                        refreshMenuView(null)
+                        title.setTextWithAnim(getString(R.string.version))
+                        uiManager.switchUI(uiManager.versionUI)
+                    } else {
+                        title.setTextWithAnim(getString(R.string.manage))
+                        uiManager.manageUI.setVersion(version, Profiles.getSelectedProfile())
+                        uiManager.switchUI(uiManager.manageUI)
+                    }
+                }
+
+                download -> {
+                    title.setTextWithAnim(getString(R.string.download))
+                    uiManager.switchUI(uiManager.downloadUI)
+                }
+
+                controller -> {
+                    title.setTextWithAnim(getString(R.string.controller))
+                    uiManager.switchUI(uiManager.controllerUI)
+                }
+
+                multiplayer -> {
+                    title.setTextWithAnim(getString(R.string.terracotta))
+                    uiManager.switchUI(uiManager.multiplayerUI)
+                }
+
+                setting -> {
+                    title.setTextWithAnim(getString(R.string.setting))
+                    uiManager.switchUI(uiManager.settingUI)
+                }
+            }
+        }
+    }
+
+    fun refreshMenuView(view: FCLMenuView?) {
+        binding.homePageItem.isSelected = false
+        binding.homeItem.isSelected = false
+        binding.manageItem.isSelected = false
+        binding.downloadItem.isSelected = false
+        binding.controllerItem.isSelected = false
+        binding.multiplayerItem.isSelected = false
+        binding.settingItem.isSelected = false
+        binding.backItem.isSelected = false
+
+        binding.leftMenu.forEach {
+            if (it is FCLMenuView) {
+                it.isSelected = false
+            }
+        }
+
+        view?.isSelected = true
+        when (view?.id) {
+            R.id.home_page -> binding.homePageItem.isSelected = true
+            R.id.home -> binding.homeItem.isSelected = true
+            R.id.manage -> binding.manageItem.isSelected = true
+            R.id.download -> binding.downloadItem.isSelected = true
+            R.id.controller -> binding.controllerItem.isSelected = true
+            R.id.multiplayer -> binding.multiplayerItem.isSelected = true
+            R.id.setting -> binding.settingItem.isSelected = true
+            R.id.back -> binding.backItem.isSelected = true
+        }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            _uiManager?.onBackPressed()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("modpack_handled", modpackHandled)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        _uiManager?.onPause()
+        if (shouldPlayVideo() && binding.videoView.isPlaying) {
+            videoPosition = binding.videoView.currentPosition
+            binding.videoView.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        _uiManager?.onResume()
+        if (shouldPlayVideo() && !binding.videoView.isPlaying) {
+            binding.videoView.seekTo(videoPosition)
+            binding.videoView.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (shouldPlayVideo()) {
+            mediaPlayer = null
+            binding.videoView.stopPlayback()
+        }
+    }
+
+    override fun onClick(view: View) {
+        binding.apply {
+            if (view === account && uiManager.currentUI !== uiManager.accountUI) {
+                refreshMenuView(null)
+                title.setTextWithAnim(getString(R.string.account))
+                uiManager.switchUI(uiManager.accountUI)
+            }
+            if (view === version && uiManager.currentUI !== uiManager.versionUI) {
+                refreshMenuView(null)
+                title.setTextWithAnim(getString(R.string.version))
+                uiManager.switchUI(uiManager.versionUI)
+            }
+            if (view === jar) {
+                if (sharedPreferences.getBoolean("showJarExecutorWarnDialog", true)) {
+                    showWarningDialog(this@MainActivity, getString(R.string.jar_executor_warn)) {
+                        sharedPreferences.edit {
+                            putBoolean("showJarExecutorWarnDialog", false)
+                        }
+                    }
+                    return
+                }
+                jar.isSelected = false
+                JarExecutorHelper.start(this@MainActivity)
+            }
+            if (view === start) {
+                if (!Controllers.isInitialized()) {
+                    title.setTextWithAnim(getString(R.string.message_loading_controllers))
+                    AnimUtil.playTranslationX(start, 700, 0f, 50f, -50f, 50f, -50f, 0f)
+                        .interpolator(OvershootInterpolator()).start()
+                    return
+                }
+                val selectedProfile = Profiles.getSelectedProfile()
+                DriverPlugin.selected = runCatching {
+                    DriverPlugin.driverList.find {
+                        it.driver == selectedProfile.getVersionSetting(selectedProfile.selectedVersion).driver
+                    }
+                }.getOrNull() ?: DriverPlugin.driverList[0]
+                refreshScreenSize()
+                DisplayUtil.refreshDisplayMetrics(this@MainActivity)
+                Versions.launch(this@MainActivity, selectedProfile)
+            }
+            if (view === goSetting) {
+                val profile = Profiles.getSelectedProfile()
+                if (profile.versionSetting.isGlobal) {
+                    setting.isSelected = true
+                    uiManager.settingUI.runAfterInit {
+                        val tab = uiManager.settingUI.tabLayout.getTabAt(0)
+                        uiManager.settingUI.tabLayout.selectTab(tab)
+                    }
+                } else {
+                    manage.isSelected = true
+                    uiManager.manageUI.runAfterInit {
+                        val tab = uiManager.manageUI.tabLayout.getTabAt(0)
+                        uiManager.manageUI.tabLayout.selectTab(tab)
+                    }
+                }
+            }
+        }
+    }
+
+    private fun setupAccountDisplay() {
+        binding.apply {
+            currentAccount = object : SimpleObjectProperty<Account?>() {
+                override fun invalidated() {
+                    val account = get()
+                    if (account == null) {
+                        accountName.stringProperty().unbind()
+                        accountHint.stringProperty().unbind()
+                        avatar.imageProperty().unbind()
+                        accountName.text = getString(R.string.account_state_no_account)
+                        accountHint.text = getString(R.string.account_state_add)
+                        avatar.setBackgroundDrawable(
+                            TexturesLoader.toAvatar(
+                                TexturesLoader.getDefaultSkin(TextureModel.ALEX).image(),
+                                ConvertUtils.dip2px(
+                                    this@MainActivity, 52f
+                                )
+                            ).toDrawable(resources)
+                        )
+                    } else {
+                        accountName.stringProperty()
+                            .bind(BindingMapping.of(account) { obj: Account -> obj.character })
+                        accountHint.stringProperty()
+                            .bind(accountSubtitle(this@MainActivity, account))
+                        avatar.imageProperty().unbind()
+                        avatar.imageProperty().bind(
+                            TexturesLoader.avatarBinding(
+                                account, ConvertUtils.dip2px(
+                                    this@MainActivity, 52f
+                                )
+                            )
+                        )
+                    }
+                }
+            }
+            (currentAccount as SimpleObjectProperty<Account?>).bind(Accounts.selectedAccountProperty())
+        }
+    }
+
+    fun refreshAvatar(account: Account) {
+        lifecycleScope.launch {
+            if (currentAccount.get() === account) {
+                binding.avatar.imageProperty().unbind()
+                binding.avatar.imageProperty().bind(
+                    TexturesLoader.avatarBinding(
+                        currentAccount.get(), ConvertUtils.dip2px(
+                            this@MainActivity, 52f
+                        )
+                    )
+                )
+            }
+        }
+    }
+
+    private fun loadVersion(version: String?) {
+        isVersionLoading = true
+        binding.versionProgress.visibility = View.VISIBLE
+        profile = Profiles.getSelectedProfile()
+        if (version != null && profile.repository.hasVersion(version)) {
+            lifecycleScope.launch(Dispatchers.IO) {
+                var game: String? = null
+                runCatching {
+                    game = profile.repository.getGameVersion(version)
+                        .orElse(getString(R.string.message_unknown))
+                }
+                if (game == null) return@launch
+                val libraries = StringBuilder(game)
+                val analyzer = LibraryAnalyzer.analyze(
+                    profile.repository.getResolvedPreservingPatchesVersion(
+                        version
+                    ),
+                    profile.repository.getGameVersion(version).orElse(null)
+                )
+                for (mark in analyzer) {
+                    val libraryId = mark.libraryId
+                    val libraryVersion = mark.libraryVersion
+                    if (libraryId == LibraryType.MINECRAFT.patchId) continue
+                    if (AndroidUtils.hasStringId(
+                            this@MainActivity,
+                            "install_installer_" + libraryId.replace("-", "_")
+                        )
+                    ) {
+                        libraries.append(", ").append(
+                            AndroidUtils.getLocalizedText(
+                                this@MainActivity,
+                                "install_installer_" + libraryId.replace("-", "_")
+                            )
+                        )
+                        if (libraryVersion != null) libraries.append(": ").append(
+                            libraryVersion.replace(
+                                "(?i)$libraryId".toRegex(), ""
+                            )
+                        )
+                    }
+                }
+                val drawable = profile.repository.getVersionIconImage(version)
+                withContext(Dispatchers.Main) {
+                    isVersionLoading = false
+                    binding.versionProgress.visibility = View.GONE
+                    binding.versionName.text = version
+                    binding.versionName.isSelected = true
+                    binding.icon.setBackgroundDrawable(drawable)
+                }
+            }
+        } else {
+            isVersionLoading = false
+            binding.versionProgress.visibility = View.GONE
+            binding.versionName.text = getString(R.string.version_no_version)
+            binding.icon.setBackgroundDrawable(
+                AppCompatResources.getDrawable(
+                    this,
+                    R.drawable.img_grass
+                )
+            )
+        }
+    }
+
+    private fun setupVersionDisplay() {
+        holder.add(FXUtils.onWeakChangeAndOperate(Profiles.selectedVersionProperty()) { s: String? ->
+            lifecycleScope.launch { loadVersion(s) }
+        })
+    }
+
+    private fun accountSubtitle(context: Context, account: Account): ObservableValue<String> {
+        return if (account is AuthlibInjectorAccount) {
+            BindingMapping.of(account.server) { obj: AuthlibInjectorServer -> obj.name }
+        } else {
+            Bindings.createStringBinding({
+                Accounts.getLocalizedLoginTypeName(
+                    context,
+                    Accounts.getAccountFactory(account)
+                )
+            })
+        }
+    }
+
+    private fun updateColor() {
+        binding.apply {
+            start.background = createBackground()
+            createBackground().apply {
+                version.background = this
+                jar.background = this
+            }
+            version.backgroundTintList =
+                ColorStateList.valueOf(ThemeEngine.getInstance().theme.color2).apply {
+                    version.backgroundTintList = this
+                    jar.backgroundTintList = this
+                }
+            version.setTextColor(ThemeEngine.getInstance().theme.color2)
+            jar.setTextColor(ThemeEngine.getInstance().theme.color2)
+        }
+
+    }
+
+    private fun initBackground() {
+        theme = object : IntegerPropertyBase() {
+            override fun invalidated() {
+                get()
+                updateColor()
+            }
+
+            override fun getBean(): Any {
+                return this
+            }
+
+            override fun getName(): String {
+                return "theme"
+            }
+        }
+        theme2 = object : IntegerPropertyBase() {
+            override fun invalidated() {
+                get()
+                updateColor()
+            }
+
+            override fun getBean(): Any {
+                return this
+            }
+
+            override fun getName(): String {
+                return "theme2"
+            }
+        }
+        theme2Dark = object : IntegerPropertyBase() {
+            override fun invalidated() {
+                get()
+                updateColor()
+            }
+
+            override fun getBean(): Any {
+                return this
+            }
+
+            override fun getName(): String {
+                return "theme2Dark"
+            }
+        }
+        theme.bind(ThemeEngine.getInstance().theme.colorProperty())
+        theme2.bind(ThemeEngine.getInstance().theme.color2Property())
+        theme2Dark.bind(ThemeEngine.getInstance().theme.color2DarkProperty())
+    }
+
+    private fun createBackground(): GradientDrawable {
+        return GradientDrawable().apply {
+            setColor(Color.TRANSPARENT)
+            shape = GradientDrawable.RECTANGLE
+            cornerRadius = ConvertUtils.dip2px(this@MainActivity, 8f).toFloat()
+            setStroke(
+                ConvertUtils.dip2px(this@MainActivity, 1f),
+                ThemeEngine.getInstance().theme.color2
+            )
+        }
+    }
+
+    private fun playAnim() {
+        binding.apply {
+            val speed = ThemeEngine.getInstance().theme.animationSpeed
+            AnimUtil.playTranslationX(
+                listOf(leftMenu),
+                speed * 100L,
+                -100f,
+                0f
+            ).forEach {
+                it.interpolator(BounceInterpolator()).start()
+            }
+            AnimUtil.playTranslationX(
+                listOf(rightMenu),
+                speed * 100L,
+                100f,
+                0f
+            ).forEach {
+                it.interpolator(BounceInterpolator()).start()
+            }
+            AnimUtil.playTranslationY(
+                listOf(start, version, jar),
+                speed * 100L,
+                -200f,
+                0f
+            ).forEachIndexed { index, objectAnimator ->
+                objectAnimator.interpolator(BounceInterpolator()).startAfter((index + 1) * 100L)
+            }
+            AnimUtil.playTranslationY(
+                listOf(homePage, home, manage, download, controller, multiplayer, setting, back),
+                speed * 100L,
+                -300f,
+                0f
+            ).forEachIndexed { index, objectAnimator ->
+                objectAnimator.interpolator(BounceInterpolator()).startAfter((index + 1) * 100L)
+            }
+            AnimUtil.playTranslationX(
+                listOf(homePage, home, manage, download, controller, multiplayer, setting, back),
+                speed * 100L,
+                -100f,
+                0f
+            ).forEachIndexed { index, objectAnimator ->
+                objectAnimator.interpolator(BounceInterpolator()).startAfter((index + 1) * 100L)
+            }
+        }
+    }
+
+    private fun shareLog() {
+        try {
+            val file = File(FCLPath.LOG_DIR).resolve("latest_game.log")
+            if (!file.exists()) return
+            val intent = Intent(Intent.ACTION_SEND)
+
+            val uri = FileProvider.getUriForFile(
+                this,
+                "${application.packageName}.provider",
+                file
+            )
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_STREAM, uri)
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            startActivity(
+                Intent.createChooser(
+                    intent,
+                    getString(com.tungsten.hfcl.R.string.crash_reporter_share)
+                )
+            )
+        } catch (e: Exception) {
+            LOG.log(Level.INFO, "Share error: $e")
+        }
+    }
+
+    fun checkNotificationPermission(): Boolean {
+        return if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            true
+        } else {
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_DENIED
+        }
+    }
+
+    fun requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU || !ActivityCompat.shouldShowRequestPermissionRationale(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            )
+        ) {
+            try {
+                val intent = Intent()
+                intent.action = Settings.ACTION_APP_NOTIFICATION_SETTINGS
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, applicationInfo.uid)
+                startActivity(intent)
+            } catch (_: Exception) {
+                val intent = Intent()
+                intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+                intent.data = Uri.fromParts("package", packageName, null)
+                startActivity(intent)
+            }
+        } else {
+            permissionResultLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    }
+
+    fun shouldPlayVideo(): Boolean {
+        return File(FCLPath.LIVE_BACKGROUND_PATH).exists()
+    }
+
+    fun setupLiveBackground() {
+        if (shouldPlayVideo()) {
+            binding.videoView.visibility = View.VISIBLE
+            binding.videoView.setVideoPath(FCLPath.LIVE_BACKGROUND_PATH)
+            binding.videoView.setOnPreparedListener {
+                mediaPlayer = it
+                it.isLooping = true
+                setLiveBackgroundVolume()
+                binding.videoView.start()
+            }
+            binding.videoView.setOnCompletionListener {
+                binding.videoView.seekTo(0)
+                binding.videoView.start()
+            }
+            binding.videoView.setOnErrorListener { _, _, _ ->
+                mediaPlayer = null
+                return@setOnErrorListener true
+            }
+        } else {
+            mediaPlayer = null
+            binding.videoView.visibility = View.GONE
+            binding.videoView.stopPlayback()
+        }
+    }
+
+    fun setLiveBackgroundVolume() {
+        mediaPlayer?.let {
+            val volume = sharedPreferences.getInt("videoBackgroundVolume", 100) / 100f
+            it.setVolume(volume, volume)
+        }
+    }
+
+    private fun handleModpack(intent: Intent) {
+        val path = intent.getStringExtra("modpack_cache_path") ?: return
+        modpackHandled = true
+        val file = File(path)
+        if (!file.exists()) return
+        Toast.makeText(
+            this,
+            getString(R.string.modpack_external_detected, file.name),
+            Toast.LENGTH_SHORT
+        ).show()
+        binding.download.isSelected = true
+        val downloadUI = uiManager.downloadUI
+        downloadUI.runAfterInit {
+            val page = LocalModpackPage(
+                this,
+                PageManager.PAGE_ID_TEMP,
+                downloadUI.container,
+                R.layout.page_modpack,
+                profile,
+                null,
+                file
+            )
+            downloadUI.pageManager.showTempPage(page)
+        }
+    }
+
+    private fun refreshScreenSize() {
+        DisplayUtil.screenWidth = binding.root.width
+        DisplayUtil.screenHeight = binding.root.height
+    }
+}

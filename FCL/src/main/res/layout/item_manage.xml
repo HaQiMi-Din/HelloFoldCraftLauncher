@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

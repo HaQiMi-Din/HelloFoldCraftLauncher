@@ -6,7 +6,7 @@
     android:paddingStart="10dp"
     android:paddingEnd="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/warning"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.tungsten.fcllibrary.component.view.FCLCheckBox
+            <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                 android:id="@+id/enabled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
                 android:text="@string/enabled"
                 app:auto_hint_tint="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLCheckBox
+            <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                 android:id="@+id/disabled"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,20 +57,20 @@
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/normal_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/add"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/mods_add"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/check_update_all"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                     android:text="@string/mods_check_updates"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/refresh"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,16 +86,16 @@
                     android:text="@string/action_refresh"
                     app:ripple="true" />
 
-            </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+            </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/selected_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/check_update"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -103,7 +103,7 @@
                     android:text="@string/mods_check_updates"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/delete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                     android:text="@string/button_remove"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/select_all"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
                     android:text="@string/button_select_all"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/select_invert"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -127,7 +127,7 @@
                     android:text="@string/button_select_invert"
                     app:ripple="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLButton
+                <com.tungsten.hfcllibrary.component.view.FCLButton
                     android:id="@+id/cancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                     android:text="@string/button_cancel"
                     app:ripple="true" />
 
-            </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+            </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -164,7 +164,7 @@
                 android:padding="5dp"
                 app:layout_scrollFlags="scroll|enterAlways|snap">
 
-                <com.tungsten.fcllibrary.component.view.FCLEditText
+                <com.tungsten.hfcllibrary.component.view.FCLEditText
                     android:id="@+id/search_filter"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -180,7 +180,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.tungsten.fcllibrary.component.view.FCLProgressBar
+            <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                 android:id="@+id/progress"
                 android:layout_width="match_parent"
                 android:layout_height="3dp"

@@ -1,0 +1,101 @@
+package com.tungsten.hfcl.ui.manage;
+
+import static com.tungsten.hfclcore.util.StringUtils.parseColorEscapes;
+import static com.tungsten.hfcllibrary.util.LocaleUtils.formatDateTime;
+
+import android.app.Activity;
+import android.content.Context;
+
+import com.tungsten.hfcl.R;
+import com.tungsten.hfcl.activity.MainActivity;
+import com.tungsten.hfcl.ui.PageManager;
+import com.tungsten.hfcl.util.AndroidUtils;
+import com.tungsten.hfclcore.fakefx.beans.property.SimpleStringProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.StringProperty;
+import com.tungsten.hfclcore.game.World;
+import com.tungsten.hfclcore.util.io.FileUtils;
+import com.tungsten.hfclcore.util.versioning.VersionNumber;
+import com.tungsten.hfcllibrary.component.dialog.FCLAlertDialog;
+import com.tungsten.hfcllibrary.component.view.FCLUILayout;
+
+import java.time.Instant;
+
+public class WorldListItem {
+    private final Context context;
+    private final Activity activity;
+    private final FCLUILayout parent;
+    private final StringProperty title = new SimpleStringProperty();
+    private final StringProperty subtitle = new SimpleStringProperty();
+    private final World world;
+
+    public WorldListItem(Context context, Activity activity, FCLUILayout parent, World world) {
+        this.context = context;
+
+        this.activity = activity;
+
+        this.parent = parent;
+
+        this.world = world;
+
+        title.set(parseColorEscapes(world.getWorldName()));
+
+        subtitle.set(AndroidUtils.getLocalizedText(context, "world_description", world.getFileName(), formatDateTime(context, Instant.ofEpochMilli(world.getLastPlayed())), world.getGameVersion() == null ? context.getString(R.string.message_unknown) : world.getGameVersion()));
+    }
+
+    public StringProperty titleProperty() {
+        return title;
+    }
+
+    public StringProperty subtitleProperty() {
+        return subtitle;
+    }
+
+    public void export() {
+        MainActivity.getInstance().fileLauncher.launchSingleSelection(null, null, true, files -> {
+            if (files == null) return;
+            WorldExportDialog dialog = new WorldExportDialog(context, world, files.get(0));
+            dialog.show();
+        });
+    }
+
+    public void manageDatapacks() {
+        if (world.getGameVersion() == null || // old game will not write game version to level.dat
+                (VersionNumber.isIntVersionNumber(world.getGameVersion()) // we don't parse snapshot version
+                        && VersionNumber.asVersion(world.getGameVersion()).compareTo(VersionNumber.asVersion("1.13")) < 0)) {
+            FCLAlertDialog.Builder builder = new FCLAlertDialog.Builder(context);
+            builder.setCancelable(false);
+            builder.setAlertLevel(FCLAlertDialog.AlertLevel.INFO);
+            builder.setMessage(context.getString(R.string.world_datapack_1_13));
+            builder.setNegativeButton(context.getString(com.tungsten.hfcl.R.string.dialog_positive), null);
+            builder.create().show();
+            return;
+        }
+        DatapackListPage page = new DatapackListPage(context, PageManager.PAGE_ID_TEMP, parent, R.layout.page_datapack_list, world.getWorldName(), world.getFile());
+        ManagePageManager.getInstance().showTempPage(page);
+    }
+
+    public void showInfo() {
+        try {
+            WorldInfoPage page = new WorldInfoPage(context, PageManager.PAGE_ID_TEMP, parent, R.layout.page_manage_world_info, world);
+            ManagePageManager.getInstance().showTempPage(page);
+        } catch (Exception e) {
+            // TODO
+        }
+    }
+
+    public void delete() {
+        new FCLAlertDialog.Builder(context)
+                .setMessage(context.getString(R.string.version_manage_remove_confirm, world.getWorldName()))
+                .setPositiveButton(() -> {
+                    try {
+                        FileUtils.forceDelete(world.getFile().toFile());
+                    } catch (Exception ignore) {
+                    }
+                    WorldListPage page = (WorldListPage) ManagePageManager.getInstance().getPageById(ManagePageManager.PAGE_ID_MANAGE_WORLD);
+                    page.refresh();
+                })
+                .setNegativeButton(null)
+                .create()
+                .show();
+    }
+}

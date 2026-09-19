@@ -5,7 +5,7 @@
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:text="@string/account_login_refresh"
         android:singleLine="true"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/account_login_refresh_microsoft_hint"
@@ -39,7 +39,7 @@
 
     </ScrollView>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/login"
         android:text="@string/account_login"
         android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/cancel"
         android:text="@string/dialog_negative"
         android:layout_width="wrap_content"

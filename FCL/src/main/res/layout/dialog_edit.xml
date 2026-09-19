@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:text="@string/edit"
         android:textSize="16sp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLEditText
+    <com.tungsten.hfcllibrary.component.view.FCLEditText
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:singleLine="true"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintBottom_toTopOf="@+id/positive"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/positive"
         android:text="@string/dialog_positive"
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/negative"
         android:text="@string/dialog_negative"
         android:layout_width="wrap_content"

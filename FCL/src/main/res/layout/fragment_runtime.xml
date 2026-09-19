@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -50,7 +50,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/lwjgl_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -58,7 +58,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/lwjgl_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -91,7 +91,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/cacio_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -99,7 +99,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/cacio_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -132,7 +132,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/cacio17_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -140,7 +140,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/cacio17_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,7 +162,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -173,7 +173,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/java8_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -181,7 +181,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/java8_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -203,7 +203,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -214,7 +214,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/java17_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -222,7 +222,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/java17_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,7 +244,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -255,7 +255,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/java21_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -263,7 +263,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/java21_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -285,7 +285,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -296,7 +296,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/java25_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -304,7 +304,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/java25_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -326,7 +326,7 @@
                 android:orientation="horizontal"
                 android:padding="10dp">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -337,7 +337,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1" />
 
-                <com.tungsten.fcllibrary.component.view.FCLProgressBar
+                <com.tungsten.hfcllibrary.component.view.FCLProgressBar
                     android:id="@+id/jna_progress"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -345,7 +345,7 @@
                     android:layout_marginStart="10dp"
                     android:visibility="gone" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageView
+                <com.tungsten.hfcllibrary.component.view.FCLImageView
                     android:id="@+id/jna_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -369,7 +369,7 @@
         app:layout_constraintStart_toEndOf="@id/runtime_parent"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -380,7 +380,7 @@
         app:layout_constraintStart_toEndOf="@id/split"
         app:layout_constraintTop_toBottomOf="@id/title" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/install"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tungsten.fcl.R
-import com.tungsten.fcl.databinding.ItemManageJavaBinding
-import com.tungsten.fclauncher.utils.FCLPath
-import com.tungsten.fclcore.game.JavaVersion
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.databinding.ItemManageJavaBinding
+import com.tungsten.hfclauncher.utils.FCLPath
+import com.tungsten.hfclcore.game.JavaVersion
 import java.io.File
 
 class ManageJavaItemAdapter(

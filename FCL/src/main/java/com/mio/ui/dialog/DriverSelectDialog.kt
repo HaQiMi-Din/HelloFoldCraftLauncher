@@ -5,14 +5,14 @@ import android.graphics.Point
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ArrayAdapter
-import com.tungsten.fcl.R
-import com.tungsten.fcl.databinding.DialogSelectRendererBinding
-import com.tungsten.fcl.setting.Profiles
-import com.tungsten.fclauncher.FCLConfig
-import com.tungsten.fclauncher.plugins.DriverPlugin
-import com.tungsten.fclauncher.plugins.RendererPlugin
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
-import com.tungsten.fcllibrary.util.ConvertUtils
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.databinding.DialogSelectRendererBinding
+import com.tungsten.hfcl.setting.Profiles
+import com.tungsten.hfclauncher.FCLConfig
+import com.tungsten.hfclauncher.plugins.DriverPlugin
+import com.tungsten.hfclauncher.plugins.RendererPlugin
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcllibrary.util.ConvertUtils
 import java.util.function.Consumer
 
 class DriverSelectDialog(

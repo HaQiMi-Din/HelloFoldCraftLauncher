@@ -17,7 +17,7 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/archive_name"
@@ -25,7 +25,7 @@
             app:auto_text_tint="true"
             android:layout_gravity="center"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLEditText
+        <com.tungsten.hfcllibrary.component.view.FCLEditText
             android:textSize="14sp"
             app:auto_edit_tint="true"
             android:layout_marginStart="10dp"
@@ -36,7 +36,7 @@
             android:singleLine="true"
             android:id="@+id/edit"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

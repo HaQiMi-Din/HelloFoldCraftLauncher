@@ -23,8 +23,8 @@ import android.view.inputmethod.InputContentInfo
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.getSystemService
 import androidx.core.view.inputmethod.EditorInfoCompat
-import com.tungsten.fcl.control.FCLInput
-import com.tungsten.fclauncher.keycodes.FCLKeycodes
+import com.tungsten.hfcl.control.FCLInput
+import com.tungsten.hfclauncher.keycodes.FCLKeycodes
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow

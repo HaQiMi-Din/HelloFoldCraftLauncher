@@ -8,7 +8,7 @@ import android.system.Os
 import android.util.SparseArray
 import android.util.SparseIntArray
 import android.view.MotionEvent
-import com.tungsten.fclcore.util.Logging
+import com.tungsten.hfclcore.util.Logging
 import top.fifthlight.touchcontroller.proxy.client.LauncherProxyClient
 import top.fifthlight.touchcontroller.proxy.client.LauncherProxyClient.VibrationHandler
 import top.fifthlight.touchcontroller.proxy.client.PlatformCapability

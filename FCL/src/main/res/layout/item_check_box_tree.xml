@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
         android:paddingEnd="10dp"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/switch_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,14 +22,14 @@
             app:auto_tint="true"
             app:no_padding="true"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLCheckBox
+        <com.tungsten.hfcllibrary.component.view.FCLCheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:id="@+id/check"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -38,7 +38,7 @@
             android:layout_gravity="center"
             app:auto_text_tint="true"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -47,7 +47,7 @@
             android:layout_gravity="center"
             app:auto_text_tint="true"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
     <ListView
         android:layout_marginTop="1px"

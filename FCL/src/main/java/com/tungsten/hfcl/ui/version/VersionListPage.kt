@@ -1,0 +1,243 @@
+package com.tungsten.hfcl.ui.version
+
+import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
+import android.view.View
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.JsonParseException
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.activity.MainActivity
+import com.tungsten.hfcl.databinding.PageVersionListBinding
+import com.tungsten.hfcl.setting.Profile
+import com.tungsten.hfcl.setting.Profiles.getSelectedProfile
+import com.tungsten.hfcl.setting.Profiles.profiles
+import com.tungsten.hfcl.setting.Profiles.registerVersionsListener
+import com.tungsten.hfcl.util.AndroidUtils
+import com.tungsten.hfclcore.download.LibraryAnalyzer
+import com.tungsten.hfclcore.fakefx.beans.binding.Bindings
+import com.tungsten.hfclcore.game.Version
+import com.tungsten.hfclcore.mod.ModpackConfiguration
+import com.tungsten.hfclcore.task.Task
+import com.tungsten.hfclcore.util.Logging
+import com.tungsten.hfcllibrary.component.ui.FCLCommonPage
+import com.tungsten.hfcllibrary.component.view.FCLUILayout
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.IOException
+import java.util.Locale
+import java.util.logging.Level
+import java.util.stream.Collectors
+
+class VersionListPage(context: Context?, id: Int, parent: FCLUILayout?, resId: Int) :
+    FCLCommonPage(context, id, parent, resId), View.OnClickListener {
+    private lateinit var binding: PageVersionListBinding
+    private var adapter: VersionListAdapter? = null
+    private lateinit var children: MutableList<VersionListItem>
+    private var textWatcher: TextWatcher? = null
+
+    override fun onCreate() {
+        super.onCreate()
+        binding = PageVersionListBinding.bind(contentView)
+        binding.refresh.setOnClickListener(this)
+        binding.newProfile.setOnClickListener(this)
+        registerVersionsListener { loadVersions(it) }
+        refreshProfile()
+        textWatcher = object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                val text = s.toString()
+                adapter?.updateVersionList(if (text.isEmpty()) children else children.filter {
+                    it.version.lowercase(
+                        Locale.getDefault()
+                    ).contains(text.lowercase(Locale.getDefault()))
+                })
+            }
+        }
+        binding.category.setOnCheckedChangeListener { _, i ->
+            when (i) {
+                R.id.all -> {
+                    adapter?.updateVersionList(children)
+                }
+
+                R.id.fabric -> {
+                    adapter?.updateVersionList(
+                        children.filter {
+                            it.libraries.split(",").find { lib ->
+                                lib.contains(":") && lib.contains("Fabric")
+                            } != null
+                        }
+                    )
+                }
+
+                R.id.forge -> {
+                    adapter?.updateVersionList(
+                        children.filter {
+                            it.libraries.split(",").find { lib ->
+                                lib.contains(":") && lib.contains("Forge") && !lib.contains("NeoForge")
+                            } != null
+                        }
+                    )
+                }
+
+                R.id.neoforge -> {
+                    adapter?.updateVersionList(
+                        children.filter {
+                            it.libraries.split(",").find { lib ->
+                                lib.contains(":") && lib.contains("NeoForge")
+                            } != null
+                        }
+                    )
+                }
+
+                R.id.other -> {
+                    adapter?.updateVersionList(
+                        children.filter {
+                            it.libraries.split(",").none { lib ->
+                                lib.contains("Fabric") || lib.contains("Forge") || lib.contains("NeoForge")
+                            }
+                        }
+                    )
+                }
+
+            }
+        }
+    }
+
+    override fun refresh(vararg param: Any?): Task<*>? {
+        return Task.runAsync {}
+    }
+
+    fun refreshProfile() {
+        val adapter = ProfileListAdapter(context, profiles)
+        binding.profileList.adapter = adapter
+    }
+
+    private fun loadVersions(profile: Profile) {
+        MainActivity.getInstance().lifecycleScope.launch {
+            binding.category.check(R.id.all)
+            binding.search.removeTextChangedListener(textWatcher)
+            binding.search.setText("")
+            binding.refresh.isEnabled = false
+            binding.layout.visibility = View.GONE
+            binding.progress.visibility = View.VISIBLE
+        }
+        val repository = profile.repository
+        MainActivity.getInstance().lifecycleScope.launch {
+            if (profile == getSelectedProfile()) {
+                children = withContext(Dispatchers.IO) {
+                    repository.displayVersions
+                        .parallel()
+                        .map { version: Version ->
+                            val game = profile.repository.getGameVersion(version.id)
+                            val libraries =
+                                StringBuilder(game.orElse(context.getString(R.string.message_unknown)))
+                            val analyzer = LibraryAnalyzer.analyze(
+                                profile.repository.getResolvedPreservingPatchesVersion(
+                                    version.id
+                                ), game.orElse(null)
+                            )
+                            for (mark in analyzer) {
+                                val libraryId = mark.libraryId
+                                val libraryVersion = mark.libraryVersion
+                                if (libraryId == LibraryAnalyzer.LibraryType.MINECRAFT.patchId) continue
+                                if (AndroidUtils.hasStringId(
+                                        context,
+                                        "install_installer_" + libraryId.replace("-", "_")
+                                    )
+                                ) {
+                                    libraries.append(", ").append(
+                                        AndroidUtils.getLocalizedText(
+                                            context,
+                                            "install_installer_" + libraryId.replace("-", "_")
+                                        )
+                                    )
+                                    if (libraryVersion != null) libraries.append(": ").append(
+                                        libraryVersion.replace(
+                                            ("(?i)$libraryId").toRegex(),
+                                            ""
+                                        )
+                                    )
+                                }
+                            }
+                            var tag: String? = null
+                            try {
+                                val config: ModpackConfiguration<*>? =
+                                    profile.repository.readModpackConfiguration<Any?>(
+                                        version.id
+                                    )
+                                if (config != null) tag = config.version
+                            } catch (e: IOException) {
+                                Logging.LOG.log(
+                                    Level.WARNING,
+                                    "Failed to read modpack configuration from $version",
+                                    e
+                                )
+                            } catch (e: JsonParseException) {
+                                Logging.LOG.log(
+                                    Level.WARNING,
+                                    "Failed to read modpack configuration from $version",
+                                    e
+                                )
+                            }
+                            return@map VersionListItem(
+                                profile,
+                                version.id,
+                                libraries.toString(),
+                                tag,
+                                repository.getVersionIconImage(version.id)
+                            )
+                        }
+                        .collect(Collectors.toList())
+                }
+                if (profile == getSelectedProfile()) {
+                    if (adapter == null) {
+                        adapter = VersionListAdapter(
+                            context,
+                            children
+                        )
+                        binding.versionList.adapter = adapter
+                        binding.versionList.layoutManager = LinearLayoutManager(context)
+                    } else {
+                        adapter!!.updateVersionList(children)
+                    }
+                    binding.refresh.isEnabled = true
+                    if (children.isNotEmpty()) {
+                        binding.layout.visibility = View.VISIBLE
+                    }
+                    binding.progress.visibility = View.GONE
+                    binding.search.addTextChangedListener(textWatcher)
+                    val selected = children.find { it.selectedProperty().get() }
+                    if (selected != null) {
+                        binding.versionList.scrollToPosition(children.indexOf(selected))
+                    }
+                }
+                children.forEach {
+                    it.selectedProperty().bind(
+                        Bindings.createBooleanBinding({
+                            profile.selectedVersionProperty().get() == it.version
+                        }, profile.selectedVersionProperty())
+                    )
+                }
+            }
+        }
+    }
+
+    override fun onClick(view: View?) {
+        if (view === binding.refresh) {
+            getSelectedProfile().repository.refreshVersionsAsync().start()
+        }
+        if (view === binding.newProfile) {
+            val dialog = AddProfileDialog(context)
+            dialog.show()
+        }
+    }
+}

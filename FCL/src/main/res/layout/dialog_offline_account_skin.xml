@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:padding="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.skin.SkinViewer
+    <com.tungsten.hfcllibrary.skin.SkinViewer
         android:id="@+id/skin_view"
         android:focusableInTouchMode="false"
         android:focusable="false"
@@ -45,7 +45,7 @@
             android:orientation="vertical">
 
             <!-- Skin Model Selection -->
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -60,7 +60,7 @@
                 android:layout_marginTop="4dp"
                 android:orientation="horizontal">
 
-                <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                     android:id="@+id/model_classic"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                     android:text="@string/account_skin_model_classic"
                     app:text_use_theme_color="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                     android:id="@+id/model_slim"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -78,18 +78,18 @@
 
             </RadioGroup>
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/local_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+                <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -102,7 +102,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLImageButton
+                    <com.tungsten.hfcllibrary.component.view.FCLImageButton
                         android:id="@+id/skin_path"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -111,7 +111,7 @@
                         app:no_padding="true"
                         app:use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLImageButton
+                    <com.tungsten.hfcllibrary.component.view.FCLImageButton
                         android:id="@+id/skin_path_reset"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -121,9 +121,9 @@
                         app:no_padding="true"
                         app:use_theme_color="true" />
 
-                </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+                </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:id="@+id/skin_path_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -131,12 +131,12 @@
                     android:padding="10dp"
                     android:singleLine="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+                <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -149,7 +149,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLImageButton
+                    <com.tungsten.hfcllibrary.component.view.FCLImageButton
                         android:id="@+id/cape_path"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -158,7 +158,7 @@
                         app:no_padding="true"
                         app:use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLImageButton
+                    <com.tungsten.hfcllibrary.component.view.FCLImageButton
                         android:id="@+id/cape_path_reset"
                         android:layout_width="24dp"
                         android:layout_height="24dp"
@@ -168,9 +168,9 @@
                         app:no_padding="true"
                         app:use_theme_color="true" />
 
-                </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+                </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:id="@+id/cape_path_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -178,13 +178,13 @@
                     android:padding="10dp"
                     android:singleLine="true" />
 
-            </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+            </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/positive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/negative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

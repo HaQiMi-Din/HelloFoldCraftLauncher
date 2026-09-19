@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.tungsten.fcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tungsten.hfcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_auto_keep"
@@ -23,21 +23,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/auto_keep"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_auto_click"
@@ -49,21 +49,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/auto_click"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_open_menu"
@@ -75,21 +75,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/open_menu"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_touch_mode"
@@ -101,21 +101,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/touch_mode"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_mouse_mode"
@@ -127,21 +127,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/mouse_mode"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_input"
@@ -153,21 +153,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/input"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_quick_input"
@@ -179,21 +179,21 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLSwitch
+        <com.tungsten.hfcllibrary.component.view.FCLSwitch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/quick_input"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_output_text"
@@ -205,7 +205,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLEditText
+        <com.tungsten.hfcllibrary.component.view.FCLEditText
             android:singleLine="true"
             android:textSize="12sp"
             android:layout_width="200dp"
@@ -213,15 +213,15 @@
             android:layout_gravity="center"
             android:id="@+id/output_text"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_keycodes"
@@ -233,7 +233,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:auto_padding="false"
@@ -244,15 +244,15 @@
             android:id="@+id/keycode"
             android:text="@string/menu_control_set"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_button_event_bind_group"
@@ -264,7 +264,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:auto_padding="false"
@@ -275,6 +275,6 @@
             android:id="@+id/bind_group"
             android:text="@string/menu_control_set"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-</com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+</com.tungsten.hfcllibrary.component.view.FCLLinearLayout>

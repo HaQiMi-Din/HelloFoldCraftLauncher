@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/account_methods_microsoft_hint"

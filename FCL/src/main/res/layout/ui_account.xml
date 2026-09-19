@@ -14,7 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.3">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -24,7 +24,7 @@
             android:textSize="11sp"
             app:use_theme_color="true" />
 
-        <com.tungsten.fcllibrary.component.view.FCLView
+        <com.tungsten.hfcllibrary.component.view.FCLView
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginStart="10dp"
@@ -44,14 +44,14 @@
             android:padding="10dp"
             android:stateListAnimator="@xml/anim_scale">
 
-            <com.tungsten.fcllibrary.component.view.FCLImageView
+            <com.tungsten.hfcllibrary.component.view.FCLImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_person_add_24"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -73,14 +73,14 @@
             android:padding="10dp"
             android:stateListAnimator="@xml/anim_scale">
 
-            <com.tungsten.fcllibrary.component.view.FCLImageView
+            <com.tungsten.hfcllibrary.component.view.FCLImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_microsoft_24"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -110,14 +110,14 @@
             android:padding="10dp"
             android:stateListAnimator="@xml/anim_scale">
 
-            <com.tungsten.fcllibrary.component.view.FCLImageView
+            <com.tungsten.hfcllibrary.component.view.FCLImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_add_24"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

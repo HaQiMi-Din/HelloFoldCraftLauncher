@@ -1,0 +1,106 @@
+package com.tungsten.hfcl.control.data;
+
+import static com.tungsten.hfcl.util.FXUtils.onInvalidating;
+import static com.tungsten.hfclcore.fakefx.collections.FXCollections.observableArrayList;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+import com.tungsten.hfclauncher.utils.FCLPath;
+import com.tungsten.hfclcore.fakefx.beans.property.ReadOnlyListProperty;
+import com.tungsten.hfclcore.fakefx.beans.property.ReadOnlyListWrapper;
+import com.tungsten.hfclcore.fakefx.collections.ObservableList;
+import com.tungsten.hfclcore.util.Logging;
+import com.tungsten.hfclcore.util.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+
+public class QuickInputTexts {
+
+    private QuickInputTexts() {
+    }
+
+    private static final ObservableList<String> inputTexts = observableArrayList(new ArrayList<>());
+    private static final ReadOnlyListWrapper<String> inputTextsWrapper = new ReadOnlyListWrapper<>(inputTexts);
+
+    /**
+     * True if {@link #init()} hasn't been called.
+     */
+    private static boolean initialized = false;
+
+    public static boolean isInitialized() {
+        return initialized;
+    }
+
+    private static void updateInputTextsStorages() {
+        // don't update the underlying storage before data loading is completed
+        // otherwise it might cause data loss
+        if (!initialized)
+            return;
+        // update storage
+        saveInputTexts();
+    }
+
+    static {
+        inputTexts.addListener(onInvalidating(QuickInputTexts::updateInputTextsStorages));
+    }
+
+    public static void init() {
+        if (initialized)
+            throw new IllegalStateException("Already initialized");
+
+        inputTexts.addAll(getInputTextsFromDisk());
+
+        initialized = true;
+    }
+
+    private static ArrayList<String> getInputTextsFromDisk() {
+        try {
+            File file = new File(FCLPath.CONTROLLER_DIR + "/input/input_text.json");
+            if (file.exists()) {
+                String json = FileUtils.readText(file);
+                Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+                return gson.fromJson(json, new TypeToken<ArrayList<String>>() {
+                }.getType());
+            }
+        } catch (IOException e) {
+            Logging.LOG.log(Level.SEVERE, "Failed to get quick input text", e);
+        } catch (JsonSyntaxException e) {
+            new File(FCLPath.CONTROLLER_DIR + "/input/input_text.json").delete();
+        }
+        return new ArrayList<>();
+    }
+
+    public static ObservableList<String> getInputTexts() {
+        return inputTexts;
+    }
+
+    public static ReadOnlyListProperty<String> inputTextsProperty() {
+        return inputTextsWrapper.getReadOnlyProperty();
+    }
+
+    public static void saveInputTexts() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+        String json = gson.toJson(new ArrayList<>(inputTexts));
+        try {
+            FileUtils.writeText(new File(FCLPath.CONTROLLER_DIR + "/input/input_text.json"), json);
+        } catch (IOException e) {
+            Logging.LOG.log(Level.SEVERE, "Failed to save quick input text", e);
+        }
+    }
+
+    public static void addInputText(String inputText) {
+        if (!initialized) return;
+        inputTexts.add(inputText);
+    }
+
+    public static void removeInputText(String inputText) {
+        if (!initialized) return;
+        inputTexts.remove(inputText);
+    }
+
+}

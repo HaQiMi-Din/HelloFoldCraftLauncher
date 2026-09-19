@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.tungsten.fcllibrary.component.view.FCLProgressBar
+    <com.tungsten.hfcllibrary.component.view.FCLProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/next"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         app:ripple="true"
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/next"

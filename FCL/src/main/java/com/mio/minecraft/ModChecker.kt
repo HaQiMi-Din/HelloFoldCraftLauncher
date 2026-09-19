@@ -3,13 +3,13 @@ package com.mio.minecraft
 import android.content.Context
 import com.mio.manager.RendererManager
 import com.mio.util.getElfArchFromZip
-import com.tungsten.fcl.R
-import com.tungsten.fclauncher.bridge.FCLBridge
-import com.tungsten.fclauncher.plugins.FFmpegPlugin
-import com.tungsten.fclauncher.plugins.NativeLibPlugin
-import com.tungsten.fclauncher.utils.Architecture
-import com.tungsten.fclcore.mod.LocalModFile
-import com.tungsten.fclcore.util.versioning.GameVersionNumber
+import com.tungsten.hfcl.R
+import com.tungsten.hfclauncher.bridge.FCLBridge
+import com.tungsten.hfclauncher.plugins.FFmpegPlugin
+import com.tungsten.hfclauncher.plugins.NativeLibPlugin
+import com.tungsten.hfclauncher.utils.Architecture
+import com.tungsten.hfclcore.mod.LocalModFile
+import com.tungsten.hfclcore.util.versioning.GameVersionNumber
 
 class ModChecker(val context: Context, val version: String) {
     @Throws(ModCheckException::class)

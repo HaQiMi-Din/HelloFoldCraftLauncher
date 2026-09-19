@@ -5,7 +5,7 @@
     android:paddingBottom="8dp"
     android:layout_height="wrap_content">
 
-    <com.tungsten.fcllibrary.component.view.FCLConstraintLayout
+    <com.tungsten.hfcllibrary.component.view.FCLConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_container_white"
@@ -15,7 +15,7 @@
         app:auto_tint="true"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLRadioButton
+        <com.tungsten.hfcllibrary.component.view.FCLRadioButton
             android:id="@+id/radio_button"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:id="@+id/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
                     android:singleLine="true"
                     app:auto_text_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:id="@+id/tag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
             app:layout_constraintVertical_bias="0.5"
             android:visibility="gone"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -108,6 +108,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
 
-    </com.tungsten.fcllibrary.component.view.FCLConstraintLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

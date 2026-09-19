@@ -32,7 +32,7 @@
         android:anyDensity="true" />
 
     <application
-        android:name=".FCLApplication"
+        android:name=".HFCLApplication"
         android:allowBackup="true"
         android:allowNativeHeapPointerTagging="false"
         android:appCategory="game"
@@ -47,7 +47,7 @@
         android:preserveLegacyExternalStorage="true"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoldCraftLauncher"
+        android:theme="@style/Theme.HelloFoldCraftLauncher"
         android:usesCleartextTraffic="true"
         tools:ignore="DiscouragedApi"
         tools:targetApi="33">
@@ -105,9 +105,8 @@
         <activity
             android:name=".activity.ShellActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
-            android:screenOrientation="sensorPortrait"
-            android:windowSoftInputMode="adjustResize"
-            tools:ignore="LockedOrientationActivity" />
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.JVMActivity"
             android:alwaysRetainTaskState="true"
@@ -118,17 +117,17 @@
             android:name=".activity.JVMCrashActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
             android:process=":crash"
-            android:screenOrientation="sensor" />
+            android:screenOrientation="sensorLandscape" />
         <activity
-            android:name="com.tungsten.fcllibrary.browser.FileBrowserActivity"
+            android:name="com.tungsten.hfcllibrary.browser.FileBrowserActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
             android:screenOrientation="sensorLandscape" />
         <activity
-            android:name="com.tungsten.fcllibrary.crash.CrashReportActivity"
+            android:name="com.tungsten.hfcllibrary.crash.CrashReportActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|keyboard|navigation"
-            android:screenOrientation="sensor" />
+            android:screenOrientation="sensorLandscape" />
         <service
-            android:name="com.tungsten.fclcore.download.ProcessService"
+            android:name="com.tungsten.hfclcore.download.ProcessService"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="dataSync"
@@ -163,7 +162,7 @@
                 android:resource="@xml/provider_paths" />
         </provider>
         <provider
-            android:name="com.tungsten.fcllibrary.crash.CrashReporterInitProvider"
+            android:name="com.tungsten.hfcllibrary.crash.CrashReporterInitProvider"
             android:authorities="${applicationId}.crashreporterinitprovider"
             android:exported="false"
             android:initOrder="101" />

@@ -29,7 +29,7 @@ __attribute__((constructor)) void env_init() {
     __android_log_print(ANDROID_LOG_INFO, "Environ", "%p", fcl);
 }
 
-JNIEXPORT void JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_setFCLBridge(JNIEnv *env, jobject thiz, jobject fcl_bridge) {
+JNIEXPORT void JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_setFCLBridge(JNIEnv *env, jobject thiz, jobject fcl_bridge) {
     fcl->object_FCLBridge = (jclass)(*env)->NewGlobalRef(env, thiz);
 }
 
@@ -42,9 +42,9 @@ JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* reserved) {
             FCL_INTERNAL_LOG("Failed to attach thread to JavaVM.");
             abort();
         }
-        jclass class_FCLBridge = (*env)->FindClass(env, "com/tungsten/fclauncher/bridge/FCLBridge");
+        jclass class_FCLBridge = (*env)->FindClass(env, "com/tungsten/hfclauncher/bridge/FCLBridge");
         if (class_FCLBridge == 0) {
-            FCL_INTERNAL_LOG("Failed to find class: com/tungsten/fclauncher/bridge/FCLBridge.");
+            FCL_INTERNAL_LOG("Failed to find class: com/tungsten/hfclauncher/bridge/FCLBridge.");
             abort();
         }
         fcl->class_FCLBridge = (jclass)(*env)->NewGlobalRef(env, class_FCLBridge);

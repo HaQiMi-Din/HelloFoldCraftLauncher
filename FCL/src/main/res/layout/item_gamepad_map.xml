@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.component.view.FCLImageButton
+    <com.tungsten.hfcllibrary.component.view.FCLImageButton
         android:id="@+id/remap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

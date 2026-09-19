@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:stateListAnimator="@xml/anim_scale"
         app:auto_linear_background_tint="true">
 
-        <com.tungsten.fcllibrary.component.view.FCLImageView
+        <com.tungsten.hfcllibrary.component.view.FCLImageView
             android:id="@+id/icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -30,7 +30,7 @@
             android:layout_marginStart="10dp"
             android:orientation="vertical">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:textSize="14sp"
                 app:auto_text_tint="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -53,7 +53,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/remove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
             android:src="@drawable/ic_baseline_close_24"
             app:auto_tint="true" />
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,6 +71,6 @@
             android:src="@drawable/ic_baseline_arrow_forward_24"
             app:auto_tint="true" />
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

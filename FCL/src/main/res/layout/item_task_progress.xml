@@ -5,7 +5,7 @@
     android:paddingBottom="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +13,7 @@
         android:textSize="11sp"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLProgressBar
+    <com.tungsten.hfcllibrary.component.view.FCLProgressBar
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="3dp"
@@ -22,7 +22,7 @@
         android:indeterminateDrawable="@drawable/bg_progress_indeterminate"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/state"
         android:visibility="gone"
         android:layout_width="match_parent"

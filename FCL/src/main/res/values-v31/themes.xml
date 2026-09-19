@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.FoldCraftLauncher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.HelloFoldCraftLauncher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/default_theme_color</item>
         <item name="colorPrimaryVariant">@color/default_theme_color</item>
@@ -20,7 +20,7 @@
         <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
     </style>
 
-    <style name="Theme.Splash" parent="Theme.FoldCraftLauncher">
+    <style name="Theme.Splash" parent="Theme.HelloFoldCraftLauncher">
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
     </style>
 </resources>

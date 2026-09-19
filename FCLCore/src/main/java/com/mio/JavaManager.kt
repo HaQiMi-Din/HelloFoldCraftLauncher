@@ -1,9 +1,9 @@
 package com.mio
 
-import com.tungsten.fclauncher.utils.FCLPath
-import com.tungsten.fclcore.game.JavaVersion
-import com.tungsten.fclcore.game.Version
-import com.tungsten.fclcore.util.io.FileUtils
+import com.tungsten.hfclauncher.utils.FCLPath
+import com.tungsten.hfclcore.game.JavaVersion
+import com.tungsten.hfclcore.game.Version
+import com.tungsten.hfclcore.util.io.FileUtils
 import java.io.File
 
 object JavaManager {

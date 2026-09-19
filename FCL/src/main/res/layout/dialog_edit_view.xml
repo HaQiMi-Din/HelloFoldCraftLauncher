@@ -5,7 +5,7 @@
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:singleLine="true"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/body"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintBottom_toTopOf="@+id/positive">
 
-        <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+        <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:paddingStart="5dp"
@@ -37,7 +37,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <com.tungsten.fcllibrary.component.view.FCLImageButton
+                <com.tungsten.hfcllibrary.component.view.FCLImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/info"
@@ -52,7 +52,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <com.tungsten.fcllibrary.component.view.FCLImageButton
+                <com.tungsten.hfcllibrary.component.view.FCLImageButton
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:id="@+id/event"
@@ -62,22 +62,22 @@
 
             </RelativeLayout>
 
-        </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+        </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
         </ScrollView>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/clone"
         android:text="@string/edit_view_clone"
         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
         app:layout_constraintEnd_toStartOf="@id/delete"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/delete"
         android:text="@string/edit_view_delete"
         android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/positive"
         android:text="@string/dialog_positive"
         android:layout_width="wrap_content"
@@ -106,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/negative"
         android:text="@string/dialog_negative"
         android:layout_width="wrap_content"

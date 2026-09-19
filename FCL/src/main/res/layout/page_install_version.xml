@@ -19,7 +19,7 @@
             android:background="@drawable/bg_container_white"
             app:auto_tint="true">
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_scrollFlags="scroll|enterAlways|snap">
 
-                <com.tungsten.fcllibrary.component.view.FCLCheckBox
+                <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                     android:id="@+id/release"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                     android:text="@string/version_game_release"
                     app:auto_hint_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLCheckBox
+                <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                     android:id="@+id/snapshot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                     android:text="@string/version_game_snapshot"
                     app:auto_hint_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLCheckBox
+                <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                     android:id="@+id/old"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                     android:text="@string/version_game_old"
                     app:auto_hint_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLCheckBox
+                <com.tungsten.hfcllibrary.component.view.FCLCheckBox
                     android:id="@+id/april_fools"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                     android:text="@string/version_game_april_fools"
                     app:auto_hint_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLEditText
+                <com.tungsten.hfcllibrary.component.view.FCLEditText
                     android:id="@+id/search"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                     android:singleLine="true"
                     app:auto_edit_tint="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLImageButton
+                <com.tungsten.hfcllibrary.component.view.FCLImageButton
                     android:id="@+id/refresh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
                     android:src="@drawable/ic_baseline_refresh_24"
                     app:auto_tint="true" />
 
-            </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+            </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
         </com.mio.ui.widget.FCLAppBarLayout>
 
@@ -104,7 +104,7 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLProgressBar
+    <com.tungsten.hfcllibrary.component.view.FCLProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -114,7 +114,7 @@
         app:layout_constraintStart_toStartOf="@id/layout"
         app:layout_constraintTop_toTopOf="@id/layout" />
 
-    <com.tungsten.fcllibrary.component.view.FCLImageButton
+    <com.tungsten.hfcllibrary.component.view.FCLImageButton
         android:id="@+id/failed_refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

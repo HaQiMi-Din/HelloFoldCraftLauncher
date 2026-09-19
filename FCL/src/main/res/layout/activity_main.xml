@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
         <!-- 中间标题 -->
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:id="@+id/title_bar_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -98,7 +98,7 @@
                     android:focusable="true"
                     android:stateListAnimator="@xml/anim_button_press"
                     android:paddingBottom="@dimen/account_padding_bottom">
-                    <com.tungsten.fcllibrary.component.view.FCLImageView
+                    <com.tungsten.hfcllibrary.component.view.FCLImageView
                         android:id="@+id/avatar"
                         android:layout_width="@dimen/avatar_size"
                         android:layout_height="@dimen/avatar_size"
@@ -106,7 +106,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:id="@+id/account_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/avatar" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:id="@+id/account_hint"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -148,12 +148,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/home_page"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_home_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -178,12 +178,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/home"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_refresh_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -208,12 +208,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/manage"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_build_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -238,12 +238,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/download"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_cloud_download_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -268,12 +268,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/controller"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_videogame_asset_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -298,12 +298,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/multiplayer"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_outline_account_tree_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -328,12 +328,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/setting"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_settings_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -358,12 +358,12 @@
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/menu_item_padding_vertical"
                     android:paddingBottom="@dimen/menu_item_padding_vertical">
-                    <com.tungsten.fcllibrary.component.view.FCLMenuView
+                    <com.tungsten.hfcllibrary.component.view.FCLMenuView
                         android:id="@+id/back"
                         android:layout_width="@dimen/menu_icon_size"
                         android:layout_height="@dimen/menu_icon_size"
                         android:src="@drawable/ic_baseline_arrow_back_24" />
-                    <com.tungsten.fcllibrary.component.view.FCLTextView
+                    <com.tungsten.hfcllibrary.component.view.FCLTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/menu_icon_margin_start"
@@ -382,12 +382,12 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone" />
-    <com.tungsten.fcllibrary.component.view.FCLDynamicIsland
+    <com.tungsten.hfcllibrary.component.view.FCLDynamicIsland
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone" />
-    <com.tungsten.fcllibrary.component.view.FCLUILayout
+    <com.tungsten.hfcllibrary.component.view.FCLUILayout
         android:id="@+id/ui_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -419,7 +419,7 @@
             app:layout_constraintEnd_toStartOf="@id/go_setting"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -427,7 +427,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="@dimen/start_button_text_size"
                 android:textStyle="bold" />
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/version_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -436,7 +436,7 @@
                 android:textSize="@dimen/version_name_text_size"
                 tools:text=" " />
         </LinearLayout>
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/go_setting"
             android:layout_width="@dimen/go_setting_button_size"
             android:layout_height="@dimen/go_setting_button_size"
@@ -445,12 +445,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        <com.tungsten.fcllibrary.component.view.FCLImageView
+        <com.tungsten.hfcllibrary.component.view.FCLImageView
             android:id="@+id/icon"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:visibility="gone" />
-        <com.tungsten.fcllibrary.component.view.FCLProgressBar
+        <com.tungsten.hfcllibrary.component.view.FCLProgressBar
             android:id="@+id/version_progress"
             android:layout_width="0dp"
             android:layout_height="0dp"

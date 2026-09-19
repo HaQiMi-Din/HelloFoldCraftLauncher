@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:layout_width="0dp"
@@ -24,7 +24,7 @@
                 android:text="@string/account_create_server"
                 android:layout_gravity="center"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_marginStart="5dp"
                 android:id="@+id/server_name"
                 android:singleLine="true"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLImageButton
+            <com.tungsten.hfcllibrary.component.view.FCLImageButton
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                 android:tint="@android:color/darker_gray"
                 android:id="@+id/home"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLImageButton
+            <com.tungsten.hfcllibrary.component.view.FCLImageButton
                 android:layout_marginStart="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:layout_width="0dp"
@@ -65,7 +65,7 @@
                 android:text="@string/account_create_username"
                 android:layout_gravity="center"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLEditText
+            <com.tungsten.hfcllibrary.component.view.FCLEditText
                 android:singleLine="true"
                 android:id="@+id/username"
                 android:layout_width="250dp"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:layout_width="0dp"
@@ -87,7 +87,7 @@
                 android:text="@string/account_create_password"
                 android:layout_gravity="center"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLEditText
+            <com.tungsten.hfcllibrary.component.view.FCLEditText
                 android:singleLine="true"
                 android:inputType="textPassword"
                 android:id="@+id/password"

@@ -4,12 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tungsten.fcl.R
-import com.tungsten.fcl.control.SelectKeycodeDialog
-import com.tungsten.fcl.control.gamepad.GamepadEmulatedButton
-import com.tungsten.fcl.control.gamepad.GamepadMap
-import com.tungsten.fcl.databinding.ItemGamepadMapBinding
-import com.tungsten.fclcore.fakefx.collections.FXCollections
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.control.SelectKeycodeDialog
+import com.tungsten.hfcl.control.gamepad.GamepadEmulatedButton
+import com.tungsten.hfcl.control.gamepad.GamepadMap
+import com.tungsten.hfcl.databinding.ItemGamepadMapBinding
+import com.tungsten.hfclcore.fakefx.collections.FXCollections
 
 class GamepadMapItemAdapter(val context: Context, val gamepadMap: GamepadMap) :
     RecyclerView.Adapter<ViewHolder>() {

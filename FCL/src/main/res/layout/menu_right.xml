@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="12dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/text_setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_func"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_func" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_lock_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_func" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_hide_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_lock_view" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_show_fps"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_hide_view" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/open_multiplayer_menu_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +94,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/open_multiplayer_menu" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/open_multiplayer_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -105,7 +105,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_show_fps" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -117,7 +117,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/open_quick_input" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/open_quick_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/open_multiplayer_menu" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -141,7 +141,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/open_send_key" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/open_send_key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/open_quick_input" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_soft_keyboard_adjust"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/open_send_key" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/item_bar_scale_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,7 +176,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_soft_keyboard_adjust" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/item_bar_width"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,7 +187,7 @@
                 app:layout_constraintTop_toBottomOf="@id/item_bar_scale_text"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/item_bar_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
                 app:layout_constraintTop_toBottomOf="@id/item_bar_width"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/window_scale_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -211,7 +211,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_bar_height" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/window_scale"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -222,7 +222,7 @@
                 app:layout_constraintTop_toBottomOf="@id/window_scale_text"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/cursor_offset_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -235,7 +235,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/window_scale" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/cursor_offset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -245,7 +245,7 @@
                 android:min="-150"
                 app:layout_constraintTop_toBottomOf="@id/cursor_offset_text" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_gesture"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_gesture" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_gesture"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -274,7 +274,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_gesture" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -286,7 +286,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/gesture_mode_spinner" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSpinner
+            <com.tungsten.hfcllibrary.component.view.FCLSpinner
                 android:id="@+id/gesture_mode_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -294,7 +294,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_gesture" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_left_touch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -304,7 +304,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/gesture_mode_spinner" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_mouse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -323,7 +323,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_mouse" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -335,7 +335,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/mouse_mode_spinner" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSpinner
+            <com.tungsten.hfcllibrary.component.view.FCLSpinner
                 android:id="@+id/mouse_mode_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -344,7 +344,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_mouse" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/mouse_sensitivity_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -357,7 +357,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_mode_spinner" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/mouse_sensitivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -368,7 +368,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mouse_sensitivity_text"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/mouse_sensitivity_cursor_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -381,7 +381,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_sensitivity" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/mouse_sensitivity_cursor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -392,7 +392,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mouse_sensitivity_cursor_text"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/mouse_size_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -405,7 +405,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_sensitivity_cursor" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/mouse_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -415,7 +415,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mouse_size_text"
                 app:suffix="dp" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/mouse_offset_x_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -428,7 +428,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_size" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/mouse_offset_x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -439,7 +439,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mouse_offset_x_text"
                 app:suffix="dp" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/mouse_offset_y_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -452,7 +452,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_offset_x" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/mouse_offset_y"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -463,7 +463,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mouse_offset_y_text"
                 app:suffix="dp" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_physical_mouse_mode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -473,7 +473,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mouse_offset_y" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_gamepad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -492,7 +492,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_gamepad" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_disable_gamepad_mapping"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -502,7 +502,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_gamepad" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -514,7 +514,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/gamepad_reset_mapper" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/gamepad_reset_mapper"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -526,7 +526,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_disable_gamepad_mapping" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -538,7 +538,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/gamepad_reset_button_binding" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/gamepad_reset_button_binding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -550,7 +550,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/gamepad_reset_mapper" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/gamepad_deadzone_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -563,7 +563,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/gamepad_reset_button_binding" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/gamepad_deadzone_size"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -574,7 +574,7 @@
                 app:layout_constraintTop_toBottomOf="@id/gamepad_deadzone_text"
                 app:suffix="%" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_gyro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -593,7 +593,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_gyro" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_gyro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -603,7 +603,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_gyro" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_gyro_invert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -613,7 +613,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_gyro" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/gyro_sensitivity_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -625,7 +625,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_gyro_invert" />
 
-            <com.tungsten.fcllibrary.component.view.FCLNumberSeekBar
+            <com.tungsten.hfcllibrary.component.view.FCLNumberSeekBar
                 android:id="@+id/gyro_sensitivity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -634,7 +634,7 @@
                 android:max="1000"
                 app:layout_constraintTop_toBottomOf="@id/gyro_sensitivity_text" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/text_debug"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -653,7 +653,7 @@
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toBottomOf="@id/text_debug" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_show_memory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -663,7 +663,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_debug" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_performance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -673,7 +673,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_show_memory" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_show_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -683,7 +683,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_performance" />
 
-            <com.tungsten.fcllibrary.component.view.FCLSwitch
+            <com.tungsten.hfcllibrary.component.view.FCLSwitch
                 android:id="@+id/switch_auto_show_log"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -693,7 +693,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/switch_show_log" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -705,7 +705,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/force_exit" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/force_exit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

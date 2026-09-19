@@ -15,7 +15,7 @@
         android:stateListAnimator="@xml/anim_scale"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLImageView
+        <com.tungsten.hfcllibrary.component.view.FCLImageView
             android:id="@+id/icon"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -39,14 +39,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/delete"
             android:layout_width="20dp"
             android:layout_height="20dp"

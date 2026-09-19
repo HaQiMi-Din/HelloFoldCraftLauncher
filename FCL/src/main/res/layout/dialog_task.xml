@@ -5,7 +5,7 @@
     android:padding="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:singleLine="true"
         android:layout_width="wrap_content"
@@ -33,7 +33,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -45,7 +45,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dialog_negative"

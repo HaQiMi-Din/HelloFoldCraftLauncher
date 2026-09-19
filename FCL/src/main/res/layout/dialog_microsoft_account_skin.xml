@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:padding="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.skin.SkinViewer
+    <com.tungsten.hfcllibrary.skin.SkinViewer
         android:id="@+id/skin_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content">
 
             <!-- Skin Model Selection -->
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/model_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/model_title">
 
-                <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                     android:id="@+id/model_classic"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
                     android:text="@string/account_skin_model_classic"
                     app:text_use_theme_color="true" />
 
-                <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                     android:id="@+id/model_slim"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
             </RadioGroup>
 
             <!-- Upload from File -->
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/skin_upload_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,7 +91,7 @@
                 app:layout_constraintTop_toBottomOf="@id/model_group"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/skin_file_path"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/skin_upload_title" />
 
-            <com.tungsten.fcllibrary.component.view.FCLImageButton
+            <com.tungsten.hfcllibrary.component.view.FCLImageButton
                 android:id="@+id/skin_file_pick"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -113,7 +113,7 @@
                 app:no_padding="true"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/upload"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
                 android:text="@string/account_skin_upload_file"
                 app:layout_constraintTop_toBottomOf="@id/skin_file_path" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/reset_skin_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                 app:layout_constraintTop_toBottomOf="@id/upload" />
 
             <!-- Cape Management -->
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:id="@+id/cape_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                 app:layout_constraintTop_toBottomOf="@id/reset_skin_btn"
                 app:use_theme_color="true" />
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/cape_list_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/cape_title" />
 
-            <com.tungsten.fcllibrary.component.view.FCLButton
+            <com.tungsten.hfcllibrary.component.view.FCLButton
                 android:id="@+id/hide_cape_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
 
     </ScrollView>
 
-    <com.tungsten.fcllibrary.component.view.FCLProgressBar
+    <com.tungsten.hfcllibrary.component.view.FCLProgressBar
         android:id="@+id/progress"
         android:layout_width="24dp"
         android:layout_height="24dp"
@@ -172,7 +172,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/positive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

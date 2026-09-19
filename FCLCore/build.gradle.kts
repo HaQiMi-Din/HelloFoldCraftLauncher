@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tungsten.fclcore"
+    namespace = "com.tungsten.hfclcore"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {

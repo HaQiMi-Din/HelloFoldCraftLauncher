@@ -108,7 +108,7 @@ static void *logger_thread() {
     }
 }
 
-JNIEXPORT jint JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_redirectStdio(JNIEnv* env, jobject jobject, jstring path) {
+JNIEXPORT jint JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_redirectStdio(JNIEnv* env, jobject jobject, jstring path) {
     setvbuf(stdout, 0, _IOLBF, 0);
     setvbuf(stderr, 0, _IONBF, 0);
     if  (pipe(fclFd) < 0) {
@@ -121,7 +121,7 @@ JNIEXPORT jint JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_redirectStd
         return 2;
     }
     close(fclFd[1]);
-    jclass bridge = (*env) -> FindClass(env, "com/tungsten/fclauncher/bridge/FCLBridge");
+    jclass bridge = (*env) -> FindClass(env, "com/tungsten/hfclauncher/bridge/FCLBridge");
     log_method = (*env) -> GetMethodID(env, bridge, "receiveLog", "(Ljava/lang/String;)V");
     if (!log_method) {
         __android_log_print(ANDROID_LOG_ERROR, "FCL", "Failed to find receive method!");
@@ -137,7 +137,7 @@ JNIEXPORT jint JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_redirectStd
     return 0;
 }
 
-JNIEXPORT jint JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_chdir(JNIEnv* env, jobject jobject, jstring path) {
+JNIEXPORT jint JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_chdir(JNIEnv* env, jobject jobject, jstring path) {
     char const* dir = (*env)->GetStringUTFChars(env, path, 0);
 
     int b = chdir(dir);
@@ -146,7 +146,7 @@ JNIEXPORT jint JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_chdir(JNIEn
     return b;
 }
 
-JNIEXPORT void JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_setenv(JNIEnv* env, jobject jobject, jstring str1, jstring str2) {
+JNIEXPORT void JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_setenv(JNIEnv* env, jobject jobject, jstring str1, jstring str2) {
     char const* name = (*env)->GetStringUTFChars(env, str1, 0);
     char const* value = (*env)->GetStringUTFChars(env, str2, 0);
 
@@ -156,7 +156,7 @@ JNIEXPORT void JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_setenv(JNIE
     (*env)->ReleaseStringUTFChars(env, str2, value);
 }
 
-JNIEXPORT jlong JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_dlopen(JNIEnv* env, jobject jobject, jstring str) {
+JNIEXPORT jlong JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_dlopen(JNIEnv* env, jobject jobject, jstring str) {
     dlerror();
 
     char const* lib_name = (*env)->GetStringUTFChars(env, str, 0);
@@ -176,7 +176,7 @@ JNIEXPORT jlong JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_dlopen(JNI
     return (jlong) handle;
 }
 
-JNIEXPORT void JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_setLdLibraryPath(JNIEnv *env, jobject jobject, jstring ldLibraryPath) {
+JNIEXPORT void JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_setLdLibraryPath(JNIEnv *env, jobject jobject, jstring ldLibraryPath) {
     android_update_LD_LIBRARY_PATH_t android_update_LD_LIBRARY_PATH;
     void *libdl_handle = dlopen("libdl.so", RTLD_LAZY);
     void *updateLdLibPath = dlsym(libdl_handle, "android_update_LD_LIBRARY_PATH");
@@ -252,10 +252,10 @@ static void custom_atexit() {
     nominal_exit(0);
 }
 
-JNIEXPORT void JNICALL Java_com_tungsten_fclauncher_bridge_FCLBridge_setupExitTrap(JNIEnv *env, jobject jobject1, jobject bridge) {
+JNIEXPORT void JNICALL Java_com_tungsten_hfclauncher_bridge_FCLBridge_setupExitTrap(JNIEnv *env, jobject jobject1, jobject bridge) {
     exitTrap_bridge = (*env)->NewGlobalRef(env, bridge);
     (*env)->GetJavaVM(env, &exitTrap_jvm);
-    jclass exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env, "com/tungsten/fclauncher/bridge/FCLBridge"));
+    jclass exitTrap_exitClass = (*env)->NewGlobalRef(env,(*env)->FindClass(env, "com/tungsten/hfclauncher/bridge/FCLBridge"));
     exitTrap_method = (*env)->GetMethodID(env, exitTrap_exitClass, "onExit", "(I)V");
     (*env)->DeleteGlobalRef(env, exitTrap_exitClass);
     if(bytehook_init(BYTEHOOK_MODE_AUTOMATIC, false) == BYTEHOOK_STATUS_CODE_OK) {

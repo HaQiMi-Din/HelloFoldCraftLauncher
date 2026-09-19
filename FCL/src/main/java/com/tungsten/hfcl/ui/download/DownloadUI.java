@@ -1,0 +1,152 @@
+package com.tungsten.hfcl.ui.download;
+
+import static com.tungsten.hfclcore.util.Lang.tryCast;
+
+import android.content.Context;
+
+import com.google.android.material.tabs.TabLayout;
+import com.tungsten.hfcl.R;
+import com.tungsten.hfcl.setting.Profile;
+import com.tungsten.hfcl.setting.Profiles;
+import com.tungsten.hfclcore.task.Task;
+import com.tungsten.hfcllibrary.component.ui.FCLBasePage;
+import com.tungsten.hfcllibrary.component.ui.FCLMultiPageUI;
+import com.tungsten.hfcllibrary.component.view.FCLTabLayout;
+import com.tungsten.hfcllibrary.component.view.FCLUILayout;
+
+import java.util.ArrayList;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class DownloadUI extends FCLMultiPageUI implements TabLayout.OnTabSelectedListener {
+
+    private DownloadPageManager pageManager;
+    private Runnable runnable;
+
+    public FCLTabLayout tabLayout;
+    public FCLUILayout container;
+
+    public DownloadUI(Context context, FCLUILayout parent, int id) {
+        super(context, parent, id);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        tabLayout = findViewById(R.id.tab_layout);
+        container = findViewById(R.id.container);
+
+        tabLayout.addOnTabSelectedListener(this);
+        container.post(this::initPages);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (pageManager != null && pageManager.canReturn()) {
+            pageManager.dismissCurrentTempPage();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (pageManager != null) {
+            pageManager.onPause();
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (pageManager != null) {
+            pageManager.onResume();
+        }
+    }
+
+    @Override
+    public void initPages() {
+        pageManager = new DownloadPageManager(getContext(), container, DownloadPageManager.PAGE_ID_DOWNLOAD_GAME);
+
+        Profiles.registerVersionsListener(this::loadVersions);
+        if (runnable != null) {
+            runnable.run();
+        }
+    }
+
+    @Override
+    public ArrayList<FCLBasePage> getAllPages() {
+        return pageManager == null ? null : (ArrayList<FCLBasePage>) pageManager.getAllPages().stream().map(it -> tryCast(it, FCLBasePage.class)).filter(Optional::isPresent).map(Optional::get).collect(Collectors.toList());
+    }
+
+    @Override
+    public FCLBasePage getPage(int id) {
+        return pageManager == null ? null : pageManager.getPageById(id);
+    }
+
+    @Override
+    public Task<?> refresh(Object... param) {
+        return null;
+    }
+
+    private void loadVersions(Profile profile) {
+        if (profile == Profiles.getSelectedProfile()) {
+            pageManager.loadVersion(profile, null);
+            profile.selectedVersionProperty().addListener(observable -> pageManager.loadVersion(profile, null));
+        }
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        if (pageManager != null) {
+            switch (tab.getPosition()) {
+                case 1:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_MODPACK);
+                    break;
+                case 2:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_MOD);
+                    break;
+                case 3:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_RESOURCE_PACK);
+                    break;
+                case 4:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_WORLD);
+                    break;
+                case 5:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_SHADER_PACK);
+                    break;
+                default:
+                    pageManager.switchPage(DownloadPageManager.PAGE_ID_DOWNLOAD_GAME);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
+    }
+
+    public DownloadPageManager getPageManager() {
+        return pageManager;
+    }
+
+    @Override
+    public void runAfterInit(Runnable runnable) {
+        this.runnable = runnable;
+        if (pageManager != null) {
+            runnable.run();
+        }
+    }
+}

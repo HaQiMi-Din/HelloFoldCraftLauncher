@@ -5,7 +5,7 @@
     android:paddingBottom="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLConstraintLayout
+    <com.tungsten.hfcllibrary.component.view.FCLConstraintLayout
         android:id="@+id/parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         android:paddingTop="2dp"
         android:paddingBottom="2dp">
 
-        <com.tungsten.fcllibrary.component.view.FCLRadioButton
+        <com.tungsten.hfcllibrary.component.view.FCLRadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,13 +43,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:id="@+id/name"/>
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_marginStart="10dp"
                     android:textSize="11sp"
                     android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:textSize="12sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,6 +68,6 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </com.tungsten.fcllibrary.component.view.FCLConstraintLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@
     android:paddingEnd="10dp"
     tools:ignore="HardcodedText">
 
-    <com.tungsten.fcllibrary.component.view.FCLEditText
+    <com.tungsten.hfcllibrary.component.view.FCLEditText
         android:id="@+id/search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@id/search"
         app:layout_constraintWidth_percent="0.3" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/refresh"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
         app:layout_constraintWidth_percent="0.3"
         app:ripple="true" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/new_profile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                    <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                         android:id="@+id/all"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -91,28 +91,28 @@
                         android:text="@string/curse_category_0"
                         app:text_use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                    <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                         android:id="@+id/fabric"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Fabric"
                         app:text_use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                    <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                         android:id="@+id/forge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Forge"
                         app:text_use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                    <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                         android:id="@+id/neoforge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NeoForge"
                         app:text_use_theme_color="true" />
 
-                    <com.tungsten.fcllibrary.component.view.FCLRadioButton
+                    <com.tungsten.hfcllibrary.component.view.FCLRadioButton
                         android:id="@+id/other"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
-    <com.tungsten.fcllibrary.component.view.FCLProgressBar
+    <com.tungsten.hfcllibrary.component.view.FCLProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

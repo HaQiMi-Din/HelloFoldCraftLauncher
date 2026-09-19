@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:layout_width="0dp"
@@ -23,7 +23,7 @@
                 android:text="@string/account_create_username"
                 android:layout_gravity="center"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLEditText
+            <com.tungsten.hfcllibrary.component.view.FCLEditText
                 android:singleLine="true"
                 android:id="@+id/username"
                 android:layout_width="300dp"

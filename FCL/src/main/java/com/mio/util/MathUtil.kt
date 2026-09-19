@@ -1,7 +1,7 @@
 package com.mio.util
 
 import android.content.Context
-import com.tungsten.fcllibrary.util.LocaleUtils
+import com.tungsten.hfcllibrary.util.LocaleUtils
 
 fun Long.format(context: Context): String {
     val isChinese = LocaleUtils.isChinese(context)

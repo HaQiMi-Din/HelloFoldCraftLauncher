@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -12,7 +12,7 @@
         android:singleLine="true"
         android:id="@+id/text"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLImageButton
+    <com.tungsten.hfcllibrary.component.view.FCLImageButton
         android:id="@+id/delete"
         android:tint="@android:color/darker_gray"
         android:layout_marginStart="10dp"

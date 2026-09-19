@@ -6,8 +6,8 @@ import android.view.View
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import com.getkeepsafe.taptargetview.TapTargetView
-import com.tungsten.fclauncher.utils.FCLPath
-import com.tungsten.fcllibrary.component.theme.ThemeEngine
+import com.tungsten.hfclauncher.utils.FCLPath
+import com.tungsten.hfcllibrary.component.theme.ThemeEngine
 import java.io.File
 
 class GuideUtil {

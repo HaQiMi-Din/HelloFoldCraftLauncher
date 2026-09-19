@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:id="@+id/parent"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.tungsten.fcllibrary.component.view.FCLCheckBox
+        <com.tungsten.hfcllibrary.component.view.FCLCheckBox
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:id="@+id/check"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
@@ -42,7 +42,7 @@
                     android:singleLine="true"
                     app:auto_text_tint="true"/>
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:paddingStart="4dp"
                     android:paddingEnd="4dp"
                     android:paddingTop="2dp"
@@ -58,7 +58,7 @@
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
@@ -68,6 +68,6 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

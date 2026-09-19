@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.tungsten.fcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tungsten.hfcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -12,13 +12,13 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+        <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
             android:id="@+id/parent_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.tungsten.fcllibrary.component.view.FCLTextView
+            <com.tungsten.hfcllibrary.component.view.FCLTextView
                 android:singleLine="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,14 +36,14 @@
                 android:layout_width="600dp"
                 layout="@layout/view_keyboard"/>
 
-            <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+            <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                 android:id="@+id/mouse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <com.tungsten.fcllibrary.component.view.FCLTextView
+                <com.tungsten.hfcllibrary.component.view.FCLTextView
                     android:singleLine="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -55,13 +55,13 @@
                     android:layout_height="1dp"
                     android:background="@android:color/darker_gray"/>
 
-                <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+                <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginTop="10dp">
 
-                    <com.tungsten.fcl.control.view.KeycodeView
+                    <com.tungsten.hfcl.control.view.KeycodeView
                         android:background="@drawable/keycode_view_normal"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -73,7 +73,7 @@
                         android:textAllCaps="false"
                         app:keycode="1000"/>
 
-                    <com.tungsten.fcl.control.view.KeycodeView
+                    <com.tungsten.hfcl.control.view.KeycodeView
                         android:background="@drawable/keycode_view_normal"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -85,7 +85,7 @@
                         android:textAllCaps="false"
                         app:keycode="1002"/>
 
-                    <com.tungsten.fcl.control.view.KeycodeView
+                    <com.tungsten.hfcl.control.view.KeycodeView
                         android:background="@drawable/keycode_view_normal"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -97,7 +97,7 @@
                         android:textAllCaps="false"
                         app:keycode="1001"/>
 
-                    <com.tungsten.fcl.control.view.KeycodeView
+                    <com.tungsten.hfcl.control.view.KeycodeView
                         android:background="@drawable/keycode_view_normal"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -109,7 +109,7 @@
                         android:textAllCaps="false"
                         app:keycode="1003"/>
 
-                    <com.tungsten.fcl.control.view.KeycodeView
+                    <com.tungsten.hfcl.control.view.KeycodeView
                         android:background="@drawable/keycode_view_normal"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -121,15 +121,15 @@
                         android:textAllCaps="false"
                         app:keycode="1004"/>
 
-                </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+                </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-            </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+            </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-        </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+        </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
     </ScrollView>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -140,12 +140,12 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:id="@+id/positive"
             android:text="@string/dialog_positive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-</com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+</com.tungsten.hfcllibrary.component.view.FCLLinearLayout>

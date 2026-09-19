@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.util.AttributeSet
 import com.google.android.material.appbar.AppBarLayout
-import com.tungsten.fclcore.fakefx.beans.property.IntegerProperty
-import com.tungsten.fclcore.fakefx.beans.property.IntegerPropertyBase
-import com.tungsten.fcllibrary.component.theme.ThemeEngine
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerProperty
+import com.tungsten.hfclcore.fakefx.beans.property.IntegerPropertyBase
+import com.tungsten.hfcllibrary.component.theme.ThemeEngine
 import androidx.core.content.withStyledAttributes
-import com.tungsten.fcl.R
+import com.tungsten.hfcl.R
 
 class FCLAppBarLayout @JvmOverloads constructor(
     context: Context,

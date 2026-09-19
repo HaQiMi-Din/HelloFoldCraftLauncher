@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.tungsten.fcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.tungsten.hfcllibrary.component.view.FCLLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/keyboard"
@@ -7,13 +7,13 @@
     android:layout_height="168dp"
     android:orientation="vertical">
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -44,7 +44,7 @@
             android:textAllCaps="false"
             app:keycode="59"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -57,7 +57,7 @@
             android:textAllCaps="false"
             app:keycode="60"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -70,7 +70,7 @@
             android:textAllCaps="false"
             app:keycode="61"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -88,7 +88,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -101,7 +101,7 @@
             android:textAllCaps="false"
             app:keycode="63"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -114,7 +114,7 @@
             android:textAllCaps="false"
             app:keycode="64"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -127,7 +127,7 @@
             android:textAllCaps="false"
             app:keycode="65"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -145,7 +145,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -158,7 +158,7 @@
             android:textAllCaps="false"
             app:keycode="67"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -171,7 +171,7 @@
             android:textAllCaps="false"
             app:keycode="68"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -184,7 +184,7 @@
             android:textAllCaps="false"
             app:keycode="87"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -202,7 +202,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -215,7 +215,7 @@
             android:textAllCaps="false"
             app:keycode="-1"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -228,7 +228,7 @@
             android:textAllCaps="false"
             app:keycode="70"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -251,20 +251,20 @@
             android:layout_height="match_parent"
             android:layout_weight="4"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5" />
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -277,7 +277,7 @@
             android:textAllCaps="false"
             app:keycode="41"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -290,7 +290,7 @@
             android:textAllCaps="false"
             app:keycode="2"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -303,7 +303,7 @@
             android:textAllCaps="false"
             app:keycode="3"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -316,7 +316,7 @@
             android:textAllCaps="false"
             app:keycode="4"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -329,7 +329,7 @@
             android:textAllCaps="false"
             app:keycode="5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -342,7 +342,7 @@
             android:textAllCaps="false"
             app:keycode="6"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -355,7 +355,7 @@
             android:textAllCaps="false"
             app:keycode="7"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -368,7 +368,7 @@
             android:textAllCaps="false"
             app:keycode="8"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -381,7 +381,7 @@
             android:textAllCaps="false"
             app:keycode="9"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -394,7 +394,7 @@
             android:textAllCaps="false"
             app:keycode="10"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -407,7 +407,7 @@
             android:textAllCaps="false"
             app:keycode="11"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -420,7 +420,7 @@
             android:textAllCaps="false"
             app:keycode="12"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -433,7 +433,7 @@
             android:textAllCaps="false"
             app:keycode="13"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -451,7 +451,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5" />
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -464,7 +464,7 @@
             android:textAllCaps="false"
             app:keycode="110"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -477,7 +477,7 @@
             android:textAllCaps="false"
             app:keycode="102"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -495,7 +495,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -508,7 +508,7 @@
             android:textAllCaps="false"
             app:keycode="69"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -521,7 +521,7 @@
             android:textAllCaps="false"
             app:keycode="98"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -534,7 +534,7 @@
             android:textAllCaps="false"
             app:keycode="-1"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -547,15 +547,15 @@
             android:textAllCaps="false"
             app:keycode="74"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -568,7 +568,7 @@
             android:textAllCaps="false"
             app:keycode="15"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -581,7 +581,7 @@
             android:textAllCaps="false"
             app:keycode="16"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -594,7 +594,7 @@
             android:textAllCaps="false"
             app:keycode="17"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -607,7 +607,7 @@
             android:textAllCaps="false"
             app:keycode="18"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -620,7 +620,7 @@
             android:textAllCaps="false"
             app:keycode="19"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -633,7 +633,7 @@
             android:textAllCaps="false"
             app:keycode="20"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -646,7 +646,7 @@
             android:textAllCaps="false"
             app:keycode="21"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -659,7 +659,7 @@
             android:textAllCaps="false"
             app:keycode="22"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -672,7 +672,7 @@
             android:textAllCaps="false"
             app:keycode="23"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -685,7 +685,7 @@
             android:textAllCaps="false"
             app:keycode="24"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -698,7 +698,7 @@
             android:textAllCaps="false"
             app:keycode="25"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -711,7 +711,7 @@
             android:textAllCaps="false"
             app:keycode="26"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -724,7 +724,7 @@
             android:textAllCaps="false"
             app:keycode="27"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -742,7 +742,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -755,7 +755,7 @@
             android:textAllCaps="false"
             app:keycode="111"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -768,7 +768,7 @@
             android:textAllCaps="false"
             app:keycode="107"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -786,7 +786,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -799,7 +799,7 @@
             android:textAllCaps="false"
             app:keycode="71"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -812,7 +812,7 @@
             android:textAllCaps="false"
             app:keycode="72"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -825,7 +825,7 @@
             android:textAllCaps="false"
             app:keycode="73"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -838,15 +838,15 @@
             android:textAllCaps="false"
             app:keycode="78"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:id="@+id/virtual_keyboard_button_caps"
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
@@ -860,7 +860,7 @@
             android:textAllCaps="false"
             app:keycode="58"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -873,7 +873,7 @@
             android:textAllCaps="false"
             app:keycode="30"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -886,7 +886,7 @@
             android:textAllCaps="false"
             app:keycode="31"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -899,7 +899,7 @@
             android:textAllCaps="false"
             app:keycode="32"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -912,7 +912,7 @@
             android:textAllCaps="false"
             app:keycode="33"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -925,7 +925,7 @@
             android:textAllCaps="false"
             app:keycode="34"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -938,7 +938,7 @@
             android:textAllCaps="false"
             app:keycode="35"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -951,7 +951,7 @@
             android:textAllCaps="false"
             app:keycode="36"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -964,7 +964,7 @@
             android:textAllCaps="false"
             app:keycode="37"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -977,7 +977,7 @@
             android:textAllCaps="false"
             app:keycode="38"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -990,7 +990,7 @@
             android:textAllCaps="false"
             app:keycode="39"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1003,7 +1003,7 @@
             android:textAllCaps="false"
             app:keycode="40"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1021,7 +1021,7 @@
             android:layout_height="match_parent"
             android:layout_weight="4"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1034,7 +1034,7 @@
             android:textAllCaps="false"
             app:keycode="75"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1047,7 +1047,7 @@
             android:textAllCaps="false"
             app:keycode="76"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1065,15 +1065,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:id="@+id/virtual_keyboard_button_lshift"
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
@@ -1087,7 +1087,7 @@
             android:textAllCaps="false"
             app:keycode="42"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1100,7 +1100,7 @@
             android:textAllCaps="false"
             app:keycode="44"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1113,7 +1113,7 @@
             android:textAllCaps="false"
             app:keycode="45"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1126,7 +1126,7 @@
             android:textAllCaps="false"
             app:keycode="46"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1139,7 +1139,7 @@
             android:textAllCaps="false"
             app:keycode="47"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1152,7 +1152,7 @@
             android:textAllCaps="false"
             app:keycode="48"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1165,7 +1165,7 @@
             android:textAllCaps="false"
             app:keycode="49"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1178,7 +1178,7 @@
             android:textAllCaps="false"
             app:keycode="50"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1191,7 +1191,7 @@
             android:textAllCaps="false"
             app:keycode="51"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1204,7 +1204,7 @@
             android:textAllCaps="false"
             app:keycode="52"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1217,7 +1217,7 @@
             android:textAllCaps="false"
             app:keycode="53"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:id="@+id/virtual_keyboard_button_Rshift"
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
@@ -1236,7 +1236,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1254,7 +1254,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1267,7 +1267,7 @@
             android:textAllCaps="false"
             app:keycode="79"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1280,7 +1280,7 @@
             android:textAllCaps="false"
             app:keycode="80"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1293,7 +1293,7 @@
             android:textAllCaps="false"
             app:keycode="81"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1306,15 +1306,15 @@
             android:textAllCaps="false"
             app:keycode="96"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-    <com.tungsten.fcllibrary.component.view.FCLLinearLayout
+    <com.tungsten.hfcllibrary.component.view.FCLLinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1327,7 +1327,7 @@
             android:textAllCaps="false"
             app:keycode="29"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1340,7 +1340,7 @@
             android:textAllCaps="false"
             app:keycode="-1"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1353,7 +1353,7 @@
             android:textAllCaps="false"
             app:keycode="56"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1366,7 +1366,7 @@
             android:textAllCaps="false"
             app:keycode="57"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1379,7 +1379,7 @@
             android:textAllCaps="false"
             app:keycode="100"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1392,7 +1392,7 @@
             android:textAllCaps="false"
             app:keycode="-1"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1405,7 +1405,7 @@
             android:textAllCaps="false"
             app:keycode="-1"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1423,7 +1423,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1436,7 +1436,7 @@
             android:textAllCaps="false"
             app:keycode="105"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1449,7 +1449,7 @@
             android:textAllCaps="false"
             app:keycode="108"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1467,7 +1467,7 @@
             android:layout_height="match_parent"
             android:layout_weight="0.5"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1480,7 +1480,7 @@
             android:textAllCaps="false"
             app:keycode="82"/>
 
-        <com.tungsten.fcl.control.view.KeycodeView
+        <com.tungsten.hfcl.control.view.KeycodeView
             android:background="@drawable/keycode_view_normal"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -1498,6 +1498,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-    </com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLLinearLayout>
 
-</com.tungsten.fcllibrary.component.view.FCLLinearLayout>
+</com.tungsten.hfcllibrary.component.view.FCLLinearLayout>

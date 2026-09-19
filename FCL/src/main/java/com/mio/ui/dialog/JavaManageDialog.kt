@@ -9,18 +9,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mio.JavaManager
 import com.mio.ui.adapter.ManageJavaItemAdapter
 import com.mio.util.checkElfIsAndroid
-import com.tungsten.fcl.R
-import com.tungsten.fcl.activity.MainActivity
-import com.tungsten.fcl.databinding.DialogManageJavaBinding
-import com.tungsten.fcl.util.AndroidUtils
-import com.tungsten.fcl.util.RuntimeUtils
-import com.tungsten.fclauncher.utils.FCLPath
-import com.tungsten.fclcore.game.JavaVersion
-import com.tungsten.fclcore.task.Schedulers
-import com.tungsten.fclcore.util.io.FileUtils
-import com.tungsten.fcllibrary.component.dialog.FCLAlertDialog
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
-import com.tungsten.fcllibrary.util.ConvertUtils
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.activity.MainActivity
+import com.tungsten.hfcl.databinding.DialogManageJavaBinding
+import com.tungsten.hfcl.util.AndroidUtils
+import com.tungsten.hfcl.util.RuntimeUtils
+import com.tungsten.hfclauncher.utils.FCLPath
+import com.tungsten.hfclcore.game.JavaVersion
+import com.tungsten.hfclcore.task.Schedulers
+import com.tungsten.hfclcore.util.io.FileUtils
+import com.tungsten.hfcllibrary.component.dialog.FCLAlertDialog
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcllibrary.util.ConvertUtils
 import java.io.File
 import java.io.InputStream
 import java.nio.file.Files
@@ -194,7 +194,7 @@ class JavaManageDialog(context: Context, val onSelected: (String) -> Unit) : FCL
                 .setAlertLevel(
                     FCLAlertDialog.AlertLevel.ALERT
                 )
-                .setNegativeButton(context.getString(com.tungsten.fcl.R.string.dialog_positive)) {
+                .setNegativeButton(context.getString(com.tungsten.hfcl.R.string.dialog_positive)) {
 
                 }
                 .create()

@@ -24,6 +24,13 @@ static jlong ndlopen_bugfix(__attribute__((unused)) JNIEnv *env,
                      jint jmode) {
     const char* filename = (const char*) filename_ptr;
 
+    // 窗口后端 GLFW -> SDL3：LWJGL 3.4.1 的 SDL3 绑定按 "SDL3" / "libSDL3.so" 名加载原生库。
+    // 该库随 natives 铺在 app_runtime/lwjgl/3.4.1/natives/<abi>/，已通过 FCLauncher.appendCommonPaths
+    // 加入 java.library.path，故此处直接走默认 dlopen 即可解析；仅加日志便于确认后端已切换。
+    if (strstr(filename, "SDL3") != NULL) {
+        FCL_LOG("LWJGL linkerhook: loading SDL3 window backend native: %s", filename);
+    }
+
     // Oveeride vulkan loading to let us load vulkan ourselves
     if(strstr(filename, "libvulkan.so") == filename) {
         FCL_LOG("LWJGL linkerhook: replacing load for libvulkan.so with custom driver");

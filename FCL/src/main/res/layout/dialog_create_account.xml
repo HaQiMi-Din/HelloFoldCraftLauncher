@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         android:singleLine="true"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.5"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLTabLayout
+    <com.tungsten.hfcllibrary.component.view.FCLTabLayout
         android:layout_marginTop="10dp"
         android:id="@+id/tab_layout"
         app:tabTextAppearance="@style/TabTextAppearance"
@@ -42,7 +42,7 @@
             android:layout_height="match_parent"
             android:text="@string/account_methods_authlib_injector"/>
 
-    </com.tungsten.fcllibrary.component.view.FCLTabLayout>
+    </com.tungsten.hfcllibrary.component.view.FCLTabLayout>
 
     <RelativeLayout
         android:id="@+id/detail_container"
@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tab_layout"
         app:layout_constraintBottom_toTopOf="@+id/login"/>
     
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/login"
         android:text="@string/account_login"
         android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/cancel"
         android:text="@string/dialog_negative"
         android:layout_width="wrap_content"

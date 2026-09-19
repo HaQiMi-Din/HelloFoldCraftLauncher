@@ -21,7 +21,7 @@
             android:layout_gravity="center"
             android:id="@+id/image"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_marginStart="10dp"
             android:singleLine="true"
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:id="@+id/text"
             android:textIsSelectable="true"
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:id="@+id/positive"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:text="@string/dialog_positive" />
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:id="@+id/neutral"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -72,7 +72,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:text="@string/dialog_positive" />
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:id="@+id/extra"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -82,7 +82,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:text="@string/dialog_positive" />
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             android:id="@+id/negative"
             android:layout_width="0dp"
             android:layout_weight="1"

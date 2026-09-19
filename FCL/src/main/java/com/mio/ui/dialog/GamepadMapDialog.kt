@@ -4,10 +4,10 @@ import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mio.ui.adapter.GamepadMapItemAdapter
-import com.tungsten.fcl.control.FCLInput
-import com.tungsten.fcl.databinding.DialogGamepadMapBinding
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
-import com.tungsten.fcllibrary.util.ConvertUtils
+import com.tungsten.hfcl.control.FCLInput
+import com.tungsten.hfcl.databinding.DialogGamepadMapBinding
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcllibrary.util.ConvertUtils
 
 class GamepadMapDialog(context: Context, fclInput: FCLInput) : FCLDialog(context) {
     init {

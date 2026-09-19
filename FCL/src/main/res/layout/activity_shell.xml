@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     app:auto_tint="true">
 
-    <com.tungsten.fcllibrary.component.view.FCLEditText
+    <com.tungsten.hfcllibrary.component.view.FCLEditText
         android:id="@+id/shell_input"
         android:layout_width="match_parent"
         android:layout_height="0dp"

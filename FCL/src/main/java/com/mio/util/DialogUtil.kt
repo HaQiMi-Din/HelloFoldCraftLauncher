@@ -2,9 +2,9 @@ package com.mio.util
 
 import android.content.Context
 import com.mio.dialog.ItemSelectionDialog
-import com.tungsten.fcl.R
-import com.tungsten.fcllibrary.component.dialog.FCLAlertDialog
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcl.R
+import com.tungsten.hfcllibrary.component.dialog.FCLAlertDialog
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
 
 fun showErrorDialog(context: Context, message: Int, vararg args: String?) {
     showErrorDialog(context, context.getString(message, *args))

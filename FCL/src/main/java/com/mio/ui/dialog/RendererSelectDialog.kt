@@ -5,11 +5,11 @@ import android.graphics.Point
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import com.mio.manager.RendererManager
-import com.tungsten.fcl.R
-import com.tungsten.fcl.databinding.DialogSelectRendererBinding
-import com.tungsten.fcl.setting.Profiles
-import com.tungsten.fcllibrary.component.dialog.FCLDialog
-import com.tungsten.fcllibrary.util.ConvertUtils
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.databinding.DialogSelectRendererBinding
+import com.tungsten.hfcl.setting.Profiles
+import com.tungsten.hfcllibrary.component.dialog.FCLDialog
+import com.tungsten.hfcllibrary.util.ConvertUtils
 import java.util.function.Consumer
 
 class RendererSelectDialog(

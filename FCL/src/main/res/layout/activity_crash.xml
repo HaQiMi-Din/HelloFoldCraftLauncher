@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/title"
         style="@style/FCLCrashTitle"
         android:text="@string/crash_reporter_title"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintWidth_percent="0.7">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:id="@+id/error"
             style="@style/FCLCrashErrorText" />
 
@@ -37,7 +37,7 @@
         app:layout_constraintStart_toEndOf="@id/title"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.component.view.FCLTextView
+    <com.tungsten.hfcllibrary.component.view.FCLTextView
         android:id="@+id/hint"
         style="@style/FCLCrashSidebarTitle"
         android:text="@string/crash_reporter_hint"
@@ -45,7 +45,7 @@
         app:layout_constraintStart_toEndOf="@+id/split"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/restart"
         style="@style/FCLCrashButton"
         android:text="@string/crash_reporter_restart"
@@ -53,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/split" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/close"
         style="@style/FCLCrashButton"
         android:text="@string/crash_reporter_close"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/split" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/upload"
         style="@style/FCLCrashButton"
         android:text="@string/crash_reporter_upload"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/split" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/share"
         style="@style/FCLCrashButton"
         android:layout_marginBottom="0dp"

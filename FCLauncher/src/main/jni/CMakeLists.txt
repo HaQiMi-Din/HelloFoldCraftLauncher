@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.18.1)
 
-project("fcl")
+project("hfcl")
 
 # 设置C标准
 set(CMAKE_C_STANDARD 11)
@@ -19,23 +19,23 @@ if(${ANDROID_ABI} STREQUAL "arm64-v8a")
     add_definitions(-DADRENO_POSSIBLE)
 endif()
 
-# 模块：fcl
+# 模块：hfcl
 add_library(
-    fcl
+    hfcl
     SHARED
     fcl/fcl_bridge.c
     fcl/fcl_loader.c
 )
 
 target_include_directories(
-    fcl
+    hfcl
     PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/fcl/include
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
 target_link_libraries(
-    fcl
+    hfcl
     PRIVATE
     bytehook::bytehook
     log
@@ -100,10 +100,23 @@ add_library(
 target_link_libraries(
     pojavexec_awt
     PRIVATE
-    fcl
+    hfcl
 )
 
 # 模块：pojavexec
+# ---------------------------------------------------------------------------
+# 窗口/输入后端：当前本模块通过自实现 org.lwjgl.glfw.GLFW* / CallbackBridge*
+# 的 JNI 入口（见 input_bridge_v3.c、egl_bridge.c），在 Android ANativeWindow
+# 上用 EGL/GLES 自建 GLFW 风格窗口。
+#
+# 迁移到 SDL3（LWJGL 3.4.1 内置 org.lwjgl.sdl）后，窗口/输入应由 libSDL3.so
+# 承担；libSDL3.so 由 LWJGL natives 以预编译 .so 形式提供（位于
+# app_runtime/lwjgl/3.4.1/natives/<abi>/），【不在此处从源码编译】，
+# 故本文件不新增 SDL3 源文件、不链接 SDL3。
+#
+# 如需自绘 SDL3 窗口桥（把下方 GLFW JNI 入口改写成 org.lwjgl.sdl.* 等价物），
+# 届时再在此处追加对应 .c 源文件与 target_link_libraries(... SDL3)。
+# 当前仅做构建/打包层切换，native 重写需 NDK 环境，详见迁移记录。
 add_library(
     pojavexec
     SHARED
@@ -137,7 +150,7 @@ target_include_directories(
 target_link_libraries(
     pojavexec
     PRIVATE
-    fcl
+    hfcl
     log
     dl
     android

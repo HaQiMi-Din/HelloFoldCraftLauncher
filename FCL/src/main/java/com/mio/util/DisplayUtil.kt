@@ -5,7 +5,7 @@ import android.content.res.Configuration
 import android.graphics.Rect
 import android.os.Build
 import android.util.DisplayMetrics
-import com.tungsten.fcllibrary.component.theme.ThemeEngine
+import com.tungsten.hfcllibrary.component.theme.ThemeEngine
 
 object DisplayUtil {
     @JvmField

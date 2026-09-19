@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.tungsten.fcllibrary.component.view.FCLTextView
+        <com.tungsten.hfcllibrary.component.view.FCLTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -50,7 +50,7 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             app:ripple="true"
             android:id="@+id/refresh"
             android:layout_marginTop="10dp"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:text="@string/action_refresh"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLButton
+        <com.tungsten.hfcllibrary.component.view.FCLButton
             app:ripple="true"
             android:id="@+id/website"
             android:layout_marginTop="10dp"
@@ -82,13 +82,13 @@
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"/>
 
-        <com.tungsten.fcllibrary.component.view.FCLProgressBar
+        <com.tungsten.hfcllibrary.component.view.FCLProgressBar
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true" />
 
-        <com.tungsten.fcllibrary.component.view.FCLImageButton
+        <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/retry"
             android:src="@drawable/ic_baseline_refresh_24"
             android:layout_width="wrap_content"

@@ -8,9 +8,9 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.edit
 import androidx.core.content.withStyledAttributes
-import com.tungsten.fcl.R
-import com.tungsten.fcl.util.AndroidUtils
-import com.tungsten.fcllibrary.component.theme.ThemeEngine
+import com.tungsten.hfcl.R
+import com.tungsten.hfcl.util.AndroidUtils
+import com.tungsten.hfcllibrary.component.theme.ThemeEngine
 
 class DraggableTextView @JvmOverloads constructor(
     context: Context,

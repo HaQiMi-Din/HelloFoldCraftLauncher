@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:importantForAccessibility="no" />
 
-    <com.tungsten.fcllibrary.component.view.FCLButton
+    <com.tungsten.hfcllibrary.component.view.FCLButton
         android:id="@+id/close"
         android:text="@string/close"
         android:layout_width="wrap_content"
