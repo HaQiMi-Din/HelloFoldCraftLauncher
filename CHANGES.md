@@ -105,3 +105,46 @@ HFCL fork 相对上游分叉点领先 134 个提交（主要是平板 UI 迭代�
 - `JVMActivity` 的 `OnGlobalLayoutListener` 随 decorView 回收，建议后续持有引用在 `onDestroy` 移除。
 - FCLDialog 同样走沉浸式 hide system bars，需真机确认弹窗内输入/返回不受影响。
 - 分屏/小窗下 notch 扣除逻辑需真机验证。
+
+## 9. HMCL 风格化改造（第二轮迭代）
+
+目标：在不回退横屏锁定/沉浸式全屏、不改包名 `com.tungsten.hfcl*`、不动游戏逻辑与 native 的前提下，把启动器 UI 视觉/交互尽量贴近桌面版 HMCL（Hello Minecraft Launcher，huangyuhang，JavaFX + Material You 主题）。
+
+### 参考的 HMCL 真实 UI 元素
+- 直接读 `HMCL-dev/HMCL` main 分支 `HMCL/src/main/resources/assets/css/blue.css` 取得 Material You 色板；对照 HMCL 经典主界面截图确认布局结构。
+- 经典 HMCL 主界面特征：MC 世界壁纸背景 + 左侧竖向导航栏（导航项 = 方块图标 + 加粗标题 + 灰色副标题 + 右侧可选齿轮/列表小图标），导航栏压暗保证白字可读；右下角大圆角蓝色「启动游戏」主按钮；正文区浅底卡片。
+
+### 配色方案对照（落 values/colors.xml，新增 `hmcl_*` 系列）
+| HMCL 角色 | 色值 | 落位 |
+|---|---|---|
+| primary | `#4352A5` | themes.xml `colorPrimary`、启动胶囊背景 |
+| primary-container | `#5C6BC0` | `colorPrimaryDark`/PrimaryVariant、选中导航项半透高亮（`#405C6BC0`）；与既有 `default_theme_color` 同源 |
+| on-primary | `#FFFFFF` | 胶囊/按钮白字 |
+| surface | `#FBF8FF` | `android:colorBackground` |
+| surface-container | `#EFEDF5` | 内容卡片底（`bg_container_white*`） |
+| on-surface / variant | `#1B1B21` / `#454651` | 文字（卡片正文仍走运行时 ThemeEngine.autoTint） |
+| outline / error | `#767683` / `#BA1A1A` | 描边/错误预留 |
+
+### 改动的文件
+- `values/colors.xml`：新增 14 个 `hmcl_*` 色值，原色全保留。
+- `values/themes.xml`：主色/背景/错误色/状态栏色按上表更新；NoActionBar、横屏、沉浸式原样保留。
+- `drawable/bg_left_menu_scrim.xml`（新增）：左侧栏横向渐变压暗 `#CC000000 → #59000000`。
+- `drawable/bg_left_menu_item.xml`：圆角 8→14dp，选中态改半透 primary-container 高亮，涟漪改白。
+- `drawable/bg_start_capsule.xml`（新增）：`#4352A5` 实心 + 28dp 大圆角胶囊。
+- `drawable/bg_container_white.xml` / `bg_container_white_clickable.xml`：卡片底白→`#EFEDF5`，圆角 5→16dp（覆盖设置/下载/关于等所有页卡片）。
+- `layout/activity_main.xml`：`left_menu` 加 scrim 背景、内容区左右 8dp 留白；`start` 启动按钮背景换 `bg_start_capsule`。
+
+### 因 Android 平台限制只能近似（未 1:1 复刻）
+- HMCL 导航项的灰色副标题行：HFCL 左侧 item 结构只有「图标+标题」，为不动 `findViewById` 结构未强行新增副标题控件。
+- HMCL 圆角方块图标底是 JavaFX CSS 实现；Android 侧 `FCLMenuView` 矢量图标直接着色，未额外套方块背景。
+- 设置页是原生 `FCLSwitch/FCLSpinner/FCLTextView`，无法搬 JavaFX/Metro 控件，仅统一浅底卡片、圆角与蓝色选中态。
+- HMCL 桌面内容区不显示壁纸；Android 端内容仍为浅卡片压在壁纸之上，仅左侧栏做了压暗。
+
+### 需真机验证的视觉项
+- 左侧栏渐变 scrim 与不同 MC 壁纸叠加后白字/灰副标题可读性。
+- 14dp 圆角导航项 + 8dp 留白在 140dp 栏宽、横屏 w600dp/w720dp 下是否过挤（必要时微调 `left_menu_width`）。
+- 启动胶囊 28dp 圆角在 `start_button_width=200dp` 下的比例与右下角位置。
+- 卡片改 `#EFEDF5` 后浅色壁纸缝隙处的对比。
+- 状态栏 `#CC000000` 在沉浸式全屏下是否被窗口隐藏（预期不影响）。
+
+静态校验：改动的 20 个 XML 全部 well-formed；9 个 `hmcl_*` 色全部有定义、无悬空引用；两个新 drawable 各被引用 1 次；`left_menu/start/text_start/go_setting/version_name` 等 `findViewById` id 全部保留，未增删改名。

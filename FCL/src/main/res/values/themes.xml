@@ -1,16 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.HelloFoldCraftLauncher" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/default_theme_color</item>
-        <item name="colorPrimaryVariant">@color/default_theme_color</item>
-        <item name="colorOnPrimary">@color/default_theme_color</item>
+        <!-- Primary brand color (HMCL Material You 蓝) -->
+        <item name="colorPrimary">@color/hmcl_primary</item>
+        <item name="colorPrimaryVariant">@color/hmcl_primary_container</item>
+        <item name="colorOnPrimary">@color/hmcl_on_primary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/default_theme_color</item>
-        <item name="colorSecondaryVariant">@color/default_theme_color</item>
-        <item name="colorOnSecondary">@color/default_theme_color</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/default_theme_color</item>
+        <item name="colorSecondary">@color/hmcl_primary</item>
+        <item name="colorSecondaryVariant">@color/hmcl_primary_container</item>
+        <item name="colorOnSecondary">@color/hmcl_on_primary</item>
+        <!-- 表面/错误色对齐 HMCL -->
+        <item name="android:colorBackground">@color/hmcl_surface</item>
+        <item name="colorError">@color/hmcl_error</item>
+        <!-- Status bar color（沉浸式下与左侧栏压暗一致） -->
+        <item name="android:statusBarColor">@color/hmcl_scrim_left</item>
         <!-- Customize your theme here. -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>

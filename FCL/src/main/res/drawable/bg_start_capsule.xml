@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HMCL 式「启动游戏」主按钮：大圆角胶囊、primary 蓝底 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/hmcl_primary" />
+    <corners android:radius="28dp" />
+</shape>

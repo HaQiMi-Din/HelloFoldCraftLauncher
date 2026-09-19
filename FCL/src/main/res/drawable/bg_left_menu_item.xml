@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- HMCL 式左侧导航项：圆角 14dp，选中项用半透 primary-container 高亮 -->
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#40000000">
+    android:color="#33FFFFFF">
 
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
             <solid android:color="#000000" />
-            <corners android:radius="8dp" />
+            <corners android:radius="14dp" />
         </shape>
     </item>
 
@@ -13,14 +14,14 @@
         <selector>
             <item android:state_selected="true">
                 <shape android:shape="rectangle">
-                    <solid android:color="#30000000" />
-                    <corners android:radius="8dp" />
+                    <solid android:color="@color/hmcl_selected_overlay" />
+                    <corners android:radius="14dp" />
                 </shape>
             </item>
             <item>
                 <shape android:shape="rectangle">
                     <solid android:color="@android:color/transparent" />
-                    <corners android:radius="8dp" />
+                    <corners android:radius="14dp" />
                 </shape>
             </item>
         </selector>

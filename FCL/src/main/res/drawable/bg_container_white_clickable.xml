@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- HMCL 式可点内容卡片：surface-container 浅底 + 16dp 圆角 + 淡蓝涟漪 -->
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@android:color/white">
+    android:color="#334352A5">
     <item>
         <shape>
             <corners
-                android:topLeftRadius="5.0dip"
-                android:topRightRadius="5.0dip"
-                android:bottomLeftRadius="5.0dip"
-                android:bottomRightRadius="5.0dip"/>
+                android:radius="16dp" />
             <solid
-                android:color="@android:color/white" />
+                android:color="@color/hmcl_surface_container" />
         </shape>
     </item>
 </ripple>
