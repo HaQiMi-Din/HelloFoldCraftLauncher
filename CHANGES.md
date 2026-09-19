@@ -148,3 +148,25 @@ HFCL fork 相对上游分叉点领先 134 个提交（主要是平板 UI 迭代�
 - 状态栏 `#CC000000` 在沉浸式全屏下是否被窗口隐藏（预期不影响）。
 
 静态校验：改动的 20 个 XML 全部 well-formed；9 个 `hmcl_*` 色全部有定义、无悬空引用；两个新 drawable 各被引用 1 次；`left_menu/start/text_start/go_setting/version_name` 等 `findViewById` id 全部保留，未增删改名。
+
+## 10. GitHub Actions 云编译
+
+按用户要求改用 GitHub Actions 云端编译（未在本地装 SDK/NDK）。
+
+### workflow
+- 复用仓库既有的 `.github/workflows/build.yml`（FCL 官方同款）：`ubuntu-latest` + `actions/setup-java@v5` JDK 17 Temurin + Gradle 缓存；owner 为 HaQiMi-Din 时自动执行 `./gradlew assemblefordebug -Darch=<arch>`，matrix = all/arm/arm64/x86/x86_64，产物经 `actions/upload-artifact` 上传。compileSdk 35 / NDK 27.0.12077973 / CMake 由 AGP 与仓库配置自动拉取，无需手写 SDK 安装步骤。
+- 触发：push 到 main 即自动跑（workflow 文件本身在 paths-ignore，只改 .md 不会再触发）。
+
+### 结果
+- Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35430704314
+- 状态：**success（5/5 ABI 全部通过）**，含 native CMake 编译。
+- 产物（Actions Artifacts，约保留期内可下载）：
+  - `app-arm` 165.0 MB、`app-arm64` 173.6 MB、`app-x86` 159.1 MB、`app-x86_64` 178.0 MB、`app-all` 328.3 MB（全 ABI）。
+
+### 实际修复的编译错误（静态修改的遗漏在云端暴露）
+1. **`FCL/.../hfcl/util/AndroidUtils.java:120` — unreported exception IOException**：此前"资源泄漏修复"在 finally 中直接调用 `MediaMetadataRetriever.release()`，而该方法抛受检 IOException。修复：finally 内再包一层 try-catch（IOException 已 import）。修复后一次通过。
+- 其余（包名重命名、JNI `Java_com_tungsten_hfclauncher_*`、`loadLibrary("hfcl")`、Manifest `.HFCLApplication`、主题/资源引用）经云端实际编译验证均无遗漏、无悬空 R 引用、native 链接一致。
+
+### 备注
+- token 含 `repo` + `workflow` 权限，可正常推送 workflow 与触发 Actions，无权限受阻。
+- release 签名所需 secrets（FCL_KEYSTORE_PASSWORD 等）未配置，故只出 debug APK；release 流程在非 FCL-Team 仓库本就被 workflow 跳过。
