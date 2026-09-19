@@ -12,8 +12,8 @@
         <!-- 表面/错误色对齐 HMCL -->
         <item name="android:colorBackground">@color/hmcl_surface</item>
         <item name="colorError">@color/hmcl_error</item>
-        <!-- Status bar color（沉浸式下与左侧栏压暗一致） -->
-        <item name="android:statusBarColor">@color/hmcl_scrim_left</item>
+        <!-- Status bar color（与紫色标题栏一致） -->
+        <item name="android:statusBarColor">@color/hmcl_primary</item>
         <!-- Customize your theme here. -->
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>

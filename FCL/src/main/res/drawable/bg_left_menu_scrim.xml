@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- HMCL 左侧导航栏压暗层：左浓右淡的横向渐变 scrim，覆盖在壁纸之上保证白字可读 -->
+<!-- HMCL 左侧导航栏：浅灰白半透明背景，覆盖在 MC 壁纸之上，深灰文字 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <gradient
-        android:type="linear"
-        android:angle="0"
-        android:startColor="@color/hmcl_scrim_left"
-        android:endColor="@color/hmcl_scrim_right" />
+    <solid android:color="@color/hmcl_menu_background" />
 </shape>

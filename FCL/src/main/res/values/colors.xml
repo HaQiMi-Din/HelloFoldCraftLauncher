@@ -10,10 +10,10 @@
     <!-- 原 FCLLibrary 模块颜色（模块已并入 FCL） -->
     <color name="dialog_background">#F4F4F4</color>
 
-    <!-- ================= HMCL (Hello Minecraft Launcher) Material You 浅色蓝白色板 ================= -->
-    <!-- 主色/容器 -->
-    <color name="hmcl_primary">#4352A5</color>
-    <color name="hmcl_primary_container">#5C6BC0</color>
+    <!-- ================= HMCL (Hello Minecraft Launcher) Material 紫色系（Deep Purple）浅色调色板 ================= -->
+    <!-- 主色/容器：HMCL 真实主色为深紫 #673AB7 / 亮紫 #7C4DFF -->
+    <color name="hmcl_primary">#673AB7</color>
+    <color name="hmcl_primary_container">#7C4DFF</color>
     <color name="hmcl_on_primary">#FFFFFF</color>
     <!-- 表面层级 -->
     <color name="hmcl_surface">#FBF8FF</color>
@@ -25,9 +25,10 @@
     <color name="hmcl_on_surface_variant">#454651</color>
     <color name="hmcl_outline">#767683</color>
     <color name="hmcl_error">#BA1A1A</color>
-    <!-- 左侧导航栏压暗(scrim)：左浓右淡，覆盖在壁纸之上保证白字可读 -->
-    <color name="hmcl_scrim_left">#CC000000</color>
-    <color name="hmcl_scrim_right">#59000000</color>
-    <!-- 选中导航项高亮（半透 primary-container） -->
-    <color name="hmcl_selected_overlay">#405C6BC0</color>
+    <!-- 左侧导航栏：浅灰白半透明覆盖在壁纸之上，深灰文字可读 -->
+    <color name="hmcl_menu_background">#E6FFFFFF</color>
+    <color name="hmcl_menu_text">#212121</color>
+    <color name="hmcl_menu_text_hint">#757575</color>
+    <!-- 选中导航项高亮（浅灰，非蓝色） -->
+    <color name="hmcl_selected_overlay">#1F000000</color>
 </resources>

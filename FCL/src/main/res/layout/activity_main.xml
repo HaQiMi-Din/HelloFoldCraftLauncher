@@ -117,7 +117,7 @@
                         android:gravity="center"
                         android:singleLine="true"
                         android:text="@string/account_state_no_account"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/account_name_text_size"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +131,7 @@
                         android:gravity="center"
                         android:singleLine="true"
                         android:text="@string/account_state_add"
-                        android:textColor="#CCCCCC"
+                        android:textColor="#757575"
                         android:textSize="@dimen/account_hint_text_size"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +163,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="回到主页"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -193,7 +193,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="游戏管理"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -223,7 +223,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="版本设置"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -253,7 +253,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="游戏下载"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -283,7 +283,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="按键布局"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -313,7 +313,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="联机设置"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -343,7 +343,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="设置管理"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -373,7 +373,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:text="回到上级"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#212121"
                         android:textSize="@dimen/menu_item_text_size"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -422,7 +422,7 @@
             android:orientation="vertical"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/go_setting"
+            app:layout_constraintEnd_toStartOf="@id/start_arrow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
             <com.tungsten.hfcllibrary.component.view.FCLTextView
@@ -442,6 +442,15 @@
                 android:textSize="@dimen/version_name_text_size"
                 tools:text=" " />
         </LinearLayout>
+        <com.tungsten.hfcllibrary.component.view.FCLImageView
+            android:id="@+id/start_arrow"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_arrow_forward"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/go_setting"
+            app:layout_constraintStart_toEndOf="@id/start_text_container"
+            app:layout_constraintTop_toTopOf="parent" />
         <com.tungsten.hfcllibrary.component.view.FCLImageButton
             android:id="@+id/go_setting"
             android:layout_width="@dimen/go_setting_button_size"
