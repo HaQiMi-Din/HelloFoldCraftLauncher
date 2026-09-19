@@ -201,3 +201,33 @@ HFCL fork 相对上游分叉点领先 134 个提交（主要是平板 UI 迭代�
   - `activity_main.xml` 的 `@id/start` 加 `android:elevation="8dp"`，按钮浮在壁纸/内容之上。
   - 「启动游戏」白字加粗、版本名半透白、齿轮图标在右侧，位置与尺寸维持右下角 200dp 宽（已与上轮 content paddingBottom 配合）。
 - Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35438976230 — success（5/5）。
+
+## 12. 按 HMCL 官方截图重做 UI（紫色系）
+
+上一版误做蓝色 (#4352A5)。对照 HMCL v3.7.3 官方截图改回真实紫色 Material 风格。
+
+### 配色对照
+| 角色 | 旧(蓝) | 新(紫 HMCL) |
+|---|---|---|
+| primary | #4352A5 | **#673AB7**（Material Deep Purple） |
+| primary variant | #5C6BC0 | **#7C4DFF** |
+| on-primary | #FFFFFF | #FFFFFF |
+| surface | #FBF8FF | #FBF8FF（保留） |
+| 左侧栏背景 | 深色黑渐变 scrim | **浅灰白半透明 #E6FFFFFF** |
+| 左栏文字 | 白色 | **深灰 #212121**（副标题 #757575） |
+| 选中导航项 | 半透蓝 | **浅灰 #1F000000** |
+
+### 改动文件
+- `res/values/colors.xml`：紫色板；新增 `hmcl_menu_background/menu_text/menu_text_hint`；删除不再用的 scrim 色。
+- `res/values/themes.xml`：statusBarColor 改 `@color/hmcl_primary`（紫）。
+- `drawable/bg_left_menu_scrim.xml`：深色渐变 → 浅灰白半透明纯色。
+- `drawable/bg_left_menu_item.xml`：选中态引用 `hmcl_selected_overlay`（浅灰）。
+- `layout/activity_main.xml`：左栏菜单项/账户文字 #FFFFFF→#212121、#CCCCCC→#757575（标题栏与退出键保留白字）。
+- `drawable/bg_start_capsule.xml`：圆角 26dp → **6dp 小圆角矩形**，实心 ?attr/colorPrimary（紫）。
+- 新增 `drawable/ic_arrow_forward.xml`（白色右箭头），插入启动按钮文字与齿轮之间。
+
+### 未做（Android 平台/结构限制）
+- 左栏「账户/游戏/通用」分组小标题需改菜单 adapter 增列，风险大，未动（保留现有扁平列表）。
+- 标题栏 logo/最小化关闭、版本卡片紫左边框、Tab 紫下划线沿用现有 FCL 控件，未逐像素复刻 JavaFX。
+
+Run：https://github.com/HaQiMi-Din/HelloFoldCraftLauncher/actions/runs/35439573471 — success（5/5）。
