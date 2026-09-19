@@ -410,6 +410,7 @@
         android:background="@drawable/bg_start_capsule"
         android:clickable="true"
         android:focusable="true"
+        android:elevation="8dp"
         android:padding="@dimen/start_button_padding"
         android:stateListAnimator="@xml/anim_scale"
         app:layout_constraintBottom_toBottomOf="parent"
